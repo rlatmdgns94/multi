@@ -13,7 +13,7 @@
                     <li>
                         <router-link to="/diabetes" class="menu_arrow">맞춤당 식단</router-link>
                         <ul class="submenu">
-                            <li><router-link to="/">식단 시작하기</router-link></li>
+                            <li><router-link to="/diabetes">식단 시작하기</router-link></li>
                             <li><router-link to="/">식단표 보기</router-link></li>
                         </ul>
                     </li>

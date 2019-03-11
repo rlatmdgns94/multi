@@ -29,7 +29,7 @@
             <router-link data-slide-index="2" to="/">
                 <i></i>
                 <span>03</span>
-                <p>편리하게 반조리 배송</p>
+                <p>편리한 반조리 배송</p>
             </router-link>
         </div>
     </div>
