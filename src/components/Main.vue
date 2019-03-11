@@ -2,9 +2,18 @@
 <div class="container">
     <div class="visual">
         <ul class="slider">
-         <li><img src="../assets/img/visual.jpg" alt=""></li> 
-         <li><img src="../assets/img/visual.jpg" alt=""></li> 
-         <li><img src="../assets/img/visual.jpg" alt=""></li> 
+         <li>
+             <img src="../assets/img/visual1.jpg" alt="">
+             <router-link to="/" class="visual_btn"><img src="../assets/img/visual_btn.png"></router-link>
+         </li>
+         <li>
+             <img src="../assets/img/visual1.jpg" alt="">
+             <router-link to="/" class="visual_btn"><img src="../assets/img/visual_btn.png"></router-link>
+         </li> 
+         <li>
+             <img src="../assets/img/visual1.jpg" alt="">
+             <router-link to="/" class="visual_btn"><img src="../assets/img/visual_btn.png"></router-link>
+         </li> 
         </ul>
         <div id="bx-pager" class="main_slide_pager">
             <router-link data-slide-index="0" to="/">
@@ -46,7 +55,7 @@
         <div class="program_box_area">
             <ul class="program_box">
                 <li>
-                    <div class="program">
+                    <div class="program program_v1">
                         <h4 class="program_title">일반 당뇨</h4>
                         <p class="program_text">당뇨 1형, 당뇨 2형<br>당뇨 확진 식단</p>
                         <router-link to="/" class="program_more">자세히 보기</router-link>
@@ -56,7 +65,7 @@
                     <img src="../assets/img/program1.jpg" alt="">
                 </li>
                 <li>
-                    <div class="program">
+                    <div class="program program_v2">
                         <h4 class="program_title">당뇨 전 일반인</h4>
                         <p class="program_text">증상이 없는<br>전당뇨, 내당능, 공복혈당</p>
                         <router-link to="/" class="program_more">자세히 보기</router-link>
@@ -68,7 +77,7 @@
                     <img src="../assets/img/program2.jpg" alt="">
                 </li>
                 <li>
-                    <div class="program">
+                    <div class="program program_v3">
                         <h4 class="program_title">임신성 당뇨</h4>
                         <p class="program_text">산전 검사 후,<br>안전한 출산을 위해</p>
                         <router-link to="/" class="program_more">자세히 보기</router-link>
@@ -161,10 +170,10 @@
         margin: 0 auto;
         margin-top: 30px;
         .program_box{
-            overflow: hidden;
             li{
                 float: left;
                 .program{
+                    position: relative;
                     width: 274px;
                     height: 208px;
                     padding-top: 66px;
@@ -193,6 +202,41 @@
 }
 .white{
     color: #fff;
+}
+.program_v1{
+    &::after{
+        position: absolute;
+        right: -16px;
+        top: 121PX;
+        width: 16px;
+        height:32px;
+        rotate: 50%;
+        content: "";
+        background: url('../assets/img/program_arrow_right.png') no-repeat;
+    }
+}
+.program_v2{
+    &::after{
+        position: absolute;
+        bottom: -16px;
+        left: 121px;
+        width: 32px;
+        height: 16px;
+        content: "";
+        background: url('../assets/img/program_arrow_down.png') no-repeat;
+    }
+}
+.program_v3{
+    &::after{
+        position: absolute;
+        left: -15px;
+        top: 121px;
+        width: 16px;
+        height:32px;
+        content: "";
+        background: url('../assets/img/program_arrow_left.png') no-repeat;
+        
+    }
 }
 //<!-- 식과당 프로그램-->
 .main_information{
@@ -244,6 +288,16 @@
 // 밑은 슬라이드 페이저 커스텀
 .visual{
     position: relative;
+    .slider{
+        li{
+            position: relative;
+            .visual_btn{
+                position: absolute;
+                top: 43%;
+                left: 19%;
+            }
+        }
+    }
 }
 .main_slide_pager{
     position: absolute;
