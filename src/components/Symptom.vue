@@ -149,8 +149,6 @@
 </style>
 
 <script>
-import $ from "jquery";
-
 export default {
   name: "Symptom",
   mounted() {

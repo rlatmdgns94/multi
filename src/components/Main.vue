@@ -376,8 +376,6 @@
 </style>
 
 <script>
-import $ from "jquery";
-
 export default {
   name: "Main",
   mounted() {
