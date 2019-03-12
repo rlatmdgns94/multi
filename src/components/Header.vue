@@ -82,6 +82,7 @@
                     >a {
                         position: relative;
                         font-size:18px;
+                        font-weight: 600;
                         &.menu_arrow::after{
                             display: inline-block;
                             width: 11px;

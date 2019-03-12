@@ -274,9 +274,13 @@
             .information_more{
                 display: inline-block;
                 padding: 7px 38px;
-                color:#fff;
+                color:#000;
                 font-size:15px;
-                background: #85AF4B
+                border:1px solid #85AF4B;
+                &:hover{
+                    color:#fff;
+                    background: #85AF4B;
+                }
             }
             .information_title, .information_text, .information_more{
                 margin-left: 35px;
