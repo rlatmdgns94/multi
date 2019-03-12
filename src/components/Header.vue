@@ -1,202 +1,224 @@
 <template>
-    <div class="header">
-        <div class="header_inner">
-            <h1 class="logo">
-                <router-link to="/"><img src="../assets/img/logo.png" alt="식과당"></router-link>
-            </h1>
-            <div id="gnb">
-                <h2 class="blind">대메뉴</h2>
-                <ul class="menu">
-                    <li>
-                        <router-link to="/">식과당 소개</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/diabetes" class="menu_arrow">맞춤당 식단</router-link>
-                        <ul class="submenu">
-                            <li><router-link to="/diabetes">식단 시작하기</router-link></li>
-                            <li><router-link to="/">식단표 보기</router-link></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <router-link to="/" class="menu_arrow">건강당 마켓</router-link>
-                        <ul class="submenu">
-                            <li><router-link to="/">체험식</router-link></li>
-                            <li><router-link to="/">반찬</router-link></li>
-                            <li><router-link to="/">간식</router-link></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <router-link to="/" class="menu_arrow">지피지기 당뇨</router-link>
-                        <ul class="submenu">
-                            <li><router-link to="/">당뇨란?</router-link></li>
-                            <li><router-link to="/">당뇨 음식</router-link></li>
-                            <li><router-link to="/">뉴스정보</router-link></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <dl class="user_menu">
-                <dt class="blind">사용자 메뉴</dt>
-                <dd>
-                    <router-link to="/">로그인</router-link>
-                </dd>
-                <dd>
-                    <router-link to="/">회원가입</router-link>
-                </dd>
-                <dd>
-                    <router-link to="/">장바구니</router-link>
-                </dd>
-            </dl>
-        </div>
-        <div class="submenu_wrap"></div>
+  <div class="header">
+    <div class="header_inner">
+      <h1 class="logo">
+        <router-link to="/">
+          <img src="../assets/img/logo.png" alt="식과당">
+        </router-link>
+      </h1>
+      <div id="gnb">
+        <h2 class="blind">대메뉴</h2>
+        <ul class="menu">
+          <li>
+            <router-link to="/">식과당 소개</router-link>
+          </li>
+          <li>
+            <router-link to="/diabetes" class="menu_arrow">맞춤당 식단</router-link>
+            <ul class="submenu">
+              <li>
+                <router-link to="/diabetes">식단 시작하기</router-link>
+              </li>
+              <li>
+                <router-link to="/">식단표 보기</router-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <router-link to="/" class="menu_arrow">건강당 마켓</router-link>
+            <ul class="submenu">
+              <li>
+                <router-link to="/">체험식</router-link>
+              </li>
+              <li>
+                <router-link to="/">반찬</router-link>
+              </li>
+              <li>
+                <router-link to="/">간식</router-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <router-link to="/" class="menu_arrow">지피지기 당뇨</router-link>
+            <ul class="submenu">
+              <li>
+                <router-link to="/">당뇨란?</router-link>
+              </li>
+              <li>
+                <router-link to="/">당뇨 음식</router-link>
+              </li>
+              <li>
+                <router-link to="/">뉴스정보</router-link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <dl class="user_menu">
+        <dt class="blind">사용자 메뉴</dt>
+        <dd>
+          <router-link to="/">로그인</router-link>
+        </dd>
+        <dd>
+          <router-link to="/">회원가입</router-link>
+        </dd>
+        <dd>
+          <router-link to="/">장바구니</router-link>
+        </dd>
+      </dl>
     </div>
+    <div class="submenu_wrap"></div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-    .header {
-        position: relative;
-        z-index: 10;
-        width: 100%;
-        box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
-        background: #fff;
-        .header_inner {
-            width: 1200px;
-            height: 60px;
-            margin: 0 auto;
-            padding-top: 30px;
-            &::after {
-                display: block;
-                content: "";
-                clear: both;
-            }
-            .logo {
-                float: left;
-            }
-            .menu {
-                float: left;
-                margin-left: 140px;
-                >li {
-                    position: relative;
-                    float: left;
-                    margin-left: 50px;
-                    >a {
-                        position: relative;
-                        font-size:18px;
-                        font-weight: 600;
-                        &.menu_arrow::after{
-                            display: inline-block;
-                            width: 11px;
-                            height: 5px;
-                            content: "";
-                            margin-left: 7px;
-                            margin-top: 12px;
-                            vertical-align: top;
-                            background: url('../assets/img/mene_arrow.png') no-repeat;
-                        }
-                    }
-                }
-            }
-        }
+.header {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  .header_inner {
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    padding-top: 30px;
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
     }
-    
-    .menu>li::after {
-        position: absolute;
-        top: 7px;
-        right: -25px;
-        display: block;
-        content: "";
-        width: 1px;
-        height: 15px;
-        background: #707070;
+    .logo {
+      float: left;
     }
-    
-    .menu>li:last-child::after {
-        width: 0px;
-    }
-    
-    .menu li:first-child {
-        margin-left: 0;
-    }
-    
-    .user_menu {
-        float: right;
-        margin-top: 3px;
-    }
-    
-    .user_menu dd {
+    .menu {
+      float: left;
+      margin-left: 140px;
+      > li {
         position: relative;
         float: left;
-        font-size: 14px;
-        margin-left: 24px;
-    }
-    
-    .user_menu dt+dd {
-        margin-left: 0;
-    }
-    
-    .user_menu dd::after {
-        position: absolute;
-        top: 5px;
-        right: -15px;
-        display: block;
-        content: "";
-        width: 2px;
-        height: 14px;
-        background: #cfd0d2;
-    }
-    
-    .user_menu dd:last-child::after {
-        width: 0px;
-    }
-    
-    .menu li a,
-    .user_menu dd a {
-        color: #000;
-    }
-    .submenu{
-        display:none;
-        position: absolute;
-        top:40px;
-        width: 300px;
-        z-index: 100;
-        li{
-            margin-top: 5px;
-            a{
-                font-size:18px;
-            }
+        margin-left: 50px;
+        > a {
+          position: relative;
+          font-size: 18px;
+          font-weight: 600;
+          &.menu_arrow::after {
+            display: inline-block;
+            width: 11px;
+            height: 5px;
+            content: "";
+            margin-left: 7px;
+            margin-top: 12px;
+            vertical-align: top;
+            background: url("../assets/img/mene_arrow.png") no-repeat;
+          }
         }
+      }
     }
-    .submenu_wrap{
-        position: absolute;
-        display: none;
-        z-index: 20;
-        top:90px;
-        width: 100%;
-        height: 100px;
-        background-color: #fff;
-        box-shadow: 0 4px 3px -3px rgba(0,0,0,0.2);
+  }
+}
+
+.menu > li::after {
+  position: absolute;
+  top: 7px;
+  right: -25px;
+  display: block;
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #707070;
+}
+
+.menu > li:last-child::after {
+  width: 0px;
+}
+
+.menu li:first-child {
+  margin-left: 0;
+}
+
+.user_menu {
+  float: right;
+  margin-top: 3px;
+}
+
+.user_menu dd {
+  position: relative;
+  float: left;
+  font-size: 14px;
+  margin-left: 24px;
+}
+
+.user_menu dt + dd {
+  margin-left: 0;
+}
+
+.user_menu dd::after {
+  position: absolute;
+  top: 5px;
+  right: -15px;
+  display: block;
+  content: "";
+  width: 2px;
+  height: 14px;
+  background: #cfd0d2;
+}
+
+.user_menu dd:last-child::after {
+  width: 0px;
+}
+
+.menu li a,
+.user_menu dd a {
+  color: #000;
+}
+.submenu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  width: 300px;
+  z-index: 100;
+  li {
+    margin-top: 5px;
+    a {
+      font-size: 18px;
     }
-    .show{
-            display: block;
-        }
+  }
+}
+.submenu_wrap {
+  position: absolute;
+  display: none;
+  z-index: 20;
+  top: 90px;
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.2);
+}
+.show {
+  display: block;
+}
 </style>
 
 <script>
-    export default {
-        name: 'Header',
-    }
-    $(document).ready(function(){
-	 $('.menu>li>a,#gnb').on('mouseenter focus', function(){
-		 $('.submenu').addClass('show');
-		 $('.submenu_wrap').addClass('show');
-	});
-	 $('.container').on('mouseenter', function(){
-		 $('.submenu').removeClass('show');
-		 $('.submenu_wrap').removeClass('show');
-	});
-	$('.menu>li:last-child').on('focusout', function(){
-		 $('.submenu').removeClass('show');
-		 $('.submenu_wrap').removeClass('show');
-	});
-});
+import $ from "jquery";
+
+export default {
+  name: "Header",
+  mounted() {
+    $(document).ready(function() {
+      $(".menu>li>a,#gnb").on("mouseenter focus", function() {
+        $(".submenu").addClass("show");
+        $(".submenu_wrap").addClass("show");
+      });
+      $(".container").on("mouseenter", function() {
+        $(".submenu").removeClass("show");
+        $(".submenu_wrap").removeClass("show");
+      });
+      $(".menu>li:last-child").on("focusout", function() {
+        $(".submenu").removeClass("show");
+        $(".submenu_wrap").removeClass("show");
+      });
+    });
+  }
+};
 </script>
