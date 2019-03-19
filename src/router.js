@@ -4,6 +4,7 @@ import Router from "vue-router";
 import Diabetes from "./components/Diabetes.vue";
 import Symptom from "./components/Symptom.vue";
 import Main from './components/Main.vue';
+import Login from './components/Login.vue';
 
 Vue.use(Router);
 
@@ -32,6 +33,11 @@ export default new Router({
       path: "/symptom",
       name: "Symptom",
       component: Symptom
+    },
+    {
+      path: "/login",
+      name: "Login",
+      component: Login
     }
   ],
   mode: 'history'

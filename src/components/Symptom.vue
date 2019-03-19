@@ -294,10 +294,10 @@
               </li>
             </ul>
           </div>
-          <div>
-            <p>일반당뇨 - 초기당뇨 맞춤당 프로그램</p>
-            <p>159,000 원</p>
-          </div>
+          <div class="payment_box">
+            <div class="payment_text"><span>일반당뇨 - 초기당뇨 맞춤당 프로그램</span><span class="price">159,000 원</span></div>
+            <div class="payment_menu"><router-link to="/">바로 결제하기</router-link><router-link to="/">장바구니 담기</router-link></div>
+          </div> 
         </form>
       </div>
     </div>
@@ -322,6 +322,7 @@
   padding-top: 70px;
   text-align: center;
   background: #fcf9ed;
+  font-family: "Noto Sans KR";
   &::after {
     display: inline-block;
     content: "";
@@ -359,7 +360,10 @@
   }
 }
 .program_option {
+  position: relative;
+  text-align: center;
   padding: 60px 0;
+   margin-bottom: 279px;
   background: #fcf9ed;
   font-family: "SDKukdetopokki";
   .early_serious_chronic {
@@ -462,6 +466,33 @@
     margin-right: 220px;
     &:last-child {
       margin: 0;
+    }
+  }
+}
+.payment_box{
+  position: absolute;
+  bottom: -82px;
+  left:28%;
+  display: inline-block;
+  background: #fff;
+  font-size:20px;
+  font-family: "Noto Sans KR";
+  box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.2);
+  .payment_text{
+    padding: 25px 58px;
+    border-bottom: 1px solid #D1D1D1;
+    .price{
+      margin-left:357px;
+    }
+  }
+  .payment_menu{
+    padding: 25px 58px;
+    text-align: right;
+    a{
+      color:#000;
+      &:last-child{
+        margin-left:26px;
+      }
     }
   }
 }

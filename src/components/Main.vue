@@ -23,17 +23,17 @@
       </ul>
       <div id="bx-pager" class="main_slide_pager">
         <router-link data-slide-index="0" to="/">
-          <i></i>
+          <i class="padger_bar"></i>
           <span>01</span>
           <p>당뇨 맞춤 식단 프로그램</p>
         </router-link>
         <router-link data-slide-index="1" to="/">
-          <i></i>
+          <i class="padger_bar"></i>
           <span>02</span>
           <p>신선한 유기농 재료</p>
         </router-link>
         <router-link data-slide-index="2" to="/">
-          <i></i>
+          <i class="padger_bar"></i>
           <span>03</span>
           <p>편리한 반조리 배송</p>
         </router-link>
@@ -164,6 +164,11 @@
   </div>
 </template>
 <style lang="scss" scoped>
+@media screen and (max-width:1500px) {
+  .main_slide_pager a{
+    font-size: 20px !important;
+  }
+}
 .main_title_box {
   margin-top: 83px;
   text-align: center;
@@ -343,20 +348,22 @@
 .main_slide_pager {
   position: absolute;
   bottom: 67px;
-  left: 380px;
+  width: 100%;
   z-index: 100;
+  text-align: center;
 }
 .main_slide_pager a {
   display: inline-block;
-  margin-left: 52px;
+  width: 18%;
+  margin-left:3%;
   color: #fff;
+  text-align: left;
   font-size: 25px;
   &:first-child {
     margin-left: 0;
   }
-  i {
+  .padger_bar {
     display: block;
-    width: 348px;
     height: 2px;
     background: #fff;
   }

@@ -56,7 +56,7 @@
       <dl class="user_menu">
         <dt class="blind">사용자 메뉴</dt>
         <dd>
-          <router-link to="/">로그인</router-link>
+          <router-link to="/login">로그인</router-link>
         </dd>
         <dd>
           <router-link to="/">회원가입</router-link>
@@ -208,7 +208,7 @@ export default {
         $(".submenu").addClass("show");
         $(".submenu_wrap").addClass("show");
       });
-      $(".container").on("mouseenter", function() {
+      $(".header").on("mouseleave", function() {
         $(".submenu").removeClass("show");
         $(".submenu_wrap").removeClass("show");
       });
