@@ -5,6 +5,7 @@ import Diabetes from "./components/Diabetes.vue";
 import Symptom from "./components/Symptom.vue";
 import Main from './components/Main.vue';
 import Login from './components/Login.vue';
+import Join from './components/Join.vue';
 
 Vue.use(Router);
 
@@ -38,6 +39,11 @@ export default new Router({
       path: "/login",
       name: "Login",
       component: Login
+    },
+    {
+      path: "/join",
+      name: "Join",
+      component: Join
     }
   ],
   mode: 'history'

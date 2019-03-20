@@ -34,7 +34,7 @@
     <div class="diabetes_program_area">
       <ul class="diabetes_program content">
         <li>
-          <router-link to="/symptom">
+          <router-link to="/symptom" class="spring">
             <div class="diabetes_img_box">
               <div class="diabetes_bg"></div>
               <p class="diabetes_caption">당뇨 1형, 당뇨 2형
@@ -42,27 +42,39 @@
               </p>
               <img src="../assets/img/diabetes1.jpg" class="diabetes_img" alt="일반 당뇨">
             </div>
-            <h4 class="diabetes_title">일반 당뇨</h4>
+            <h4 class="diabetes_title">봄</h4>
           </router-link>
         </li>
         <li>
-          <router-link to="/">
+          <router-link to="/symptom" class="summer">
+            <div class="diabetes_img_box">
+              <div class="diabetes_bg"></div>
+              <p class="diabetes_caption">당뇨 1형, 당뇨 2형
+                <br>당뇨 확진 식단
+              </p>
+              <img src="../assets/img/diabetes1.jpg" class="diabetes_img" alt="일반 당뇨">
+            </div>
+            <h4 class="diabetes_title">여름</h4>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/" class="fall">
             <div class="diabetes_img_box">
               <div class="diabetes_bg"></div>
               <p class="diabetes_caption">태아 건강, 안전한 출산</p>
               <img src="../assets/img/diabetes2.jpg" class="diabetes_img" alt="임신성 당뇨">
             </div>
-            <h4 class="diabetes_title">임신성 당뇨</h4>
+            <h4 class="diabetes_title">가을</h4>
           </router-link>
         </li>
         <li>
-          <router-link to="/">
+          <router-link to="/" class="winter">
             <div class="diabetes_img_box">
               <div class="diabetes_bg"></div>
               <p class="diabetes_caption">일반인, 건강관리</p>
               <img src="../assets/img/diabetes3.jpg" class="diabetes_img" alt="당뇨 전 단계">
             </div>
-            <h4 class="diabetes_title">당뇨 전 단계</h4>
+            <h4 class="diabetes_title">겨울</h4>
           </router-link>
         </li>
       </ul>
@@ -128,7 +140,7 @@
     overflow: hidden;
     li {
       display: inline-block;
-      margin-left: 110px;
+      margin-left: 37px;
       a {
         display: block;
         .diabetes_img_box {
@@ -210,6 +222,35 @@
   color: #fff;
   font-size: 17px;
   font-weight: 500;
+}
+.diabetes_program li a{
+  &.summer{
+    .diabetes_title{
+      &::before{background: #65b7e7}
+      &::after{background: #65b7e7;}
+    }
+    &:hover .diabetes_img_box {
+      border: 1px solid #65b7e7;
+    }
+  }
+  &.fall{
+    .diabetes_title{
+      &::before{background: #ffb43d}
+      &::after{background: #ffb43d;}
+    }
+    &:hover .diabetes_img_box {
+      border: 1px solid #ffb43d;
+    }
+  }
+  &.winter{
+    .diabetes_title{
+      &::before{background: #c26dc8}
+      &::after{background: #c26dc8;}
+    }
+    &:hover .diabetes_img_box {
+      border: 1px solid #c26dc8;
+    }
+  }
 }
 </style>
 

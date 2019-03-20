@@ -59,7 +59,7 @@
           <router-link to="/login">로그인</router-link>
         </dd>
         <dd>
-          <router-link to="/">회원가입</router-link>
+          <router-link to="/join">회원가입</router-link>
         </dd>
         <dd>
           <router-link to="/">장바구니</router-link>
@@ -180,7 +180,7 @@
   li {
     margin-top: 5px;
     a {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 }
