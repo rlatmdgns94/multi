@@ -13,10 +13,10 @@
             <router-link to="/">식과당 소개</router-link>
           </li>
           <li>
-            <router-link to="/diabetes" class="menu_arrow">맞춤당 식단</router-link>
+            <router-link to="/diet" class="menu_arrow">맞춤당 식단</router-link>
             <ul class="submenu">
               <li>
-                <router-link to="/diabetes">식단 시작하기</router-link>
+                <router-link to="/diet">식단 시작하기</router-link>
               </li>
               <li>
                 <router-link to="/">식단표 보기</router-link>
@@ -100,7 +100,7 @@
         > a {
           position: relative;
           font-size: 18px;
-          font-weight: 600;
+          font-weight: 500;
           &.menu_arrow::after {
             display: inline-block;
             width: 11px;

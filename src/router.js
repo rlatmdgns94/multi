@@ -6,6 +6,7 @@ import Symptom from "./components/Symptom.vue";
 import Main from './components/Main.vue';
 import Login from './components/Login.vue';
 import Join from './components/Join.vue';
+import Diet from './components/Diet.vue';
 
 Vue.use(Router);
 
@@ -44,6 +45,11 @@ export default new Router({
       path: "/join",
       name: "Join",
       component: Join
+    },
+    {
+      path: "/diet",
+      name: "Diet",
+      component: Diet
     }
   ],
   mode: 'history'
