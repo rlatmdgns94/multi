@@ -24,12 +24,40 @@
 	<div class="diet_content_wrap">
 		<!-- //이용방법 -->
 		<div class="diet_content on">
-			<img src="../assets/img/asdasd.jpg" alt="">
+			<div>
+				<img src="../assets/img/use1.png" alt="">
+			</div>
+			<div class="useway1">
+				<ul class="merit">
+					<li>
+						<img src="../assets/img/use2_1.png" alt="">
+					</li>
+					<li>
+						<img src="../assets/img/use2_2.png" alt="">
+					</li>
+					<li>
+						<img src="../assets/img/use2_3.png" alt="">
+					</li>
+				</ul>
+			</div>
+			<div class="useway2">
+				<ul class="faith">
+					<li>
+						<img src="../assets/img/use3_1.png" alt="">
+					</li>
+					<li>
+						<img src="../assets/img/use3_2.png" alt="">
+					</li>
+				</ul>
+			</div>
+			<div>
+				<img src="../assets/img/use4.png" alt="">
+			</div>
 		</div>
 		<!-- 이용방법 -->
 		<!-- 식단표 -->
 		<div class="diet_content">
-			<img src="../assets/img/asdasd.jpg" alt="">			
+			<img src="../assets/img/use.png" alt="">			
 		</div>
 		<!-- //식단표 -->
 		<!-- 주문하기 -->
@@ -261,7 +289,19 @@
 						</div>
 						<div class="payment_box">
 							<div class="payment_text"><span>하루 2끼, 주 3일, 1주 메인+반찬 식단 프로그램</span><span class="price">159,000 원</span></div>
-							<div class="payment_menu"><router-link to="/">바로 결제하기</router-link><router-link to="/">장바구니 담기</router-link></div>
+							<div class="payment_menu">
+								<ul class="payment">
+									<li>
+										<router-link to="/">바로 결제하기</router-link>
+									</li>
+									<li>
+										<router-link to="/">관심상품</router-link>
+									</li>
+									<li>
+										<router-link to="/">장바구니</router-link>
+									</li>
+								</ul>
+							</div>
 						</div> 
 					</form>
 				</div>
@@ -269,7 +309,7 @@
 		</div>
 		<!-- //주문하기 -->
 		<div class="diet_content">
-			<img src="../assets/img/asdasd.jpg" alt="">			
+			<img src="../assets/img/use.png" alt="">
 		</div>
 		<!-- 레시피 -->
 	</div>
@@ -343,6 +383,56 @@
 		display: block;
 	}
 }//탭 콘텐츠
+// 이용방법
+.useway1{
+height: 620px;
+background: url("../assets/img/use2.png") no-repeat center;
+padding-top:353px;
+	.merit{
+		text-align: center;
+		li{
+			display: inline-block;
+			margin-left: 129px;
+			overflow: hidden;
+			border-radius: 157px;
+			&:first-child{
+				margin: 0;
+			}
+			img{
+				&:hover{
+					cursor: pointer;
+					transform:scale(1.2);
+					transition: transform .35s;
+				}
+			}
+		}
+	}
+}
+.useway2{
+height: 709px;
+background: url("../assets/img/use3.png") no-repeat center;
+padding-top:279px;
+	.faith{
+		margin-left: -2px;
+		text-align: center;
+		li{
+			display: inline-block;
+			overflow: hidden;
+			margin-left: 60px;
+			&:first-child{
+				margin-left: 0;
+			}
+			img{
+				&:hover{
+					cursor: pointer;
+					transform:scale(1.2);
+           			transition: transform .35s;
+				}
+			}
+		}
+	}
+}
+// 이용방법
 // 주문하기
 .order_wrap{
 	padding-top: 120px;
@@ -516,12 +606,19 @@
   .payment_menu{
     padding: 25px 58px;
     text-align: right;
-    a{
-      color:#000;
-      &:last-child{
-        margin-left:26px;
-      }
-    }
+		.payment{
+			li{
+				display: inline-block;
+				margin-right: 26px;
+				&:last-child{margin-right: 0;}
+				a{
+					color:#000;
+					&:hover{
+						color:#85AF4B;
+					}
+				}
+			}
+		}
   }
 }
 // //주문하기
@@ -541,6 +638,4 @@ export default {
 	})
   }
 };
-
-
 </script>
