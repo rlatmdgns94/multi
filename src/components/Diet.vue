@@ -292,7 +292,7 @@
 							<div class="payment_menu">
 								<ul class="payment">
 									<li>
-										<router-link to="/">바로 결제하기</router-link>
+										<router-link to="/order">바로 결제하기</router-link>
 									</li>
 									<li>
 										<router-link to="/">관심상품</router-link>
@@ -401,7 +401,7 @@ padding-top:353px;
 			img{
 				&:hover{
 					cursor: pointer;
-					transform:scale(1.2);
+					transform:scale(1.2np);
 					transition: transform .35s;
 				}
 			}

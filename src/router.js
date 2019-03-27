@@ -7,6 +7,8 @@ import Main from './components/Main.vue';
 import Login from './components/Login.vue';
 import Join from './components/Join.vue';
 import Diet from './components/Diet.vue';
+import Cart from './components/Cart.vue';
+import Order from './components/Order.vue';
 
 Vue.use(Router);
 
@@ -50,7 +52,17 @@ export default new Router({
       path: "/diet",
       name: "Diet",
       component: Diet
+    },
+    {
+      path: "/cart",
+      name: "Cart",
+      component: Cart
+    },
+    {
+      path: "/order",
+      name: "Order",
+      component: Order
     }
   ],
-  mode: 'history'
+  mode:'history'
 });
