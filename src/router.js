@@ -9,6 +9,7 @@ import Join from './components/Join.vue';
 import Diet from './components/Diet.vue';
 import Cart from './components/Cart.vue';
 import Order from './components/Order.vue';
+import OrderCompleted from './components/OrderCompleted.vue';
 
 Vue.use(Router);
 
@@ -62,6 +63,11 @@ export default new Router({
       path: "/order",
       name: "Order",
       component: Order
+    },
+    {
+      path: "/ordercompleted",
+      name: "OrderCompleted",
+      component: OrderCompleted
     }
   ],
   mode:'history'

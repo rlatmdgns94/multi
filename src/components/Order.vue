@@ -1,6 +1,6 @@
 <template>
     <div class="cart_wrap">
-        <div class="order_keyimg    "></div>
+        <div class="order_keyimg"></div>
         <div class="content">
             <form action="">
             <table class="cart">
@@ -27,13 +27,7 @@
                             </div>
                         </td>
                         <td>
-                            <div>
-                                <input type="text" name="num" value="1" id="" class="num" readonly/>
-                                <div class="bt_box">
-                                    <div class="bt_up">▲</div>
-                                    <div class="bt_down">▼</div>
-                                </div>
-                            </div>                            
+                            1                           
                         </td>
                         <td>120,000 원</td>
                         <td>무료</td>
@@ -42,29 +36,31 @@
                 </tbody>
             </table>
             <div class="order_information">
-                <h3 class="order_title">주문자 정보</h3>
-                <table class="buyer">
-                    <tr>
-                        <th>이름</th>
-                        <td>지수빈</td>
-                    </tr>
-                    <tr>
-                        <th><label for="email">이메일</label></th>
-                        <td><input type="text" name="email" id="email"></td>
-                    </tr>
-                    <tr>
-                        <th><label for="phone">연락처</label></th>
-                        <td>
-                            <select name="" id="">
-                                <option value="010" selected>010</option>
-                                <option value="011">011</option>
-                                <option value="012">012</option>
-                            </select>
-                             -<input type="text" name="phone" id="phone" size="3" maxlength="4">
-                             -<input type="text" name="phone" id="phone" size="3" maxlength="4">
-                        </td>
-                    </tr>
-                </table>
+                <div class="buyer_information">
+                    <h3 class="order_title">주문자 정보</h3>
+                    <table class="buyer">
+                        <tr>
+                            <th>이름</th>
+                            <td>지수빈</td>
+                        </tr>
+                        <tr>
+                            <th><label for="email">이메일</label></th>
+                            <td><input type="text" name="email" id="email"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="phone">연락처</label></th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="010" selected>010</option>
+                                    <option value="011">011</option>
+                                    <option value="012">012</option>
+                                </select>
+                                -<input type="text" name="phone" id="phone" size="3" maxlength="4">
+                                -<input type="text" name="phone" id="phone" size="3" maxlength="4">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div class="order_information">
                 <div class="shipping_information">
@@ -237,7 +233,7 @@
         text-align: left;
     }
 }
-.shipping_information{
+.shipping_information, .buyer_information{
     margin-top: 58px;
 }
 .shipping{
@@ -316,32 +312,6 @@
         input{
             display: none;
         }
-    }
-}
-// 수량 카운트
-.num{
-    display: inline-block;
-    border: 0;
-    width: 18px;
-    height: 45px;
-    border: 1px solid #D4D8D9;
-    text-align: center;
-    margin-top: -22px;
-}
-.bt_box{
-    display: inline-block;
-    text-align: center;
-    font-size:1px;
-    border: 1px solid #D4D8D9;
-    color:#787878;
-    .bt_down, .bt_up{
-        padding: 3px 6px;
-    }
-    .bt_up{
-        border-bottom: 1px solid #D4D8D9;
-    }
-    .bt_down{
-
     }
 }
 </style>
