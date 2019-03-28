@@ -69,8 +69,8 @@
                   <option value="013">013</option>
                 </select>
                 -
-                <input type="text" size="4" v-model="phoneMiddle">-
-                <input type="text" size="4" v-model="phoneLast">
+                <input type="text" size="4" maxlength="4" v-model="phoneMiddle">-
+                <input type="text" size="4" maxlength="4" v-model="phoneLast">
               </td>
             </tr>
             <tr>

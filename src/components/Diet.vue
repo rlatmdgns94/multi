@@ -5,10 +5,10 @@
 			<h3 class="blind">맞품당 식단 탭메뉴</h3>
 			<ul class="diet_tab">
 				<li>
-					<router-link to="" class="on">이용방법</router-link>				
+					<router-link to="" >이용방법</router-link>				
 				</li>
 				<li>
-					<router-link to="">식단표</router-link>
+					<router-link to="" class="on">식단표</router-link>
 				</li>
 				<li>
 					<router-link to="">주문하기</router-link>												
@@ -23,7 +23,7 @@
 	<!-- 탭메뉴배경 -->
 	<div class="diet_content_wrap">
 		<!-- //이용방법 -->
-		<div class="diet_content on">
+		<div class="diet_content">
 			<div>
 				<img src="../assets/img/use1.png" alt="">
 			</div>
@@ -56,7 +56,421 @@
 		</div>
 		<!-- 이용방법 -->
 		<!-- 식단표 -->
-		<div class="diet_content">		
+		<div class="diet_content on">	
+			<div class="week_diet_wrap content">
+				<div class="week_diet_top">
+					<h3 class="week_diet_title">3월 1주차</h3>
+					<p class="week_diet_text">메인 식단 표기, 드시려는 식단명을 클릭하셔서 상세정보를 확인하세요.</p>
+				</div>
+				<table class="week_diet">
+					<caption class="blind">식단표</caption>
+					<colgroup>
+					<col width="20%">
+					<col width="20%">
+					<col width="20%">
+					<col width="20%">
+					<col width="20%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">MON</th>
+							<th scope="col">TUE</th>
+							<th scope="col">WED</th>
+							<th scope="col">THU</th>
+							<th scope="col">FRI</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+								<div class="menu_detail">
+									<div class="detail_top">
+										<p class="top_title">월요일 배송상품</p>
+										<a href="#"  class="detail_close">
+											<img src="../assets/img/cancel.png" alt="상세 식단 닫기">
+										</a>
+									</div>
+									<div class="detail_bottom">
+										<span class="detail_title">아침식단</span>
+										<p>차조밥 + 원추리 소고기 장국 + 계란 채소말이 + 냉이무침 + 봄동 부추 겉절이 + 깍두기   /   간식 : 자몽1개, 두유</p>
+										<ul class="food_list">
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/rice/rice1.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side1.jpg" alt="계란 채소말이"></div>
+												<div class="food_text">
+													<p>계란 채소말이</p>
+													<p>계란 1개, 당근 10g, 양파 10g, 실파 5g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side2.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/dessert/dessert1.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+										</ul>
+										<ul class="food_list">
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/main/main1.jpg" alt="계란 채소말이"></div>
+												<div class="food_text">
+													<p>계란 채소말이</p>
+													<p>계란 1개, 당근 10g, 양파 10g, 실파 5g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side3.jpg" alt="계란 채소말이"></div>
+												<div class="food_text">
+													<p>계란 채소말이</p>
+													<p>계란 1개, 당근 10g, 양파 10g, 실파 5g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side4.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/dessert/dessert2.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+								<div class="menu_detail">
+									<div class="detail_top">
+										<p class="top_title">월요일 배송상품</p>
+										<a href="#"  class="detail_close">
+											<img src="../assets/img/cancel.png" alt="상세 식단 닫기">
+										</a>
+									</div>
+									<div class="detail_bottom">
+										<span class="detail_title">아침식단</span>
+										<p>차조밥 + 원추리 소고기 장국 + 계란 채소말이 + 냉이무침 + 봄동 부추 겉절이 + 깍두기   /   간식 : 자몽1개, 두유</p>
+										<ul class="food_list">
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/rice/rice1.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side1.jpg" alt="계란 채소말이"></div>
+												<div class="food_text">
+													<p>계란 채소말이</p>
+													<p>계란 1개, 당근 10g, 양파 10g, 실파 5g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side2.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/dessert/dessert1.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+										</ul>
+										<ul class="food_list">
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/main/main1.jpg" alt="계란 채소말이"></div>
+												<div class="food_text">
+													<p>계란 채소말이</p>
+													<p>계란 1개, 당근 10g, 양파 10g, 실파 5g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side3.jpg" alt="계란 채소말이"></div>
+												<div class="food_text">
+													<p>계란 채소말이</p>
+													<p>계란 1개, 당근 10g, 양파 10g, 실파 5g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side4.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/dessert/dessert2.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+								<div class="menu_detail">
+									<div class="detail_top">
+										<p class="top_title">월요일 배송상품</p>
+										<a href="#"  class="detail_close">
+											<img src="../assets/img/cancel.png" alt="상세 식단 닫기">
+										</a>
+									</div>
+									<div class="detail_bottom">
+										<span class="detail_title">아침식단</span>
+										<p>차조밥 + 원추리 소고기 장국 + 계란 채소말이 + 냉이무침 + 봄동 부추 겉절이 + 깍두기   /   간식 : 자몽1개, 두유</p>
+										<ul class="food_list">
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/rice/rice1.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side1.jpg" alt="계란 채소말이"></div>
+												<div class="food_text">
+													<p>계란 채소말이</p>
+													<p>계란 1개, 당근 10g, 양파 10g, 실파 5g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side2.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/dessert/dessert1.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+										</ul>
+										<ul class="food_list">
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/main/main1.jpg" alt="계란 채소말이"></div>
+												<div class="food_text">
+													<p>계란 채소말이</p>
+													<p>계란 1개, 당근 10g, 양파 10g, 실파 5g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side3.jpg" alt="계란 채소말이"></div>
+												<div class="food_text">
+													<p>계란 채소말이</p>
+													<p>계란 1개, 당근 10g, 양파 10g, 실파 5g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/side/side4.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+											<li>
+												<div class="food_img"><img src="../assets/diet_img/dessert/dessert2.jpg" alt="현미 차조밥"></div>
+												<div class="food_text">
+													<p>현미 차조밥</p>
+													<p>쌀 60g, 현미20g, 차조 10g</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+							<td>
+								<div class="menu_box">
+									<dl>
+										<dt>아침</dt>
+										<dd><em>봄동 부추 겉절이</em></dd>
+										<dd>현미차조밥</dd>
+										<dd>원추리 소고기 장국</dd>
+										<dd>계란채소말이</dd>
+									</dl>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<!-- //식단표 -->
 		<!-- 주문하기 -->
@@ -313,6 +727,7 @@
 		<!-- 레시피 -->
 	</div>
 	<!-- 탭 콘텐츠 -->
+	<div class="detail_bg"></div>
 </div>
 </template>
 <style lang="scss" scoped>
@@ -432,6 +847,139 @@ padding-top:279px;
 	}
 }
 // 이용방법
+// 식단표
+.week_diet_wrap{
+	margin: 120px auto;
+	border: 1px solid #85af4b;
+}
+.week_diet_top{
+	padding: 56px 0;
+	text-align: center;
+	.week_diet_title{
+		font-size:30px;
+		font-weight: 500;
+	}
+	.week_diet_text{
+		font-size:16px;
+	}
+}
+.week_diet{
+	width: 100%;
+	thead{
+		background: #95B965;
+		th{
+			color: #fff;
+			font-size:16px;
+			font-weight: 400;
+		}
+	}
+	tbody{
+		td{
+			padding: 22px 25px;
+			border-right: 1px solid #EBEBEB;
+			&:last-child{
+				border: 0;
+			}
+		}
+	}
+}
+.menu_detail{
+	display: none;
+	position: absolute;
+	top:10%;
+	width: 1010px;
+	background: #fff;
+	z-index: 100;
+	border-radius: 10px;
+	&.on{
+		display: block;
+	}
+}
+.detail_top{
+	overflow: hidden;
+	padding: 27px;
+	border-bottom: 1px solid #D3D3D3;
+	.top_title{
+		float: left;
+		font-size: 19px;
+	}
+	.detail_close{
+		display: block;
+		float: right;
+	}
+}
+.detail_bottom{
+	overflow: hidden;
+	padding: 29px 36px;
+	.detail_title{
+		position: relative;
+		font-size:22px;
+		&::before{
+			content:"*";
+			vertical-align: middle;
+		}
+		&::after{
+			position: absolute;
+			left:0;
+			top: 20px;
+			display: inline-block;
+			content: "";
+			width:97px;
+			height:7px;
+			background: #85AF4B;
+			z-index: -10;
+		}
+	}
+	.food_list{
+		width: 50%;
+		float:left;
+		margin-top:22px;
+		li{
+			overflow: hidden;
+			margin-top: 30px;
+			&:first-child{
+				margin-top: 0;
+			}
+			.food_img{
+				float: left;
+				overflow: hidden;
+				width: 86px;
+				height: 86px;
+				img{display: block;}
+			}
+			.food_text{
+				float: left;
+				margin-top: 17px;
+				margin-left: 32px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				max-width: 330px;
+				max-height: 49px;
+				line-height: 26px;
+				p{font-size:18px}
+			}
+		}
+	}
+}
+.detail_bg{
+	display: none;
+	position: absolute;
+	top:0;
+	left: 0;
+	bottom: 0;
+	right:0;
+	background: rgba( 0, 0, 0, 0.3 );
+	&.on{
+		display: block;
+		}
+}
+.menu_box{
+	cursor: pointer;
+}
+// //식단표
 // 주문하기
 .order_wrap{
 	padding-top: 120px;
@@ -634,7 +1182,20 @@ export default {
 			$('.diet_content').removeClass('on');
 			$('.diet_content').eq(idx).addClass('on');
 		});
-	})
+		// 식단표 스크립트
+		$('.menu_box').on('click', function(){
+			$(this).next(".menu_detail").addClass('on');
+			$(".detail_bg").addClass('on');	
+		});
+		$('.detail_close').on('click', function(){
+			$(".menu_detail").removeClass('on');
+			$(".detail_bg").removeClass('on');			
+		});
+		$('.detail_bg').on('click', function(){
+			$(".menu_detail").removeClass('on');
+			$(this).removeClass('on');			
+		});
+	});
   }
 };
 </script>
