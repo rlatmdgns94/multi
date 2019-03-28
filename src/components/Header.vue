@@ -53,13 +53,25 @@
           </li>
         </ul>
       </div>
-      <dl class="user_menu">
+      <dl class="user_menu" v-if="isNotLogged">
         <dt class="blind">사용자 메뉴</dt>
         <dd>
           <router-link to="/login">로그인</router-link>
         </dd>
         <dd>
           <router-link to="/join">회원가입</router-link>
+        </dd>
+        <dd>
+          <router-link to="/cart">장바구니</router-link>
+        </dd>
+      </dl>
+      <dl class="user_menu" v-if="isLogged">
+        <dt class="blind">사용자 메뉴</dt>
+        <dd>
+          <span @click="logOut">로그아웃</span>
+        </dd>
+        <dd>
+          <router-link to="/">마이페이지</router-link>
         </dd>
         <dd>
           <router-link to="/cart">장바구니</router-link>
@@ -202,6 +214,12 @@
 <script>
 export default {
   name: "Header",
+  data: function() {
+    return {
+      isLogged: false,
+      isNotLogged: false
+    };
+  },
   mounted() {
     $(document).ready(function() {
       $(".menu>li>a,#gnb").on("mouseenter focus", function() {
@@ -217,6 +235,19 @@ export default {
         $(".submenu_wrap").removeClass("show");
       });
     });
+    if (localStorage.getItem("sat")) {
+      this.isLogged = true;
+    }
+    if (!localStorage.getItem("sat")) {
+      this.isNotLogged = true;
+    }
+  },
+  methods: {
+    logOut: function() {
+      localStorage.removeItem("sat");
+      localStorage.removeItem("sar");
+      this.$router.go("/");
+    }
   }
 };
 </script>

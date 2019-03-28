@@ -76,5 +76,5 @@ export default new Router({
       component: OrderList
     }
   ],
-  mode:'history'
+  mode: "history"
 });
