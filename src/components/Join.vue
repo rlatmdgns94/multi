@@ -610,18 +610,22 @@ export default {
           alert("도메인을 입력하거나 선택해주세요.");
           return false;
         }
-        const data = {
-          id: this.id,
-          password: this.password,
-          username: this.username,
-          phoneFirst: this.phoneFirst,
-          phoneMiddle: this.phoneMiddle,
-          phoneLast: this.phoneLast,
-          emailId: this.emailId,
-          domain: this.domain
-        };
-        const response = await axios.post("/v1/users/sign_up", data);
-        console.log(response);
+        if (true) {
+          const data = {
+            userId: this.id,
+            password: this.password,
+            userName: this.username,
+            phoneFirst: this.phoneFirst,
+            phoneMiddle: this.phoneMiddle,
+            phoneLast: this.phoneLast,
+            emailId: this.emailId,
+            domain: this.domain
+          };
+          const response = await axios.post("/users/sign_up", data);
+          console.log(response);
+          alert("회원가입이 완료되었습니다.");
+          this.$router.push("/");
+        }
       } catch (error) {
         throw Error(error);
       }
