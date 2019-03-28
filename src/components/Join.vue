@@ -428,7 +428,7 @@
         <label for="join_submit" class="join_submit">회원가입</label>
         <input @click="postUser" value="회원가입" id="join_submit">
         <label for="join_reset" class="join_submit join_reset">가입취소</label>
-         <input type="reset" value="가입취소" id="join_reset" >
+        <input type="reset" value="가입취소" id="join_reset">
       </div>
       <!-- </form> -->
     </div>
@@ -554,10 +554,12 @@
   background: #fff;
   margin-left: 40px;
 }
-.join_btn_area{
+.join_btn_area {
   margin-top: 74px;
   margin-bottom: 138px;
-  input{display: none;}
+  input {
+    display: none;
+  }
 }
 </style>
 
@@ -630,7 +632,7 @@ export default {
           const response = await axios.post("/users/sign_up", data);
           console.log(response);
           alert("회원가입이 완료되었습니다.");
-          this.$router.push("/");
+          this.$router.go("/");
         }
       } catch (error) {
         throw Error(error);
@@ -653,6 +655,9 @@ export default {
         });
       });
     });
+    if (localStorage.getItem("sat")) {
+      window.location.href = "/";
+    }
   }
 };
 </script>

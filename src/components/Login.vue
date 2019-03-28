@@ -127,6 +127,11 @@ export default {
       password: ""
     };
   },
+  mounted() {
+    if (localStorage.getItem("sat")) {
+      window.location.href = "/";
+    }
+  },
   methods: {
     postSignin: async function() {
       try {
@@ -140,14 +145,14 @@ export default {
         }
 
         if (true) {
-        const data = {
-          userId: this.userId,
-          password: this.password
-        };
-        const response = await axios.post("/v1/users/sign_in", data);
-        localStorage.setItem('sat', response.headers['x-sikguadang-token']);
-        localStorage.setItem('sar', response.headers['x-sikguadang-restore']);
-        this.$router.push('/');
+          const data = {
+            userId: this.userId,
+            password: this.password
+          };
+          const response = await axios.post("/v1/users/sign_in", data);
+          localStorage.setItem("sat", response.headers["x-sikguadang-token"]);
+          localStorage.setItem("sar", response.headers["x-sikguadang-restore"]);
+          window.location.href = "/";
         }
       } catch (error) {
         throw Error(error);
