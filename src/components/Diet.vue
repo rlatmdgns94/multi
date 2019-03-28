@@ -5,16 +5,16 @@
 			<h3 class="blind">맞품당 식단 탭메뉴</h3>
 			<ul class="diet_tab">
 				<li>
-					<router-link to="#" class="on">이용방법</router-link>				
+					<router-link to="" class="on">이용방법</router-link>				
 				</li>
 				<li>
-					<router-link to="#">식단표</router-link>
+					<router-link to="">식단표</router-link>
 				</li>
 				<li>
-					<router-link to="#">주문하기</router-link>												
+					<router-link to="">주문하기</router-link>												
 				</li>
 				<li>
-					<router-link to="#">레시피</router-link>				
+					<router-link to="" >레시피</router-link>				
 				</li>
 			</ul>
 		</div>	
@@ -56,8 +56,7 @@
 		</div>
 		<!-- 이용방법 -->
 		<!-- 식단표 -->
-		<div class="diet_content">
-			<img src="../assets/img/use.png" alt="">			
+		<div class="diet_content">		
 		</div>
 		<!-- //식단표 -->
 		<!-- 주문하기 -->
@@ -210,7 +209,7 @@
 										:checked="options === 'option1'"
 									>
 									<label for="option_meals" class="diabetes_radio_btn">
-										<span></span>메인식단
+										<span></span>단일음식
 									</label>
 								</div>
 							</li>
@@ -226,7 +225,7 @@
 									:checked="options === 'option2'"
 								>
 								<label for="option_meals2" class="diabetes_radio_btn">
-									<span></span>메인+반찬
+									<span></span>단일음식+반찬
 								</label>
 								</div>
 							</li>
@@ -242,7 +241,7 @@
 									:checked="options === 'option3'"
 								>
 								<label for="option_meals3" class="diabetes_radio_btn">
-									<span></span>메인+반찬+간식
+									<span></span>단일음식+반찬+간식
 								</label>
 								</div>
 							</li>
@@ -309,7 +308,7 @@
 		</div>
 		<!-- //주문하기 -->
 		<div class="diet_content">
-			<img src="../assets/img/use.png" alt="">
+			<img src="../assets/img/use1.png" alt="">
 		</div>
 		<!-- 레시피 -->
 	</div>

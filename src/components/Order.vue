@@ -18,7 +18,7 @@
                         <td>
                             <div class="cart_product">
                                 <div class="cart_product_img">
-                                    <img src="../assets/img/cart1.png" alt="">
+                                    <router-link to="/"><img src="../assets/img/cart1.png" alt=""></router-link>
                                 </div>
                                 <div class="cart_product_text">
                                     <p class="cart_product_name">맞춤당 정기 식단 프로그램</p>
@@ -167,7 +167,7 @@
     thead {
         th {
             padding: 16px 0;
-            font-weight: 400;
+            font-weight: 500;
         }
     }
     tbody {
@@ -192,7 +192,6 @@
     .cart_product_img {
         float: left;
         width: 58px;
-        height: 56px;
         overflow: hidden;
         margin-right: 20px;
     }

@@ -10,6 +10,7 @@ import Diet from './components/Diet.vue';
 import Cart from './components/Cart.vue';
 import Order from './components/Order.vue';
 import OrderCompleted from './components/OrderCompleted.vue';
+import OrderList from './components/OrderList.vue';
 
 Vue.use(Router);
 
@@ -68,6 +69,11 @@ export default new Router({
       path: "/ordercompleted",
       name: "OrderCompleted",
       component: OrderCompleted
+    },
+    {
+      path: "/orderlist",
+      name: "OrderList",
+      component: OrderList
     }
   ],
   mode:'history'

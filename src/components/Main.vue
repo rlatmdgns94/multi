@@ -4,21 +4,12 @@
       <ul class="slider">
         <li>
           <img src="../assets/img/visual1.jpg" alt>
-          <router-link to="/" class="visual_btn">
-            <img src="../assets/img/visual_btn.png">
-          </router-link>
         </li>
         <li>
-          <img src="../assets/img/visual1.jpg" alt>
-          <router-link to="/" class="visual_btn">
-            <img src="../assets/img/visual_btn.png">
-          </router-link>
+          <img src="../assets/img/visual2.jpg" alt>
         </li>
         <li>
-          <img src="../assets/img/visual1.jpg" alt>
-          <router-link to="/" class="visual_btn">
-            <img src="../assets/img/visual_btn.png">
-          </router-link>
+          <img src="../assets/img/visual3.jpg" alt>
         </li>
       </ul>
       <div id="bx-pager" class="main_slide_pager">
@@ -74,9 +65,10 @@
         <ul class="program_box">
           <li>
             <div class="program program_v1">
-              <h4 class="program_title">일반 당뇨</h4>
-              <p class="program_text">당뇨 1형, 당뇨 2형
-                <br>당뇨 확진 식단
+              <h4 class="program_title">이용방법 소개</h4>
+              <p class="program_text">
+				맞춤당 식단
+                <br>프로그램 소개
               </p>
               <router-link to="/" class="program_more">자세히 보기</router-link>
             </div>
@@ -86,9 +78,10 @@
           </li>
           <li>
             <div class="program program_v2">
-              <h4 class="program_title">당뇨 전 일반인</h4>
-              <p class="program_text">증상이 없는
-                <br>전당뇨, 내당능, 공복혈당
+              <h4 class="program_title">식단표 소개</h4>
+              <p class="program_text">
+				  주차별
+                <br>식단 상세정보
               </p>
               <router-link to="/" class="program_more">자세히 보기</router-link>
             </div>
@@ -100,9 +93,10 @@
           </li>
           <li>
             <div class="program program_v3">
-              <h4 class="program_title">임신성 당뇨</h4>
-              <p class="program_text">산전 검사 후,
-                <br>안전한 출산을 위해
+              <h4 class="program_title">프로그램 설계</h4>
+              <p class="program_text">
+				  식단표 확인 후
+                <br>나의 프로그램 설계
               </p>
               <router-link to="/" class="program_more">자세히 보기</router-link>
             </div>
@@ -380,8 +374,8 @@
     margin-left: 15px;
   }
 }
-</style>
 
+</style>
 <script>
 export default {
   name: "Main",
@@ -389,8 +383,8 @@ export default {
     $(document).ready(function() {
       $(".slider").bxSlider({
         pagerCustom: "#bx-pager",
-        auto: "ture"
-        // mode: 'fade'
+        auto: "ture",
+        controls:"ture",
       });
     });
   }

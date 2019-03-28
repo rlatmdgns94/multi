@@ -3,25 +3,27 @@
         <div class="cart_keyimg"></div>
         <div class="content">
             <form action="" class="cart_box">
+                <p class="order_list_title">주문 상품 정보</p>
                 <table class="cart">
+                    <caption class="blind">주문내역</caption>
                     <thead>
                         <tr>
-                            <th scope="col" class="check"><input type="checkbox"></th>
+                            <th scope="col" class="order_num">주문번호</th>
+                            <th scope="col" class="order_day">주문일</th>
                             <th scope="col" class="product_name">상품명 / 옵션</th>
                             <th scope="col" class="product">수량</th>
-                            <th scope="col" class="product">상품금액</th>
-                            <th scope="col" class="">배송비</th>
-                            <th scope="col" class="quantity">합계</th>
-                            <th scope="col" class="charge">선택</th>
+                            <th scope="col" class="product">상품구매금액</th>
+                            <th scope="col" class="">주문처리상태</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="check"><input type="checkbox"></td>
+                            <td class="order_num">[<span>0001</span>]</td>
+                            <td class="order_day"><span>2019-03-27</span></td>
                             <td>
                                 <div class="cart_product">
                                     <div class="cart_product_img">
-                                       <router-link to="/"><img src="../assets/img/cart1.png" alt=""></router-link>
+                                        <router-link to="/"><img src="../assets/img/cart1.png" alt=""></router-link>
                                     </div>
                                     <div class="cart_product_text">
                                         <p class="cart_product_name">맞춤당 정기 식단 프로그램</p>
@@ -29,62 +31,12 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>
-                                <div>
-                                    <input type="text" name="num" value="1" id="" class="num" readonly/>
-                                    <div class="bt_box">
-                                        <div class="bt_up"><img src="../assets/img/btn_up.jpg" alt=""></div>
-                                        <div class="bt_down"><img src="../assets/img/btn_down.jpg" alt=""></div>
-                                    </div>
-                                </div> 
-                            </td>
+                            <td>1</td>
                             <td>120,000 원</td>
-                            <td>무료</td>
-                            <td>120,000 원</td>
-                            <td>
-                                <ul class="cart_menu">
-                                    <li>
-                                        <router-link to="#" class="cart_order_btn">주문하기</router-link>
-                                    </li>
-                                    <li>
-                                        <router-link to="#">관심상품</router-link>
-                                    </li>
-                                    <li>
-                                        <router-link to="#">삭제</router-link>
-                                    </li>
-                                </ul>
-                            </td>
+                            <td>입금전</td>
                         </tr>
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="7">
-                                <span class="total">총 주문금액 : <strong>170,000 원</strong></span>
-                            </td>
-                        </tr>
-                    </tfoot>
                 </table>
-                <ul class="cart_text">
-                    <li>식과당은 전체 상품 무료배송입니다.</li>
-                    <li>[쇼핑 계속하기] 버튼을 누르시면 쇼핑을 계속 하실 수 있습니다.</li>
-                    <li>배송에 관한 문의사항은 고객센터로 문의바랍니다.</li>
-                </ul>
-                <div class="cart_bottom_area">
-                    <span class="product_clear">
-                        <router-link to="#">전체삭제</router-link>
-                    </span>
-                    <ul class="cart_menu cart_all_menu">
-                        <li>
-                            <router-link to="#" class="">쇼핑 계속하기</router-link>
-                        </li>
-                        <li>
-                            <router-link to="#">선택상품 주문</router-link>
-                        </li>
-                        <li>
-                            <router-link to="#" class="cart_order_btn">전체상품 주문</router-link>
-                        </li>
-                    </ul>
-                </div>
             </form>
         </div>
     </div>
@@ -93,7 +45,7 @@
 <style lang="scss" scoped>
 .cart_keyimg {
     height: 284px;
-    background: url("../assets/img/cart_bg.jpg") no-repeat center;
+    background: url("../assets/img/order_list.jpg") no-repeat center;
 }
 
 .cart_explanation_box {
@@ -147,19 +99,12 @@
             }
         }
     }
-    tfoot {
-        text-align: right;
-        td {
-            padding: 25px 0;
-        }
-        .total {
-            margin-right: 30px;
-            font-size: 18px;
-        }
-    }
-    .check {
-        width: 82px;
+    .order_num {
+        width: 102px;
         text-align: center
+    }
+    .order_day{
+        width: 110px;   
     }
     .product_name {
         width: 600px;
@@ -169,6 +114,7 @@
 .cart_product {
     overflow: hidden;
     text-align: left;
+    padding-left: 66px;
     .cart_product_img {
         float: left;
         width: 58px;
@@ -267,22 +213,15 @@
     vertical-align: middle;
     img{display: block;}
 }
+.order_list_title{
+    font-size:19px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
 </style>
 
 <script>
 export default {
-    name: "Cart",
+    name: "OrderList",
 };
-$(function(){ 
-  $('.bt_up').click(function(){ 
-    var n = $('.bt_up').index(this);
-    var num = $(".num:eq("+n+")").val();
-    num = $(".num:eq("+n+")").val(num*1+1); 
-  });
-  $('.bt_down').click(function(){ 
-    var n = $('.bt_down').index(this);
-    var num = $(".num:eq("+n+")").val();
-    num = $(".num:eq("+n+")").val(num*1-1); 
-  });
-}) 
 </script>

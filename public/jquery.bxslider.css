@@ -90,28 +90,29 @@ ul.bxslider {
 }
 /* DIRECTION CONTROLS (NEXT / PREV) */
 .bx-wrapper .bx-prev {
+  display: none;
   left: 10px;
   /* background: url('images/controls.png') no-repeat 0 -32px; */
 }
-.bx-wrapper .bx-prev:hover,
+/* .bx-wrapper .bx-prev:hover,
 .bx-wrapper .bx-prev:focus {
   background-position: 0 0;
-}
+} */
 .bx-wrapper .bx-next {
-  right: 10px;
-  /* background: url('images/controls.png') no-repeat -43px -32px; */
+  left: 355px;
+  background: url('./visual_btn.png') no-repeat;
 }
-.bx-wrapper .bx-next:hover,
+/* .bx-wrapper .bx-next:hover,
 .bx-wrapper .bx-next:focus {
   background-position: -43px 0;
-}
+} */
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
-  top: 50%;
+  top: 44%;
   margin-top: -16px;
   outline: 0;
-  width: 32px;
-  height: 32px;
+  width: 52px;
+  height: 52px;
   text-indent: -9999px;
   z-index: 9999;
 }
