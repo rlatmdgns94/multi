@@ -425,12 +425,10 @@
         </div>
       </div>
       <div class="join_btn_area">
-        <label for>
-          <input @click="postUser" value="회원가입" class="join_submit">
-        </label>
-        <label for>
-          <input type="reset" value="가입취소" class="join_submit join_reset">
-        </label>
+        <label for="join_submit" class="join_submit">회원가입</label>
+        <input @click="postUser" value="회원가입" id="join_submit">
+        <label for="join_reset" class="join_submit join_reset">가입취소</label>
+         <input type="reset" value="가입취소" id="join_reset" >
       </div>
       <!-- </form> -->
     </div>
@@ -446,6 +444,7 @@
   .join_title {
     position: relative;
     margin-top: 70px;
+    margin-bottom: 74px;
     font-size: 30px;
     font-weight: 300;
     &::after {
@@ -539,6 +538,7 @@
 }
 // 이용약관
 .join_submit {
+  display: inline-block;
   margin-top: 76px;
   padding: 8px 42px;
   background: #85af4b;
@@ -548,10 +548,16 @@
   border: 1px solid #85af4b;
 }
 .join_reset {
+  display: inline-block;
   border: 1px solid #727272;
   color: #727272;
   background: #fff;
   margin-left: 40px;
+}
+.join_btn_area{
+  margin-top: 74px;
+  margin-bottom: 138px;
+  input{display: none;}
 }
 </style>
 

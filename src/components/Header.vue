@@ -62,7 +62,7 @@
           <router-link to="/join">회원가입</router-link>
         </dd>
         <dd>
-          <router-link to="/">장바구니</router-link>
+          <router-link to="/cart">장바구니</router-link>
         </dd>
       </dl>
     </div>
