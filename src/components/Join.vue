@@ -426,9 +426,9 @@
       </div>
       <div class="join_btn_area">
         <label for="join_submit" class="join_submit">회원가입</label>
-        <input @click="postUser" value="회원가입" id="join_submit">
+        <input id="join_submit" value="회원가입" @click="postUser">
         <label for="join_reset" class="join_submit join_reset">가입취소</label>
-        <input type="reset" value="가입취소" id="join_reset">
+        <input id="join_reset" type="reset" value="가입취소">
       </div>
       <!-- </form> -->
     </div>
@@ -580,6 +580,26 @@ export default {
       domain: "naver.com"
     };
   },
+  mounted() {
+    $(document).ready(function() {
+      $("#selectEmail").change(function() {
+        $("#selectEmail option:selected").each(function() {
+          if ($(this).val() == "1") {
+            //직접입력일 경우
+            $("#str_email02").val(""); //값 초기화
+            $("#str_email02").attr("disabled", false); //활성화
+          } else {
+            //직접입력이 아닐경우
+            $("#str_email02").val($(this).text()); //선택값 입력
+            $("#str_email02").attr("disabled", true); //비활성화
+          }
+        });
+      });
+    });
+    if (localStorage.getItem("sat")) {
+      window.location.href = "/";
+    }
+  },
   methods: {
     handleChangeId: function(e) {
       this.id = e.target.value;
@@ -618,43 +638,23 @@ export default {
           alert("도메인을 입력하거나 선택해주세요.");
           return false;
         }
-        if (true) {
-          const data = {
-            userId: this.id,
-            password: this.password,
-            userName: this.username,
-            phoneFirst: this.phoneFirst,
-            phoneMiddle: this.phoneMiddle,
-            phoneLast: this.phoneLast,
-            emailId: this.emailId,
-            domain: this.domain
-          };
-          const response = await axios.post("/users/sign_up", data);
-          console.log(response);
-          alert("회원가입이 완료되었습니다.");
-          this.$router.go("/");
-        }
+        const data = {
+          userId: this.id,
+          password: this.password,
+          userName: this.username,
+          phoneFirst: this.phoneFirst,
+          phoneMiddle: this.phoneMiddle,
+          phoneLast: this.phoneLast,
+          emailId: this.emailId,
+          domain: this.domain
+        };
+        const response = await axios.post("/users/sign_up", data);
+        console.log(response);
+        alert("회원가입이 완료되었습니다.");
+        this.$router.go("/");
       } catch (error) {
         throw Error(error);
       }
-    }
-  },
-  mounted() {
-    $(document).ready(function() {
-      $("#selectEmail").change(function() {
-        $("#selectEmail option:selected").each(function() {
-          if ($(this).val() == "1") {//직접입력일 경우
-            $("#str_email02").val(""); //값 초기화
-            $("#str_email02").attr("disabled", false); //활성화
-          } else {//직접입력이 아닐경우
-            $("#str_email02").val($(this).text()); //선택값 입력
-            $("#str_email02").attr("disabled", true); //비활성화
-          }
-        });
-      });
-    });
-    if (localStorage.getItem("sat")) {
-      window.location.href = "/";
     }
   }
 };
