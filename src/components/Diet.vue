@@ -13,9 +13,6 @@
 					<li>
 						<router-link to="">주문하기</router-link>
 					</li>
-					<li>
-						<router-link to="">레시피</router-link>
-					</li>
 				</ul>
 			</div>
 			<!-- 탭메뉴 -->
@@ -2064,10 +2061,6 @@
 				</div>
 			</div>
 			<!-- //주문하기 -->
-			<div class="diet_content">
-				<img src="../assets/img/use1.png" alt="">
-			</div>
-			<!-- 레시피 -->
 		</div>
 		<!-- 탭 콘텐츠 -->
 		<div class="detail_bg"></div>
@@ -2100,7 +2093,7 @@
 		li {
 			position: relative;
 			display: inline-block;
-			width: 25%;
+			width: 33%;
 			line-height: 66px;
 			&::after {
 				position: absolute;
@@ -2122,7 +2115,7 @@
 					color: #538700;
 					&::after {
 						position: absolute;
-						left: 120px;
+						left: 158px;
 						bottom: 0;
 						display: block;
 						content: "";
@@ -2591,6 +2584,7 @@
 </style>
 
 <script>
+import Header from "../components/Header.vue";
 export default {
 	name: "Diet",
 	mounted() {
