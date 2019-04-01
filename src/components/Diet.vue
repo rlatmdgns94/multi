@@ -1,8 +1,9 @@
 <template>
+  <!-- eslint-disable -->
   <div class="diet_wrap">
     <div class="diet_tab_area">
       <div class="diet_tab_menu">
-        <h3 class="blind">맞품당 식단 탭메뉴</h3>
+        <h3 class="blind">맞춤당 식단 탭메뉴</h3>
         <ul class="diet_tab">
           <li>
             <router-link to>이용방법</router-link>
@@ -2243,7 +2244,7 @@
               <p class="guide_title">고객님의 식단 프로그램을 설계해주세요.</p>
             </li>
             <li>
-              <p>당뇨는 적절한 식사요법이 치료의 기본 요소입니다.</p>
+              <p>이 프로그램은 당뇨 식이요법을 위한 프로그램입니다. 질병 치료는 전문의와 상담하세요.</p>
             </li>
           </ul>
           <div class="program_option">
@@ -2450,13 +2451,13 @@
               </div>
               <div class="payment_box">
                 <div class="payment_text">
-                  <span>하루 2끼, 주 3일, 1주 메인+반찬 식단 프로그램</span>
+                  <span>식단 프로그램</span>
                   <span class="price">{{getTotalPrice()}} 원</span>
                 </div>
                 <div class="payment_menu">
                   <ul class="payment">
                     <li>
-                      <router-link to="/order">바로 결제하기</router-link>
+                      <span @click="getOrderItem">바로 결제하기</span>
                     </li>
                     <li>
                       <router-link to="/">관심상품</router-link>
@@ -2496,54 +2497,54 @@
 // 탭메뉴 배경이미지
 // 탭메뉴 시작
 .diet_tab_menu {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 66px;
-	background-color: rgba( 0, 0, 0, 0.2);
-	.diet_tab {
-		width: 1000px;
-		margin: 0 auto;
-		li {
-			position: relative;
-			display: inline-block;
-			width: 33%;
-			line-height: 66px;
-			&::after {
-				position: absolute;
-				top: 23px;
-				right: 0;
-				display: block;
-				content: "";
-				width: 1px;
-				height: 20px;
-				background: #000;
-			}
-			a {
-				position: relative;
-				display: block;
-				color: #fff;
-				text-align: center;
-				font-size: 18px;
-				&.on {
-					color: #538700;
-					&::after {
-						position: absolute;
-						left: 158px;
-						bottom: 0;
-						display: block;
-						content: "";
-						width: 0;
-						height: 0;
-						border-bottom: 7px solid #fff;
-						border-right: 7px solid transparent;
-						border-left: 7px solid transparent;
-					}
-				}
-			}
-		}
-	}
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 66px;
+  background-color: rgba(0, 0, 0, 0.2);
+  .diet_tab {
+    width: 1000px;
+    margin: 0 auto;
+    li {
+      position: relative;
+      display: inline-block;
+      width: 33%;
+      line-height: 66px;
+      &::after {
+        position: absolute;
+        top: 23px;
+        right: 0;
+        display: block;
+        content: "";
+        width: 1px;
+        height: 20px;
+        background: #000;
+      }
+      a {
+        position: relative;
+        display: block;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        &.on {
+          color: #538700;
+          &::after {
+            position: absolute;
+            left: 158px;
+            bottom: 0;
+            display: block;
+            content: "";
+            width: 0;
+            height: 0;
+            border-bottom: 7px solid #fff;
+            border-right: 7px solid transparent;
+            border-left: 7px solid transparent;
+          }
+        }
+      }
+    }
+  }
 } // 탭메뉴
 .diet_content {
   position: relative;
@@ -2554,28 +2555,28 @@
 } //탭 콘텐츠
 // 이용방법
 .useway1 {
-	height: 620px;
-	background: url("../assets/img/use2.png") no-repeat center;
-	padding-top: 353px;
-	.merit {
-		text-align: center;
-		li {
-			display: inline-block;
-			margin-left: 129px;
-			overflow: hidden;
-			border-radius: 157px;
-			&:first-child {
-				margin: 0;
-			}
-			img {
-				&:hover {
-					cursor: pointer;
-					transform: scale(1.2);
-					transition: transform .35s;
-				}
-			}
-		}
-	}
+  height: 620px;
+  background: url("../assets/img/use2.png") no-repeat center;
+  padding-top: 353px;
+  .merit {
+    text-align: center;
+    li {
+      display: inline-block;
+      margin-left: 129px;
+      overflow: hidden;
+      border-radius: 157px;
+      &:first-child {
+        margin: 0;
+      }
+      img {
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.2);
+          transition: transform 0.35s;
+        }
+      }
+    }
+  }
 }
 
 .useway2 {
@@ -2957,6 +2958,12 @@
         &:last-child {
           margin-right: 0;
         }
+        span {
+          color: #000;
+          &:hover {
+            color: #85af4b;
+          }
+        }
         a {
           color: #000;
           &:hover {
@@ -2999,7 +3006,6 @@
 </style>
 
 <script>
-import Header from "../components/Header.vue";
 export default {
   name: "Diet",
   data: function() {
@@ -3010,6 +3016,11 @@ export default {
       mealOption: 0,
       deliveryDate: "",
       totalPrice: 0,
+      mealsPerDayName: "",
+      daysPerWeekName: "",
+      weeksName: "",
+      mealOptionName: "",
+      productName: "맞춤당 정기 식단 프로그램",
       selectedOption: ""
     };
   },
@@ -3096,11 +3107,44 @@ export default {
         this.mealsPerDay * this.daysPerWeek * this.weeks * this.mealOption
       );
       return this.totalPrice;
-		},
-		
-		getSelectedOption: function() {
-			
-		}
+    },
+
+    getOrderItem: function() {
+      if (this.mealsPerDay === 0) {
+        alert("끼니 수를 선택해주세요.");
+        return false;
+      }
+      if (this.daysPerWeek === 0) {
+        alert("한 주에 몇 일 관리 받으실지를 선택해주세요.");
+        return false;
+      }
+      if (this.weeks === 0) {
+        alert("몇 주 동안 관리 받으실지를 선택해주세요.");
+        return false;
+      }
+      if (this.mealOption === 0) {
+        alert("식단의 옵션을 선택해주세요.");
+        return false;
+      }
+      if (this.deliveryDate === "") {
+        alert("배송받으실 요일을 선택해주세요.");
+        return false;
+      }
+      if (!localStorage.getItem("sat")) {
+        alert("로그인이 필요합니다.");
+        this.$router.push("/login");
+      } else {
+        const data = [
+          {
+            productName: this.productName,
+            qty: 1,
+            totalPrice: this.totalPrice
+          }
+        ];
+        localStorage.setItem("basket", data);
+        this.$router.push("/order");
+      }
+    }
   }
 };
 </script>
