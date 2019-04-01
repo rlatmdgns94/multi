@@ -1,7 +1,7 @@
 <template>
   <div class="join_wrap">
-    <div class="content">
-      <h3 class="join_title">회원가입</h3>
+    <div class="join_bg"></div>
+    <div class="content join_box">
       <!-- <form onSubmit="postUser"> -->
       <div class="join_wirte">
         <table class="join_table">
@@ -437,26 +437,13 @@
 <style lang="scss" scoped>
 .join_wrap {
   text-align: center;
-  form {
-    margin-top: 70px;
-    margin-bottom: 136px;
+  .join_bg{
+    height: 284px;
+    background: url("../assets/img/join.jpg") no-repeat center;
   }
-  .join_title {
-    position: relative;
-    margin-top: 70px;
-    margin-bottom: 74px;
-    font-size: 30px;
-    font-weight: 300;
-    &::after {
-      position: absolute;
-      left: 48.5%;
-      bottom: -14px;
-      display: block;
-      content: "";
-      width: 33px;
-      height: 5px;
-      background: #85af4b;
-    }
+  .join_box{
+    margin-top :98px;
+    margin-bottom: 88px;
   }
 }
 .id_check {
@@ -555,8 +542,6 @@
   margin-left: 40px;
 }
 .join_btn_area {
-  margin-top: 74px;
-  margin-bottom: 138px;
   input {
     display: none;
   }

@@ -134,8 +134,7 @@
               <img src="../assets/img/information2.jpg" alt>
             </div>
             <h4 class="information_title">당뇨에 운동이 필요한 이유</h4>
-            <p class="information_text">ㄹㅁ이나러어미럼렁미럼 음식을
-              <br>힐링푸드를 통해 알아보세요.
+            <p class="information_text">당뇨 운동의 필요성과 운동 방법,<br>주의할 점 등 모두 알려드립니다.  
             </p>
             <router-link to="/" class="information_more">자세히 보기</router-link>
           </div>
@@ -146,8 +145,8 @@
               <img src="../assets/img/information3.jpg" alt>
             </div>
             <h4 class="information_title">당뇨 합병증 종류에 대해서</h4>
-            <p class="information_text">ㄹㅁ이나러어미럼렁미럼 음식을
-              <br>힐링푸드를 통해 알아보세요.
+            <p class="information_text">
+              합병증이 더 곤란한 당뇨병<br>미리 알아보는 당뇨 합병증 종류
             </p>
             <router-link to="/" class="information_more">자세히 보기</router-link>
           </div>

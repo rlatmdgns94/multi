@@ -16,15 +16,18 @@
             <router-link to="/diet" class="menu_arrow">맞춤당 식단</router-link>
             <ul class="submenu">
               <li>
-                <router-link to="/diet">식단 시작하기</router-link>
+                <router-link to="/diet">이용방법</router-link>
               </li>
               <li>
-                <router-link to="/">식단표 보기</router-link>
+                <router-link to="/diet">식단표</router-link>
+              </li>
+               <li>
+                <router-link to="/diet">주문하기</router-link>
               </li>
             </ul>
           </li>
           <li>
-            <router-link to="/" class="menu_arrow">건강당 마켓</router-link>
+            <router-link to="/market" class="menu_arrow">건강당 마켓</router-link>
             <ul class="submenu">
               <li>
                 <router-link to="/">체험식</router-link>
@@ -47,7 +50,7 @@
                 <router-link to="/">당뇨 음식</router-link>
               </li>
               <li>
-                <router-link to="/">뉴스정보</router-link>
+                <router-link to="/">뉴스 정보</router-link>
               </li>
             </ul>
           </li>
@@ -71,7 +74,7 @@
           <span @click="logOut">로그아웃</span>
         </dd>
         <dd>
-          <router-link to="/">마이페이지</router-link>
+          <router-link to="/mypage">마이페이지</router-link>
         </dd>
         <dd>
           <router-link to="/cart">장바구니</router-link>

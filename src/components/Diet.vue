@@ -2496,54 +2496,54 @@
 // 탭메뉴 배경이미지
 // 탭메뉴 시작
 .diet_tab_menu {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 66px;
-  background-color: rgba(0, 0, 0, 0.2);
-  .diet_tab {
-    width: 1000px;
-    margin: 0 auto;
-    li {
-      position: relative;
-      display: inline-block;
-      width: 25%;
-      line-height: 66px;
-      &::after {
-        position: absolute;
-        top: 23px;
-        right: 0;
-        display: block;
-        content: "";
-        width: 1px;
-        height: 20px;
-        background: #000;
-      }
-      a {
-        position: relative;
-        display: block;
-        color: #fff;
-        text-align: center;
-        font-size: 18px;
-        &.on {
-          color: #538700;
-          &::after {
-            position: absolute;
-            left: 120px;
-            bottom: 0;
-            display: block;
-            content: "";
-            width: 0;
-            height: 0;
-            border-bottom: 7px solid #fff;
-            border-right: 7px solid transparent;
-            border-left: 7px solid transparent;
-          }
-        }
-      }
-    }
-  }
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 66px;
+	background-color: rgba( 0, 0, 0, 0.2);
+	.diet_tab {
+		width: 1000px;
+		margin: 0 auto;
+		li {
+			position: relative;
+			display: inline-block;
+			width: 33%;
+			line-height: 66px;
+			&::after {
+				position: absolute;
+				top: 23px;
+				right: 0;
+				display: block;
+				content: "";
+				width: 1px;
+				height: 20px;
+				background: #000;
+			}
+			a {
+				position: relative;
+				display: block;
+				color: #fff;
+				text-align: center;
+				font-size: 18px;
+				&.on {
+					color: #538700;
+					&::after {
+						position: absolute;
+						left: 158px;
+						bottom: 0;
+						display: block;
+						content: "";
+						width: 0;
+						height: 0;
+						border-bottom: 7px solid #fff;
+						border-right: 7px solid transparent;
+						border-left: 7px solid transparent;
+					}
+				}
+			}
+		}
+	}
 } // 탭메뉴
 .diet_content {
   position: relative;
@@ -2554,28 +2554,28 @@
 } //탭 콘텐츠
 // 이용방법
 .useway1 {
-  height: 620px;
-  background: url("../assets/img/use2.png") no-repeat center;
-  padding-top: 353px;
-  .merit {
-    text-align: center;
-    li {
-      display: inline-block;
-      margin-left: 129px;
-      overflow: hidden;
-      border-radius: 157px;
-      &:first-child {
-        margin: 0;
-      }
-      img {
-        &:hover {
-          cursor: pointer;
-          transform: scale(1.2np);
-          transition: transform 0.35s;
-        }
-      }
-    }
-  }
+	height: 620px;
+	background: url("../assets/img/use2.png") no-repeat center;
+	padding-top: 353px;
+	.merit {
+		text-align: center;
+		li {
+			display: inline-block;
+			margin-left: 129px;
+			overflow: hidden;
+			border-radius: 157px;
+			&:first-child {
+				margin: 0;
+			}
+			img {
+				&:hover {
+					cursor: pointer;
+					transform: scale(1.2);
+					transition: transform .35s;
+				}
+			}
+		}
+	}
 }
 
 .useway2 {
@@ -2999,6 +2999,7 @@
 </style>
 
 <script>
+import Header from "../components/Header.vue";
 export default {
   name: "Diet",
   data: function() {
