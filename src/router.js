@@ -2,17 +2,16 @@ import Vue from "vue";
 import Router from "vue-router";
 // import Home from "./views/Home.vue";
 import Symptom from "./components/Symptom.vue";
-import Main from './components/Main.vue';
-import Login from './components/Login.vue';
-import Join from './components/Join.vue';
-import Diet from './components/Diet.vue';
-import Cart from './components/Cart.vue';
-import Order from './components/Order.vue';
-import OrderCompleted from './components/OrderCompleted.vue';
-import OrderList from './components/OrderList.vue';
-import Mypage from './components/Mypage.vue';
-import Market from './components/Market.vue';
-import MarketMenu from './components/MarketMenu.vue';
+import Main from "./components/Main.vue";
+import Login from "./components/Login.vue";
+import Join from "./components/Join.vue";
+import Diet from "./components/Diet.vue";
+import Cart from "./components/Cart.vue";
+import Order from "./components/Order.vue";
+import OrderCompleted from "./components/OrderCompleted.vue";
+import OrderList from "./components/OrderList.vue";
+import Mypage from "./components/Mypage.vue";
+import Market from "./components/Market.vue";
 
 Vue.use(Router);
 
@@ -81,11 +80,6 @@ export default new Router({
       path: "/market",
       name: "Market",
       component: Market
-    },
-    {
-      path: "/marketmenu",
-      name: "MarketMenu",
-      component: MarketMenu
     }
   ],
   mode: "history"

@@ -1894,7 +1894,7 @@
 							</p>
 						</li>
 						<li>
-							<p>당뇨는 적절한 식사요법이 치료의 기본 요소입니다.</p>
+							<p>이 프로그램은 당뇨 식이요법을 위한 프로그램입니다. 질병 치료는 전문의와 상담하세요.</p>
 						</li>
 					</ul>
 					<div class="program_option">
@@ -2155,7 +2155,7 @@
 			img {
 				&:hover {
 					cursor: pointer;
-					transform: scale(1.2np);
+					transform: scale(1.2);
 					transition: transform .35s;
 				}
 			}
