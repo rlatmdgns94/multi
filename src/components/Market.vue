@@ -7,7 +7,7 @@
                     <h3 class="blind">마켓메뉴</h3>
                     <ul  class="market_menu">   
                         <li>   
-                            <router-link to="/cart" class="on">전체</router-link>
+                            <router-link to="#" class="on">전체</router-link>
                         </li>
                         <li>   
                             <router-link to="#">체험식</router-link>
@@ -43,14 +43,14 @@
                </div>
                 <ul class="market_product">
                     <li>
-                        <router-link to="/">
+                        <router-link to="/marketdetail">
                             <div class="market_product_img">
                                 
                             </div>
                             <dl class="market_text">
-                                <dt>[체험식] 당뇨 체험식 1주일</dt>
+                                <dt><strong>[체험식] 당뇨 체험식 1주일</strong></dt>
                                 <dd>#체험식 #당뇨 #일주일</dd>
-                                <dd class="market_price">9,900원</dd>
+                                <dd class="market_price"><strong>9,900원</strong></dd>
                             </dl>
                         </router-link>
                     </li>
@@ -60,9 +60,9 @@
                                 
                             </div>
                             <dl class="market_text">
-                                <dt>[체험식] 당뇨 체험식 1주일</dt>
+                                <dt><strong>[체험식] 당뇨 체험식 1주일</strong></dt>
                                 <dd>#체험식 #당뇨 #일주일</dd>
-                                <dd class="market_price">9,900원</dd>
+                                <dd class="market_price"><strong>9,900원</strong></dd>
                             </dl>
                         </router-link>
                     </li>
@@ -72,9 +72,9 @@
                                 
                             </div>
                             <dl class="market_text">
-                                <dt>[체험식] 당뇨 체험식 1주일</dt>
+                                <dt><strong>[체험식] 당뇨 체험식 1주일</strong></dt>
                                 <dd>#체험식 #당뇨 #일주일</dd>
-                                <dd class="market_price">9,900원</dd>
+                                <dd class="market_price"><strong>9,900원</strong></dd>
                             </dl>
                         </router-link>
                     </li>
@@ -84,9 +84,9 @@
                                 
                             </div>
                             <dl class="market_text">
-                                <dt>[체험식] 당뇨 체험식 1주일</dt>
+                                <dt><strong>[체험식] 당뇨 체험식 1주일</strong></dt>
                                 <dd>#체험식 #당뇨 #일주일</dd>
-                                <dd class="market_price">9,900원</dd>
+                                <dd class="market_price"><strong>9,900원</strong></dd>
                             </dl>
                         </router-link>
                     </li>
@@ -96,9 +96,9 @@
                                 
                             </div>
                             <dl class="market_text">
-                                <dt>[체험식] 당뇨 체험식 1주일</dt>
+                                <dt><strong>[체험식] 당뇨 체험식 1주일</strong></dt>
                                 <dd>#체험식 #당뇨 #일주일</dd>
-                                <dd class="market_price">9,900원</dd>
+                                <dd class="market_price"><strong>9,900원</strong></dd>
                             </dl>
                         </router-link>
                     </li>
@@ -108,45 +108,9 @@
                                 
                             </div>
                             <dl class="market_text">
-                                <dt>[체험식] 당뇨 체험식 1주일</dt>
+                                <dt><strong>[체험식] 당뇨 체험식 1주일</strong></dt>
                                 <dd>#체험식 #당뇨 #일주일</dd>
-                                <dd class="market_price">9,900원</dd>
-                            </dl>
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/">
-                            <div class="market_product_img">
-                                
-                            </div>
-                            <dl class="market_text">
-                                <dt>[체험식] 당뇨 체험식 1주일</dt>
-                                <dd>#체험식 #당뇨 #일주일</dd>
-                                <dd class="market_price">9,900원</dd>
-                            </dl>
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/">
-                            <div class="market_product_img">
-                                
-                            </div>
-                            <dl class="market_text">
-                                <dt>[체험식] 당뇨 체험식 1주일</dt>
-                                <dd>#체험식 #당뇨 #일주일</dd>
-                                <dd class="market_price">9,900원</dd>
-                            </dl>
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/">
-                            <div class="market_product_img">
-                                
-                            </div>
-                            <dl class="market_text">
-                                <dt>[체험식] 당뇨 체험식 1주일</dt>
-                                <dd>#체험식 #당뇨 #일주일</dd>
-                                <dd class="market_price">9,900원</dd>
+                                <dd class="market_price"><strong>9,900원</strong></dd>
                             </dl>
                         </router-link>
                     </li>
@@ -249,7 +213,6 @@
         padding-top: 24px;
         dt{
             font-size:18px;
-            font-weight: 600;
             color: #000;
         }
         dd{
@@ -260,7 +223,6 @@
             margin-top: 16px;
             font-size: 20px;
             color: #85AF4B;
-            font-weight: 400;
         }
     }
 }
