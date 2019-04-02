@@ -12,6 +12,7 @@ import OrderCompleted from "./components/OrderCompleted.vue";
 import OrderList from "./components/OrderList.vue";
 import Mypage from "./components/Mypage.vue";
 import Market from "./components/Market.vue";
+import MarketDetail from "./components/MarketDetail.vue";
 
 Vue.use(Router);
 
@@ -80,6 +81,11 @@ export default new Router({
       path: "/market",
       name: "Market",
       component: Market
+    },
+    {
+      path: "/marketdetail",
+      name: "MarketDetail",
+      component: MarketDetail
     }
   ],
   mode: "history"
