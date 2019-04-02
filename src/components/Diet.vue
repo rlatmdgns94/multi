@@ -3141,7 +3141,7 @@ export default {
             totalPrice: this.totalPrice
           }
         ];
-        localStorage.setItem("basket", data);
+        localStorage.setItem("basket", JSON.stringify(data));
         this.$router.push("/order");
       }
     }
