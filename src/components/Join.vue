@@ -437,12 +437,12 @@
 <style lang="scss" scoped>
 .join_wrap {
   text-align: center;
-  .join_bg{
+  .join_bg {
     height: 284px;
     background: url("../assets/img/join.jpg") no-repeat center;
   }
-  .join_box{
-    margin-top :98px;
+  .join_box {
+    margin-top: 98px;
     margin-bottom: 88px;
   }
 }
@@ -633,7 +633,7 @@ export default {
           emailId: this.emailId,
           domain: this.domain
         };
-        const response = await axios.post("/users/sign_up", data);
+        const response = await axios.post("/v1/users/sign_up", data);
         console.log(response);
         alert("회원가입이 완료되었습니다.");
         this.$router.go("/");

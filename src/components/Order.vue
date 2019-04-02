@@ -14,7 +14,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr v-for="item in items" :key="item.userId">
             <td>
               <div class="cart_product">
                 <div class="cart_product_img">
@@ -23,15 +23,15 @@
                   </router-link>
                 </div>
                 <div class="cart_product_text">
-                  <p class="cart_product_name">맞춤당 정기 식단 프로그램</p>
-                  <p class="cart_product_option">[옵션 : 하루 2끼, 주 3일, 1주 메인+반찬]</p>
+                  <p class="cart_product_name">{{item.productName}}</p>
+                  <!-- <p class="cart_product_option">[옵션 : 하루 2끼, 주 3일, 1주 메인+반찬]</p> -->
                 </div>
               </div>
             </td>
-            <td>1</td>
-            <td>120,000 원</td>
+            <td>{{item.qty}}</td>
+            <td>{{numberWithCommas(item.totalPrice)}}</td>
             <td>무료</td>
-            <td>120,000 원</td>
+            <td>{{numberWithCommas(item.totalPrice)}}</td>
           </tr>
         </tbody>
       </table>
@@ -41,14 +41,14 @@
           <table class="buyer">
             <tr>
               <th>이름</th>
-              <td>지수빈</td>
+              <td>{{userInfo.userName}}</td>
             </tr>
             <tr>
               <th>
                 <label for="email">이메일</label>
               </th>
               <td>
-                <input type="text" name="email" id="email">
+                <input type="text" name="email" id="email" v-model="userInfo.email">
               </td>
             </tr>
             <tr>
@@ -56,15 +56,29 @@
                 <label for="phone">연락처</label>
               </th>
               <td>
-                <select name id>
-                  <option value="010" selected>010</option>
+                <select v-model="userInfo.phoneFirst">
+                  <option value="010">010</option>
                   <option value="011">011</option>
                   <option value="012">012</option>
                 </select>
                 -
-                <input type="text" name="phone" id="phone" size="3" maxlength="4">
+                <input
+                  v-model="userInfo.phoneMiddle"
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  size="3"
+                  maxlength="4"
+                >
                 -
-                <input type="text" name="phone" id="phone" size="3" maxlength="4">
+                <input
+                  v-model="userInfo.phoneLast"
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  size="3"
+                  maxlength="4"
+                >
               </td>
             </tr>
           </table>
@@ -79,18 +93,44 @@
                 <label for="recipient">받으시는 분</label>
               </th>
               <td>
-                <input type="text" name="recipient" id="recipient" size="20">
+                <input
+                  v-model="orderData.userName"
+                  type="text"
+                  name="recipient"
+                  id="recipient"
+                  size="20"
+                >
               </td>
             </tr>
             <tr>
               <th>주소</th>
               <td>
-                <input type="text" name="rcvZipcode" size="7" readonly>
-                <button type="button" onclick="openZipSearch()" class="address_search">검색</button>
+                <input
+                  v-on:input="orderData.postcode = $event.target.value"
+                  id="postcode"
+                  type="text"
+                  size="7"
+                  readonly
+                >
+                <button type="button" @click="modalRender" class="address_search">검색</button>
                 <br>
-                <input type="text" name="rcvAddress1" readonly size="30" style="margin:5px 0;">
+                <input
+                  v-on:input="orderData.address = $event.target.value"
+                  id="address"
+                  type="text"
+                  size="30"
+                  readonly
+                  style="margin:5px 0;"
+                >
                 <br>
-                <input type="text" name="rcvAddress2" size="30" placeholder="상세주소를 입력해주세요.">
+                <input
+                  v-on:input="orderData.address_detail = $event.target.value"
+                  id="address_detail"
+                  type="text"
+                  name="rcvAddress2"
+                  size="30"
+                  placeholder="상세주소를 입력해주세요."
+                >
               </td>
             </tr>
             <tr>
@@ -98,15 +138,27 @@
                 <label for="phone">연락처</label>
               </th>
               <td>
-                <select name id>
-                  <option value="010" selected>010</option>
+                <select v-model="orderData.phoneFirst">
+                  <option value="010">010</option>
                   <option value="011">011</option>
                   <option value="012">012</option>
                 </select>
                 -
-                <input type="text" name="phone" id="phone" size="1" maxlength="4">
+                <input
+                  v-model="orderData.phoneMiddle"
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  maxlength="4"
+                >
                 -
-                <input type="text" name="phone" id="phone" size="1" maxlength="4">
+                <input
+                  v-model="orderData.phoneLast"
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  maxlength="4"
+                >
               </td>
             </tr>
           </table>
@@ -117,19 +169,16 @@
           <h3 class="order_title">결제 정보</h3>
           <ul class="payment_list">
             <li>
-              <label>
-                <input type="radio" name="payment">카드결제
-              </label>
+              <input v-model="orderData.purchaseMethod" type="radio" value="card" id="card">
+              <label for="card">카드결제</label>
             </li>
             <li>
-              <label>
-                <input type="radio" name="payment">가상결제
-              </label>
+              <input v-model="orderData.purchaseMethod" type="radio" value="vbank" id="vbank">
+              <label for="vbank">가상계좌</label>
             </li>
             <li>
-              <label>
-                <input type="radio" name="payment">실시간 계좌이체
-              </label>
+              <input v-model="orderData.purchaseMethod" type="radio" value="trans" id="trans">
+              <label for="trans">실시간 계좌이체</label>
             </li>
           </ul>
         </div>
@@ -138,21 +187,20 @@
         <h3 class="order_title">최종 결제 금액</h3>
         <div class="price">
           총 주문금액 :
-          <strong>170,000원</strong>
+          <strong>{{numberWithCommas(orderData.totalPrice)}}원</strong>
         </div>
       </div>
       <ul class="order_btn_are">
         <li>
-          <label for="order_reset" class="order_reset">주문취소</label>
-          <input type="reset" value="주문취소" id="order_reset">
+          <Button @click="cancelPurchase" class="order_reset">주문취소</Button>
         </li>
         <li>
-          <label for="order_button" class="order_button">주문하기</label>
-          <input type="submit" value="주문하기" id="order_button">
+          <Button @click="purchase" class="order_button">주문하기</Button>
         </li>
       </ul>
       <!-- </form> -->
     </div>
+    <modals-container handleAddress="handleAddress"/>
   </div>
 </template>
 
@@ -350,9 +398,23 @@
 </style>
 
 <script>
+import axios from "axios";
+import PostCode from "./PostCode.vue";
+import iamportConst from "../utils/iamportConst";
+
 export default {
   name: "Order",
-  mounted() {
+  components: {
+    PostCode
+  },
+  data: function() {
+    return {
+      orderData: {},
+      userInfo: {},
+      items: {}
+    };
+  },
+  async mounted() {
     $(function() {
       $(".bt_up").click(function() {
         var n = $(".bt_up").index(this);
@@ -365,6 +427,239 @@ export default {
         num = $(".num:eq(" + n + ")").val(num * 1 - 1);
       });
     });
+    IMP.init(iamportConst.iamportInitial);
+    if (!localStorage.getItem("sat")) {
+      alert("로그인을 해주세요.");
+      window.location.href = "/login";
+    }
+    const response = await axios({
+      url: "/v1/users/profile_edit",
+      method: "get",
+      headers: { "x-sikguadang-token": localStorage.getItem("sat") }
+    });
+    this.userInfo = response.data;
+    const splitedPhoneNumbers = this.userInfo.phoneNumber.split("-");
+    this.userInfo.phoneFirst = splitedPhoneNumbers[0];
+    this.userInfo.phoneMiddle = splitedPhoneNumbers[1];
+    this.userInfo.phoneLast = splitedPhoneNumbers[2];
+    this.orderData.phoneFirst = "010";
+    this.orderData.phoneMiddle = "";
+    this.orderData.phoneLast = "";
+    const basket = JSON.parse(localStorage.getItem("basket"));
+    this.items = basket;
+
+    if (this.items) {
+      this.sumTotalPrice();
+      this.sumTotalProductQty();
+      this.sumTotalProductName();
+    }
+  },
+  methods: {
+    handleChangePostcode(e) {
+      this.orderData.postcode = e.target.value;
+    },
+
+    handleChangeAddress(e) {
+      this.orderData.address = e.target.value;
+    },
+
+    handleChangeAddressDetail(e) {
+      this.orderData.address_detail = e.target.value;
+    },
+
+    numberWithCommas: function(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+
+    modalRender() {
+      this.$modal.show(
+        PostCode,
+        {
+          hot_table: "data",
+          modal: this.$modal,
+          handleAddress: this.handleAddress
+        },
+        {
+          name: "dynamic-modal",
+          width: "500px",
+          height: "500px",
+          draggable: true
+        }
+      );
+    },
+
+    handleAddress(data) {
+      let fullAddr = ""; // 최종 주소 변수
+      let extraAddr = ""; // 조합형 주소 변수
+
+      // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+      if (data.userSelectedType === "R") {
+        // 사용자가 도로명 주소를 선택했을 경우
+        fullAddr = data.roadAddress;
+      } else {
+        // 사용자가 지번 주소를 선택했을 경우(J)
+        fullAddr = data.jibunAddress;
+      }
+
+      // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+      if (data.userSelectedType === "R") {
+        //법정동명이 있을 경우 추가한다.
+        if (data.bname !== "") {
+          extraAddr += data.bname;
+        }
+        // 건물명이 있을 경우 추가한다.
+        if (data.buildingName !== "") {
+          extraAddr +=
+            extraAddr !== "" ? ", " + data.buildingName : data.buildingName;
+        }
+        // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+        fullAddr += extraAddr !== "" ? " (" + extraAddr + ")" : "";
+      }
+
+      // 커서를 상세주소 필드로 이동한다.
+      document.getElementById("address_detail").focus();
+
+      // 우편번호, 주소 저장 및 상세주소 초기화
+      document.getElementById("address").value = fullAddr;
+      document.getElementById("postcode").value = data.zonecode;
+      document.getElementById("address_detail").value = "";
+      // this.orderData.postcode = data.zonecode;
+      // this.orderData.address = fullAddr;
+      // this.orderData.address_detail = "";
+
+      this.$modal.hide("dynamic-modal");
+    },
+
+    sumTotalPrice() {
+      const items = this.items;
+      let totalPrice = 0;
+      for (let i = 0; i < items.length; i++) {
+        totalPrice = totalPrice + parseInt(items[i].totalPrice) * items[i].qty;
+      }
+      this.orderData.totalPrice = totalPrice;
+    },
+
+    sumTotalProductQty() {
+      const items = this.items;
+      let totalProductQty = 0;
+      for (let i = 0; i < items.length; i++) {
+        totalProductQty = totalProductQty + items[i].qty;
+      }
+      this.orderData.totalProductQty = totalProductQty;
+    },
+
+    sumTotalProductName() {
+      const items = this.items;
+      let totalProductName = 0;
+      // for (let i = 0; i < items.length; i++) {
+      totalProductName = items[0].productName;
+      // }
+      this.orderData.totalProductName = totalProductName;
+    },
+
+    purchase() {
+      const data = {};
+      data.order = this.orderData;
+      data.order.userId = this.userInfo.userId;
+      data.order.phoneNumber =
+        this.orderData.phoneFirst +
+        "-" +
+        this.orderData.phoneMiddle +
+        "-" +
+        this.orderData.phoneLast;
+      data.order.totalPrice = this.orderData.totalPrice;
+      data.order.productQty = this.orderData.totalProductQty;
+      data.order.productName = this.orderData.totalProductName;
+      if (!localStorage.getItem("sat")) {
+        alert("로그인을 해주세요.");
+        this.$router.push("/login");
+        return false;
+      }
+
+      if (!this.orderData.userName) {
+        alert("받으시는 분의 이름을 입력해주세요.");
+        return false;
+      }
+
+      // if (!this.orderData.postcode && !this.orderData.address) {
+      //   alert("주소를 입력해주세요.");
+      //   return false;
+      // }
+
+      if (!this.orderData.address_detail) {
+        alert("상세주소를 입력해주세요.");
+        return false;
+      }
+
+      if (
+        !this.orderData.phoneFirst &&
+        !this.orderData.phoneMiddle &&
+        !this.orderData.phoneLast
+      ) {
+        alert("핸드폰 번호를 입력해주세요.");
+        return false;
+      }
+
+      return new Promise((resolve, reject) => {
+        return resolve(axios.post("/v1/order", data));
+      })
+        .then(response => {
+          console.log(response);
+          IMP.request_pay(
+            {
+              pg: "html5_inicis",
+              pay_method: `${this.orderData.purchaseMethod}`,
+              merchant_uid: response.data.merchant_uid,
+              name: `${this.orderData.totalProductName}`,
+              amount:
+                this.orderData.totalProductQty * this.orderData.totalPrice,
+              buyer_email: `${this.userInfo.email}`,
+              buyer_name: `${this.userInfo.userName}`,
+              buyer_tel: `${this.userInfo.phoneFirst}-${
+                this.userInfo.phoneMiddle
+              }-${this.userInfo.phoneLast}`,
+              // buyer_addr: `${this.orderData.address} ${
+              //   this.orderData.address_detail
+              // }`,
+              // buyer_postcode: `${this.orderData.postcode}`,
+              notice_url: "http://dev.soosooplace.com/v1/webhook/complete",
+              m_redirect_url:
+                "http://192.168.0.119:3000/payments/complete/mobile"
+            },
+            rsp => {
+              console.log(rsp);
+              let msg = "";
+              if (rsp.success) {
+                localStorage.setItem("paymentsResult", JSON.stringify(rsp));
+                this.$router.push("/ordercompleted");
+                // this.props.history.push({
+                //   pathname: "/payments/complete",
+                //   state: {
+                //     rsp
+                //   }
+                // });
+              } else {
+                data.order.status = "failed";
+                axios.put(
+                  `/v1/order/${response.value.data.merchant_uid}`,
+                  data
+                );
+                msg = "결제에 실패하였습니다.";
+                msg += `에러내용 : ${rsp.error_msg}`;
+                alert(msg);
+              }
+            }
+          );
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+
+    cancelPurchase() {
+      alert("주문을 취소하셨습니다.");
+      this.$router.push("/");
+    }
   }
 };
 </script>

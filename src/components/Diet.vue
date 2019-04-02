@@ -3138,7 +3138,8 @@ export default {
           {
             productName: this.productName,
             qty: 1,
-            totalPrice: this.totalPrice
+            totalPrice:
+              this.mealsPerDay * this.daysPerWeek * this.weeks * this.mealOption
           }
         ];
         localStorage.setItem("basket", JSON.stringify(data));
