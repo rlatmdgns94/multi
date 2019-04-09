@@ -163,12 +163,12 @@
   }
 }
 .main_title_box {
-  margin-top: 83px;
+  margin-top: 65px;
   text-align: center;
   .main_title {
     font-size: 20px;
     margin-bottom: 5px;
-    font-weight: 300;
+    font-weight: 600;
   }
   .main_title_caption {
     font-size: 15px;
@@ -232,6 +232,11 @@
     color: #000;
     border: 1px solid #707070;
     border-radius: 16px;
+    &:hover{
+      color: #fff;
+      border: 1px solid #85af4b;
+      background: #85af4b;
+    }
   }
 }
 .white {
