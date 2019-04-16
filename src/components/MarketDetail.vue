@@ -15,22 +15,31 @@
                             <strong>중량 : </strong>
                             <span class="weight_text">1,450 g(셀프부대찌개재료:662 g,사골육수:650 g,신라면:120 g,체다슬라이스치즈:18 g)</span>
                         </dd>
-                        <dd>
+                        <dd class="expiration_date">
                             <strong>유통기한 : </strong>
                             <span class="weight_text weight_text_v1">
                                 셀프부대찌개재료 : 제조일로부터 냉장 4일, 사골육수 : 제조일로부터 냉동 180일<br>신라면 : 제조일로부터 6개월, 체다슬라이스치즈 : 제조일로부터 6개월</span>
                         </dd>
-                        <dd>
+                        <dd class="shipping_guide">
                             <strong>배송안내 : </strong>
                             <span class="free_delivery">무료배송</span>
                         </dd>
-                        <dd><strong>수량 : </strong></dd>
+                        <dd>
+                            <strong>수량 : </strong>
+                            <div class="quantity">
+                                <span class="bt_up"><img src="../assets/img/minus.png" alt="빼기 버튼"></span>
+                                <input type="text" name="num" value="1" id="" class="num" title="상품수량" readonly/>
+                                <span class="bt_down"><img src="../assets/img/plus.png" alt="더하기 버튼"></span>
+                            </div> 
+                        </dd>
                     </dl>
                     <div class="detail_info_bottom">
-                        <div class="total_price"><strong>총 판매금액 : <span class="info_caption">9,900원</span></strong></div>
+                        <div class="total_price"><strong>총 판매금액 : <span class="price_num">9,900원</span></strong></div>
                         <ul class="market_detail_btn">
                             <li>
-                                <router-link to="">바로구매</router-link>
+                                <router-link to="" class="buy">바로 구매</router-link>
+                            </li>
+                            <li>
                                 <router-link to="">장바구니</router-link>
                             </li>
                         </ul>
@@ -97,30 +106,38 @@
         text-decoration: underline;
      }
     .total_price{
+        margin-top: 24px;
         font-size: 20px;
         strong{
             font-weight: 500;
         }
         span{
-            font-size:20px;
+            font-size:22px;
         }
     }
     .item{
+        border-bottom: 1px solid #E5E5E5;
+        padding-bottom: 26px;
         dd{
+            margin-top:23px;
             font-size: 20px;
             strong{
                 font-weight: 300;
+                margin-right: 5px;
             }
         }
         .title{
             font-size:26px;
+            margin-bottom: 35px;
             strong{
                 font-weight: 500;
             }
         }
-        .price_num{
-            color: #85AF4B;
-            font-weight: 400;
+        .expiration_date{
+            margin-top:12px;
+        }
+        .shipping_guide{
+            margin-top: 15px;
         }
         .weight_text{
             font-size:15px;
@@ -135,11 +152,63 @@
         }
     }
 }
-
+.price_num{
+            color: #85AF4B;
+            font-weight: 400;
+        }
+.quantity{
+    display: inline-block;
+    .num{
+        width: 26px;
+        height: 24px;
+        padding: 0;
+        font-size: 14px;
+        border: 1px solid #BDBDBD;
+        text-align: center;
+    }
+    .bt_up, .bt_down{
+        text-align: center;
+        padding-top: 7px;
+        display: inline-block;
+        width: 26px;
+        height: 17px;
+        font-size: 20px;
+        border: 1px solid #BDBDBD;
+        vertical-align: middle;
+    }
+    .bt_up{
+        border-right: 0;
+    }
+    .bt_down{
+        border-left: 0;
+    }
+}
 .market_detail_bottom {
     margin-top: 140px;
 }
-
+.market_detail_btn{
+    margin-top: 35px;
+    li{
+        display: inline-block;
+        margin-right: 15px;
+        &:last-child{
+            margin-right: 0;
+        }
+        a{
+            display: inline-block;
+            border: 1px solid #009D54;
+            color: #009D54;
+            padding: 10px 85px;
+            font-size:16px;
+            border-radius: 30px;
+            &.buy{
+                background: #85AF4B;
+                color: #fff;
+                border: 1px solid #85AF4B;
+            }
+        }
+    }
+}
 .market_detail_tab {
     li {
         display: inline-block;
@@ -186,6 +255,18 @@ export default {
                 $(".detail_tab_content").eq(idx).addClass("on");
             });
         });
+        $(function(){ 
+        $('.bt_up').click(function(){ 
+            var n = $('.bt_up').index(this);
+            var num = $(".num:eq("+n+")").val();
+            num = $(".num:eq("+n+")").val(num*1+1); 
+        });
+        $('.bt_down').click(function(){ 
+            var n = $('.bt_down').index(this);
+            var num = $(".num:eq("+n+")").val();
+            num = $(".num:eq("+n+")").val(num*1-1); 
+        });
+        }) 
     }
 }
 </script>

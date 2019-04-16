@@ -80,8 +80,7 @@
             <div class="program program_v2">
               <h4 class="program_title">식단표 소개</h4>
               <p class="program_text">
-				  주차별
-                <br>식단 상세정보
+                주차별<br>식단 상세정보
               </p>
               <router-link to="/" class="program_more">자세히 보기</router-link>
             </div>
@@ -95,8 +94,7 @@
             <div class="program program_v3">
               <h4 class="program_title">프로그램 설계</h4>
               <p class="program_text">
-				  식단표 확인 후
-                <br>나의 프로그램 설계
+                식단표 확인 후<br>나의 프로그램 설계
               </p>
               <router-link to="/" class="program_more">자세히 보기</router-link>
             </div>
@@ -163,12 +161,12 @@
   }
 }
 .main_title_box {
-  margin-top: 83px;
+  margin-top: 65px;
   text-align: center;
   .main_title {
     font-size: 20px;
     margin-bottom: 5px;
-    font-weight: 300;
+    font-weight: 600;
   }
   .main_title_caption {
     font-size: 15px;
@@ -232,6 +230,11 @@
     color: #000;
     border: 1px solid #707070;
     border-radius: 16px;
+    &:hover{
+      color: #fff;
+      border: 1px solid #85af4b;
+      background: #85af4b;
+    }
   }
 }
 .white {

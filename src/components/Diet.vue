@@ -306,9 +306,6 @@
                       <span @click="getOrderItem">바로 결제하기</span>
                     </li>
                     <li>
-                      <router-link to="/">관심상품</router-link>
-                    </li>
-                    <li>
                       <router-link to="/">장바구니</router-link>
                     </li>
                   </ul>
@@ -374,7 +371,8 @@
         text-align: center;
         font-size: 18px;
         &.on {
-          color: #538700;
+          color: #2e7b48;
+          font-weight: 600;
           &::after {
             position: absolute;
             left: 158px;

@@ -201,7 +201,9 @@
             margin: 0 5px;
             padding-bottom: 50px;
             a{
+                display: block;
                 .market_product_img{
+                    overflow: hidden;
                     height:391px;
                     background: red;
                 }

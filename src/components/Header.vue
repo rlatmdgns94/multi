@@ -41,7 +41,7 @@
             </ul>
           </li>
           <li>
-            <router-link to="/" class="menu_arrow">지피지기 당뇨</router-link>
+            <router-link to="/jipijigi" class="menu_arrow">지피지기 당뇨</router-link>
             <ul class="submenu">
               <li>
                 <router-link to="/">당뇨란?</router-link>

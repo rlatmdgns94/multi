@@ -4,7 +4,7 @@
 ===================================*/
 .bx-wrapper {
   position: relative;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   padding: 0;
   *zoom: 1;
   -ms-touch-action: pan-y;
@@ -28,16 +28,17 @@ ul.bxslider {
 /** THEME
 ===================================*/
 .bx-wrapper {
-  -moz-box-shadow: 0 0 5px #ccc;
-  -webkit-box-shadow: 0 0 5px #ccc;
-  box-shadow: 0 0 5px #ccc;
+  -moz-box-shadow: 0 0 0px #ccc;
+  -webkit-box-shadow: 0 0 0px #ccc;
+  box-shadow: 0 0 0px #ccc;
   border: 0px solid #fff;
   background: #fff;
 }
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
-  bottom: -30px;
+  left: 226px;
+  bottom: 32px;
   width: 100%;
 }
 /* LOADER */
@@ -61,7 +62,7 @@ ul.bxslider {
   padding-top: 20px;
 }
 .bx-wrapper .bx-pager.bx-default-pager a {
-  background: #666;
+  background: #E5E5E5;
   text-indent: -9999px;
   display: block;
   width: 10px;
@@ -75,7 +76,7 @@ ul.bxslider {
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active,
 .bx-wrapper .bx-pager.bx-default-pager a:focus {
-  background: #000;
+  background: #85AF4B;
 }
 .bx-wrapper .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
@@ -94,6 +95,11 @@ ul.bxslider {
   left: 10px;
   /* background: url('images/controls.png') no-repeat 0 -32px; */
 }
+.jpjigi_slide .bx-wrapper .bx-prev {
+  display: block;
+  left: 0px;
+  background: url('./prev.png') no-repeat;
+}  
 /* .bx-wrapper .bx-prev:hover,
 .bx-wrapper .bx-prev:focus {
   background-position: 0 0;
@@ -101,6 +107,10 @@ ul.bxslider {
 .bx-wrapper .bx-next {
   left: 355px;
   background: url('./visual_btn.png') no-repeat;
+}
+.jpjigi_slide .bx-wrapper .bx-next {
+  left: 37px;
+  background: url('./next.png') no-repeat;
 }
 /* .bx-wrapper .bx-next:hover,
 .bx-wrapper .bx-next:focus {
@@ -113,6 +123,21 @@ ul.bxslider {
   outline: 0;
   width: 52px;
   height: 52px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.jpjigi_slide .bx-wrapper .bx-controls-direction{
+  position: absolute;
+  bottom: 36px;
+  right:108px;
+}
+.jpjigi_slide .bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  bottom: 0;
+  margin-top: -16px;
+  outline: 0;
+  width: 28px;
+  height: 28px;
   text-indent: -9999px;
   z-index: 9999;
 }

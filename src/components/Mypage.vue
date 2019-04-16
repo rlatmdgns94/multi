@@ -24,15 +24,8 @@
                 <div class="mypage_content">
                     <router-link to="/" class="left_menu">
                         <dl>
-                            <dt>회원정보</dt>
-                            <dd>회원이신 고객님의 개인정보를 관리하는 공간입니다.</dd>
-                            <dd>개인정보를 최신 정보로 유지하시면 보다 간편히 쇼핑을 즐기실 수 있습니다.</dd>
-                        </dl>
-                    </router-link>
-                    <router-link to="/cart" class="right_menu">
-                        <dl>
-                            <dt>주문내역 </dt>
-                            <dd>고객님께서 주문하신 상품의<br>주문내역을 확인하실 수 있습니다.</dd>
+                            <dt>장바구니</dt>
+                            <dd>고객님의 ‘식’ 을 담은 장바구니<br>주문하시기 전에 장바구니를 확인하세요.</dd>
                         </dl>
                     </router-link>
                 </div>
