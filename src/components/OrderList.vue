@@ -40,7 +40,7 @@
               </td>
               <td>{{order.productQty}}</td>
               <td>{{numberWithCommas(order.totalPrice)}}원</td>
-              <td>입금전</td>
+              <td>{{order.purchaseMethod === 'card' ? "결제완료" : '입금전'}}</td>
             </tr>
           </tbody>
         </table>
