@@ -55,13 +55,13 @@
       <!-- 이용방법 -->
       <!-- 식단표 -->
       <div class="diet_content on">
-        <span class="month"><input type='month' id='currnetMonth' readonly></span>
+        <!-- <span class="month"><input type='month' id='currnetMonth' readonly></span> -->
         <ul id="gallery">
           <li>
             <OneWeek/>
           </li>
           <li>
-            <TwoWeek/>            
+            <TwoWeek/>
           </li>
         </ul>
         <div id="btn_gallery">
@@ -462,26 +462,26 @@
   text-align: center;
   .week_diet_title {
     font-size: 30px;
-    padding-left: 160px;
+    /* padding-left: 160px; */
     font-weight: 600;
   }
   .week_diet_text {
     font-size: 16px;
   }
 }
-.month{
-    position: absolute;
-   left: 816px;
-    top: 56px;
-  input{
-      border: 0;
-      font-size: 30px;
-      font-weight: 600;
-      width: 252px;
-      vertical-align: top;
-      background: transparent;
-      letter-spacing: normal;
-    }
+.month {
+  position: absolute;
+  left: 816px;
+  top: 56px;
+  input {
+    border: 0;
+    font-size: 30px;
+    font-weight: 600;
+    width: 252px;
+    vertical-align: top;
+    background: transparent;
+    letter-spacing: normal;
+  }
 }
 .week_diet {
   width: 100%;
@@ -534,10 +534,10 @@
     float: right;
   }
 }
-.detail_bar{
-  &::after{
+.detail_bar {
+  &::after {
     display: inline-block;
-    content:"/";
+    content: "/";
     margin: 0 15px;
   }
 }
@@ -882,7 +882,7 @@ import TwoWeek from "./TwoWeek.vue";
 export default {
   components: {
     OneWeek,
-    TwoWeek,
+    TwoWeek
   },
   name: "Diet",
   data: function() {
@@ -973,7 +973,9 @@ export default {
         }
       });
     });
-    document.getElementById('currnetMonth').value= new Date().toISOString().slice(0, 7);
+    document.getElementById(
+      "currnetMonth"
+    ).value = new Date().toISOString().slice(0, 7);
   },
   methods: {
     numberWithCommas: function(x) {
