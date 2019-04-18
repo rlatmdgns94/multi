@@ -15,6 +15,7 @@ import Market from "./components/Market.vue";
 import MarketDetail from "./components/MarketDetail.vue";
 import Jipijigi from "./components/Jipijigi.vue";
 import JipijigiDetail from "./components/JipijigiDetail.vue";
+import Brand from "./components/Brand.vue";
 
 Vue.use(Router);
 
@@ -98,6 +99,11 @@ export default new Router({
       path: "/jipijigidetail",
       name: "JipijigiDetail",
       component: JipijigiDetail
+    },
+    {
+      path: "/brand",
+      name: "Brand",
+      component: Brand
     }
   ],
   mode: "history"
