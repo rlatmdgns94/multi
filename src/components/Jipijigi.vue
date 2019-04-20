@@ -29,10 +29,34 @@
                         </div>
                     </li>
                     <li>
-                        <img src="../assets/img/jipijigi_slide1.jpg" alt>
+                        <img src="../assets/img/jipijigi_slide2.jpg" alt>
+                        <div class="slide_text">
+                            <span>당뇨 음식 - 지피지기 당뇨</span>
+                            <h2 class="text_title"><strong>당뇨에 좋은 음식은?</strong></h2>
+                            <p class="text_explanation">
+                                당뇨병이란 혈액중의 포도당(혈당)이 높아서 소변으로 포도당이 넘쳐 
+                                나오는데서 지어진 이름입니다. 포도당은 우리가 먹는 음식물 중 탄수
+                                화물의 기본 구성성분입니다. 탄수화물은 위장에서 소화효소에 의해 
+                                포도당으로 변한 다음 혈액으로 흡수됩니다. 흡수된 포도당이 우리 몸
+                                의 세포들에서 이용되기 위해서는 …
+                            </p>
+                            <router-link to="" class="slide_more">더 보기</router-link>
+                        </div>
                     </li>
                     <li>
-                        <img src="../assets/img/jipijigi_slide1.jpg" alt>
+                        <img src="../assets/img/jipijigi_slide3.jpg" alt>
+                        <div class="slide_text">
+                            <span>당뇨 음식 - 지피지기 당뇨</span>
+                            <h2 class="text_title"><strong>당뇨에 좋은 음식은?</strong></h2>
+                            <p class="text_explanation">
+                                당뇨병이란 혈액중의 포도당(혈당)이 높아서 소변으로 포도당이 넘쳐 
+                                나오는데서 지어진 이름입니다. 포도당은 우리가 먹는 음식물 중 탄수
+                                화물의 기본 구성성분입니다. 탄수화물은 위장에서 소화효소에 의해 
+                                포도당으로 변한 다음 혈액으로 흡수됩니다. 흡수된 포도당이 우리 몸
+                                의 세포들에서 이용되기 위해서는 …
+                            </p>
+                            <router-link to="" class="slide_more">더 보기</router-link>
+                        </div>
                     </li>
                 </ul>
             </div>

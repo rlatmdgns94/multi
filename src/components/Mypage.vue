@@ -7,7 +7,7 @@
             </p>
             <div class="mypage_content_wrap">
                 <div class="mypage_content">
-                    <router-link to="/" class="left_menu">
+                    <router-link to="/updatemember" class="left_menu">
                         <dl>
                             <dt>회원정보</dt>
                             <dd>회원이신 고객님의 개인정보를 관리하는 공간입니다.</dd>
