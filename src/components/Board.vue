@@ -3,6 +3,18 @@
 		<div class="board_keyimg"></div>
 		<div class="content">
 			<div class="boardList">
+				<div class="board_search_area">
+					<form>
+						<select id="search_key" name="search_key"  class="search_key">
+							<option value="subject">제목</option>
+							<option value="content">내용</option>
+							<option value="writer_name">글쓴이</option>
+							<option value="member_id">아이디</option>
+						</select>
+						<input type="text" title="게시판 검색" class="search_text">
+						<button class="board_search_btn">검색</button>
+					</form>
+				</div>
 				<table>
 					<caption>
 						<strong>1:1 문의 게시물</strong>'
@@ -38,18 +50,7 @@
 					</tbody>
 				</table>
 				<div class="board_btn_area">
-					<div class="board_search_area">
-						<form>
-							<select id="search_key" name="search_key"  class="search_key">
-								<option value="subject">제목</option>
-								<option value="content">내용</option>
-								<option value="writer_name">글쓴이</option>
-								<option value="member_id">아이디</option>
-							</select>
-							<input type="text" title="게시판 검색" class="search_text">
-							<button class="board_search_btn">검색</button>
-						</form>
-					</div>
+					
 					<div class="board_write_area"><router-link to="/write" class="board_write_btn">글쓰기</router-link></div>
 				</div>		
 			</div>
@@ -73,9 +74,9 @@
 .boardList {
 	overflow: hidden;
 	margin-top: 113px;
-	border-top: 2px solid #85AF4B;
 	width: 100%;
 	table{
+		border-top: 2px solid #85AF4B;
 		width: 100%;
 		font-size: 15px;
 	}
@@ -121,7 +122,8 @@
 	margin-left: 10px;
 }
 .board_search_area{
-	float:left;
+	float:right;
+	margin-bottom: 20px;
 	.board_search_btn{
 		margin-left:10px;
 		border: 0;
