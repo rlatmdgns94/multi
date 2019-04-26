@@ -22,7 +22,7 @@
                     </router-link>
                 </div>
                 <div class="mypage_content">
-                    <router-link to="/" class="left_menu">
+                    <router-link to="/cart" class="left_menu">
                         <dl>
                             <dt>장바구니</dt>
                             <dd>고객님의 ‘식’ 을 담은 장바구니<br>주문하시기 전에 장바구니를 확인하세요.</dd>

@@ -19,6 +19,11 @@ import Brand from "./components/Brand.vue";
 import UpdateMember from "./components/UpdateMember.vue";
 import IdFind from "./components/IdFind.vue";
 import PasswordFind from "./components/PasswordFind.vue";
+import Board from "./components/Board.vue";
+import Notice from "./components/Notice.vue";
+import BoardView from "./components/BoardView.vue";
+import NoticeView from "./components/NoticeView.vue";
+import Write from "./components/Write.vue";
 
 Vue.use(Router);
 
@@ -122,6 +127,31 @@ export default new Router({
       path: "/passwordfind",
       name: "PasswordFind",
       component: PasswordFind
+    }
+    ,{
+      path: "/board",
+      name: "Board",
+      component: Board
+    },
+    {
+      path: "/notice",
+      name: "Notice",
+      component: Notice
+    }
+    ,{
+      path: "/boardview",
+      name: "BoardView",
+      component: BoardView
+    },
+    {
+      path: "/noticeview",
+      name: "NoticeView",
+      component: NoticeView
+    }
+    ,{
+      path: "/write",
+      name: "Write",
+      component: Write
     }
   ],
   mode: "history"
