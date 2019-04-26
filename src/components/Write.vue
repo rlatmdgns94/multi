@@ -3,7 +3,7 @@
 		<div class="board_keyimg"></div>
 		<div class="content">
 			<div class="write_wrap">
-				<span>글쓰기</span>
+				<span class="writing">글쓰기</span>
 				<form action="">
 					<table class="write_box">
 						<colgroup>
@@ -55,9 +55,15 @@
 	height: 284px;
 	background: url("../assets/img/board.jpg") no-repeat center;
 }
-
+.write_wrap{
+	margin-top: 80px;
+}
+.writing{
+	font-size:19px;
+}
 .write_box {
 	width: 100%;
+	margin-top: 10px;
 	font-size: 14px;
 	border-top: 2px solid #85AF4B;
 	th {
