@@ -26,18 +26,6 @@
 							<tr style="border:0;">
 								<td colspan="2"><textarea name="memo" class="memo"></textarea></td>
 							</tr>
-							<tr>
-								<th>첨부파일</th>
-								<td>
-									<div class="box">
-										<span class="filetype">
-										<input type="text" class="file-text" />
-										<span class="file-btn">찾아보기</span>
-										<span class="file-select"><input type="file" class="input-file" size="3"></span>
-										</span>
-									</div>
-								</td>
-							</tr>
 						</tbody>
 					</table>
 					<div class="write_bottom">
@@ -85,63 +73,6 @@
 	}
 }
 
-.search_file {
-	background: #85AF4B;
-}
-
-.filetype {
-	position: relative;
-	display: inline-block;
-	vertical-align: top;
-	*margin-right: 4px;
-}
-
-.filetype * {
-	vertical-align: middle;
-}
-
-.filetype .file-text {
-	position: relative;
-	width: 196px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	display: inline-block;
-	height: 26px;
-	background-color: #fff;
-	margin: 0;
-	border: 1px solid #707070;
-	line-height: 20px;
-	z-index: 10;
-}
-
-.filetype .file-select {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 80px;
-	overflow: hidden;
-}
-
-.filetype .file-select .input-file {
-	width: 60px;
-	filter: alpha(opacity=0);
-	opacity: 0;
-	height: 20px;
-}
-
-.filetype .file-text+.file-btn {
-	display: inline-block;
-	background-color: #fff;
-	height: 26px;
-	border: 1px solid #707070;
-	line-height: 26px;
-	padding: 0 11px;
-	color: #707070 !important;
-	cursor: pointer;
-	margin-left: 22px;
-	font-size: 10px;
-}
 .memo{
 	width: 97.3%;
 	height:386px;

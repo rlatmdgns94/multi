@@ -5,8 +5,8 @@
             <div class="footer_top_inner">
                 <h3 class="blind">하단메뉴</h3>
                 <ul class="footer_menu">
-                    <li><router-link to="/">개인정보취급방침</router-link></li>
-                    <li><router-link to="/">이메일무단수집거부</router-link></li>
+                    <li><router-link to="/privacy">개인정보취급방침</router-link></li>
+                    <li><router-link to="/email">이메일무단수집거부</router-link></li>
                     <li><router-link to="/notice">공지사항</router-link></li>
                     <li><router-link to="/board">1:1문의</router-link></li>
                 </ul> 

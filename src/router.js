@@ -24,6 +24,8 @@ import Notice from "./components/Notice.vue";
 import BoardView from "./components/BoardView.vue";
 import NoticeView from "./components/NoticeView.vue";
 import Write from "./components/Write.vue";
+import Email from "./components/Email.vue";
+import Privacy from "./components/Privacy.vue";
 
 Vue.use(Router);
 
@@ -152,6 +154,16 @@ export default new Router({
       path: "/write",
       name: "Write",
       component: Write
+    }
+    ,{
+      path: "/email",
+      name: "Email",
+      component: Email
+    },
+    {
+      path: "/privacy",
+      name: "Privacy",
+      component: Privacy
     }
   ],
   mode: "history"
