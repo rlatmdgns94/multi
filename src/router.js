@@ -15,6 +15,17 @@ import Market from "./components/Market.vue";
 import MarketDetail from "./components/MarketDetail.vue";
 import Jipijigi from "./components/Jipijigi.vue";
 import JipijigiDetail from "./components/JipijigiDetail.vue";
+import Brand from "./components/Brand.vue";
+import UpdateMember from "./components/UpdateMember.vue";
+import IdFind from "./components/IdFind.vue";
+import PasswordFind from "./components/PasswordFind.vue";
+import Board from "./components/Board.vue";
+import Notice from "./components/Notice.vue";
+import BoardView from "./components/BoardView.vue";
+import NoticeView from "./components/NoticeView.vue";
+import Write from "./components/Write.vue";
+import Email from "./components/Email.vue";
+import Privacy from "./components/Privacy.vue";
 
 Vue.use(Router);
 
@@ -98,6 +109,61 @@ export default new Router({
       path: "/jipijigidetail",
       name: "JipijigiDetail",
       component: JipijigiDetail
+    },
+    {
+      path: "/brand",
+      name: "Brand",
+      component: Brand
+    },
+    {
+      path: "/updatemember",
+      name: "UpdateMember",
+      component: UpdateMember
+    },
+    {
+      path: "/idfind",
+      name: "IdFind",
+      component: IdFind
+    },
+    {
+      path: "/passwordfind",
+      name: "PasswordFind",
+      component: PasswordFind
+    }
+    ,{
+      path: "/board",
+      name: "Board",
+      component: Board
+    },
+    {
+      path: "/notice",
+      name: "Notice",
+      component: Notice
+    }
+    ,{
+      path: "/boardview",
+      name: "BoardView",
+      component: BoardView
+    },
+    {
+      path: "/noticeview",
+      name: "NoticeView",
+      component: NoticeView
+    }
+    ,{
+      path: "/write",
+      name: "Write",
+      component: Write
+    }
+    ,{
+      path: "/email",
+      name: "Email",
+      component: Email
+    },
+    {
+      path: "/privacy",
+      name: "Privacy",
+      component: Privacy
     }
   ],
   mode: "history"

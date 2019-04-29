@@ -529,7 +529,6 @@
   margin-top: 76px;
   padding: 8px 42px;
   background: #85af4b;
-  border-radius: 25px;
   color: #fff;
   font-size: 19px;
   border: 1px solid #85af4b;

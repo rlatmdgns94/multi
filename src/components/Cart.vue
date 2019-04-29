@@ -47,9 +47,6 @@
                                         <router-link to="#" class="cart_order_btn">주문하기</router-link>
                                     </li>
                                     <li>
-                                        <router-link to="#">관심상품</router-link>
-                                    </li>
-                                    <li>
                                         <router-link to="#">삭제</router-link>
                                     </li>
                                 </ul>

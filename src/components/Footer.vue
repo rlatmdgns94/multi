@@ -5,10 +5,10 @@
             <div class="footer_top_inner">
                 <h3 class="blind">하단메뉴</h3>
                 <ul class="footer_menu">
-                    <li><router-link to="/">개인정보취급방침</router-link></li>
-                    <li><router-link to="/">이메일무단수집거부</router-link></li>
-                    <li><router-link to="/">이용약관</router-link></li>
-                    <li><router-link to="/">1:1문의</router-link></li>
+                    <li><router-link to="/privacy">개인정보취급방침</router-link></li>
+                    <li><router-link to="/email">이메일무단수집거부</router-link></li>
+                    <li><router-link to="/notice">공지사항</router-link></li>
+                    <li><router-link to="/board">1:1문의</router-link></li>
                 </ul> 
                 <div class="footer_top_right">
                     <router-link to="/">HACCP 인증 기업</router-link>
@@ -50,7 +50,7 @@
 .footer{
     margin-top: auto;
     .footer_top{
-        padding:10px 0;
+        padding:12px 0;
         background: #85af4b;
         a{
             color:#fff;

@@ -1,7 +1,7 @@
 <template>
   <div class="login_wrap">
     <div class="login_text">
-      <h3 class="login_title">로그인</h3>
+      <h3 class="login_title">아이디 찾기</h3>
       <p class="login_greetings">
         식과당에 오신 것을 환영합니다.
         <br>당뇨 맞춤 식단과 신선한 유기농 재료로 준비합니다.
@@ -11,30 +11,27 @@
       <input
         type="text"
         class="text"
-        id="loginId"
-        name="loginId"
-        v-model="userId"
-        placeholder="아이디를 입력해주세요."
-        title="아이디 입력"
+        id="idFindName"
+        name="idFindName"
+        v-model="userName"
+        placeholder="이름을 입력해주세요."
+        title="이름 입력"
         required="true"
         aria-required="true"
       >
       <input
-        type="password"
+        type="text"
         class="text"
-        id="loginPwd"
-        name="loginPwd"
-        v-model="password"
-        placeholder="비밀번호를 입력해주세요."
-        title="비밀번호 입력"
+        id="idFindMail"
+        name="idFindMail"
+        v-model="email"
+        placeholder="가입 메일 주소를 입력해주세요."
+        title="이메일 입력"
         required="true"
         aria-required="true"
       >
-      <button v-on:click="postSignin" class="login_btn">로그인</button>
+      <button v-on:click="postSignin" class="login_btn">확인</button>
       <ul class="login_menu">
-        <li>
-          <router-link to="/idfind">아이디 찾기</router-link>
-        </li>
         <li>
           <router-link to="/passwordfind">비밀번호 찾기</router-link>
         </li>
@@ -49,7 +46,7 @@
 .login_wrap {
   height: 730px;
   padding-top: 200px;
-  background: url("../assets/img/login_bg.png") no-repeat center;
+  background: url("../assets/img/idFind.jpg") no-repeat center;
   text-align: center;
 }
 .login_text {
@@ -127,11 +124,11 @@
 <script>
 import axios from "axios";
 export default {
-  name: "Login",
+  name: "IdFind",
   data: function() {
     return {
-      userId: "",
-      password: ""
+      userName: "",
+      email: ""
     };
   },
   mounted() {
@@ -142,19 +139,19 @@ export default {
   methods: {
     postSignin: async function() {
       try {
-        if (this.userId === "") {
-          alert("아이디를 입력해주세요.");
+        if (this.userName === "") {
+          alert("이름을 입력해주세요.");
           return false;
         }
-        if (this.password === "") {
-          alert("비밀번호를 입력해주세요.");
+        if (this.email === "") {
+          alert("이메일을 입력해주세요.");
           return false;
         }
 
         if (true) {
           const data = {
-            userId: this.userId,
-            password: this.password
+            userId: this.userName,
+            password: this.email
           };
           const response = await axios.post("/v1/users/sign_in", data);
           localStorage.setItem("sat", response.headers["x-sikguadang-token"]);

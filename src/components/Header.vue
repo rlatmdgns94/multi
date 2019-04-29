@@ -10,7 +10,7 @@
         <h2 class="blind">대메뉴</h2>
         <ul class="menu">
           <li>
-            <router-link to="/">식과당 소개</router-link>
+            <router-link to="/brand">식과당 소개</router-link>
           </li>
           <li>
             <router-link to="/diet" class="menu_arrow">맞춤당 식단</router-link>

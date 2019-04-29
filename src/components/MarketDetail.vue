@@ -56,7 +56,7 @@
                         <router-link to="">제품정보고시</router-link>
                     </li>
                     <li>
-                        <router-link to="">배송안내</router-link>
+                        <router-link to="">주의사항</router-link>
                     </li>
                 </ul>
                 <div class="detail_tab_content on">
