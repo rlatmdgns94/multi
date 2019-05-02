@@ -67,7 +67,7 @@
             <div class="program program_v1">
               <h4 class="program_title">이용방법 소개</h4>
               <p class="program_text">
-				맞춤당 식단
+                맞춤당 식단
                 <br>프로그램 소개
               </p>
               <router-link to="/" class="program_more">자세히 보기</router-link>
@@ -80,7 +80,8 @@
             <div class="program program_v2">
               <h4 class="program_title">식단표 소개</h4>
               <p class="program_text">
-                주차별<br>식단 상세정보
+                주차별
+                <br>식단 상세정보
               </p>
               <router-link to="/" class="program_more">자세히 보기</router-link>
             </div>
@@ -94,7 +95,8 @@
             <div class="program program_v3">
               <h4 class="program_title">프로그램 설계</h4>
               <p class="program_text">
-                식단표 확인 후<br>나의 프로그램 설계
+                식단표 확인 후
+                <br>나의 프로그램 설계
               </p>
               <router-link to="/" class="program_more">자세히 보기</router-link>
             </div>
@@ -120,7 +122,8 @@
               <img src="../assets/img/information1.jpg" alt>
             </div>
             <h4 class="information_title">당뇨에 좋은 음식은?</h4>
-            <p class="information_text">당뇨의 좋은 음식과 안 좋은 음식
+            <p class="information_text">
+              당뇨의 좋은 음식과 안 좋은 음식
               <br>어떤 것들이 있을까요?
             </p>
             <router-link to="/" class="information_more">자세히 보기</router-link>
@@ -132,7 +135,9 @@
               <img src="../assets/img/information2.jpg" alt>
             </div>
             <h4 class="information_title">당뇨에 운동이 필요한 이유</h4>
-            <p class="information_text">당뇨 운동의 필요성과 운동 방법,<br>주의할 점 등 모두 알려드립니다.  
+            <p class="information_text">
+              당뇨 운동의 필요성과 운동 방법,
+              <br>주의할 점 등 모두 알려드립니다.
             </p>
             <router-link to="/" class="information_more">자세히 보기</router-link>
           </div>
@@ -144,7 +149,8 @@
             </div>
             <h4 class="information_title">당뇨 합병증 종류에 대해서</h4>
             <p class="information_text">
-              합병증이 더 곤란한 당뇨병<br>미리 알아보는 당뇨 합병증 종류
+              합병증이 더 곤란한 당뇨병
+              <br>미리 알아보는 당뇨 합병증 종류
             </p>
             <router-link to="/" class="information_more">자세히 보기</router-link>
           </div>
@@ -155,8 +161,8 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@media screen and (max-width:1500px) {
-  .main_slide_pager a{
+@media screen and (max-width: 1500px) {
+  .main_slide_pager a {
     font-size: 20px !important;
   }
 }
@@ -230,7 +236,7 @@
     color: #000;
     border: 1px solid #707070;
     border-radius: 16px;
-    &:hover{
+    &:hover {
       color: #fff;
       border: 1px solid #85af4b;
       background: #85af4b;
@@ -351,7 +357,7 @@
 .main_slide_pager a {
   display: inline-block;
   width: 18%;
-  margin-left:3%;
+  margin-left: 3%;
   color: #fff;
   text-align: left;
   font-size: 25px;
@@ -376,7 +382,6 @@
     margin-left: 15px;
   }
 }
-
 </style>
 <script>
 export default {
@@ -385,8 +390,8 @@ export default {
     $(document).ready(function() {
       $(".slider").bxSlider({
         pagerCustom: "#bx-pager",
-        auto: "ture",
-        controls:"ture",
+        auto: "true",
+        controls: "true"
       });
     });
   }

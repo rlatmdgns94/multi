@@ -7,13 +7,13 @@
           <h3 class="blind">마켓메뉴</h3>
           <ul class="market_menu">
             <li>
-              <router-link :to="{path: '/market'}" class="on">전체</router-link>
+              <router-link :to="{path: '/market'}">전체</router-link>
             </li>
             <li>
               <router-link :to="{path: '/market/1'}">반찬</router-link>
             </li>
             <li>
-              <router-link :to="{path: '/market/2'}">간식</router-link>
+              <router-link :to="{path: '/market/2'}" class="on">간식</router-link>
             </li>
             <li>
               <router-link :to="{path: '/market/3'}">영양제</router-link>
@@ -181,7 +181,7 @@ import axios from "axios";
 
 import config from "../utils/config";
 export default {
-  name: "Market",
+  name: "Market2",
   data: function() {
     return {
       cdn: config.cdn,
@@ -190,7 +190,7 @@ export default {
   },
   async mounted() {
     const response = await axios({
-      url: "/v1/store",
+      url: "/v1/store/2",
       method: "get"
     });
     this.storeItemList = response.data;

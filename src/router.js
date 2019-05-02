@@ -12,6 +12,9 @@ import OrderCompleted from "./components/OrderCompleted.vue";
 import OrderList from "./components/OrderList.vue";
 import Mypage from "./components/Mypage.vue";
 import Market from "./components/Market.vue";
+import Market1 from "./components/Market1.vue";
+import Market2 from "./components/Market2.vue";
+import Market3 from "./components/Market3.vue";
 import MarketDetail from "./components/MarketDetail.vue";
 import Jipijigi from "./components/Jipijigi.vue";
 import JipijigiDetail from "./components/JipijigiDetail.vue";
@@ -96,7 +99,22 @@ export default new Router({
       component: Market
     },
     {
-      path: "/marketdetail",
+      path: "/market/1",
+      name: "Market1",
+      component: Market1
+    },
+    {
+      path: "/market/2",
+      name: "Market2",
+      component: Market2
+    },
+    {
+      path: "/market/3",
+      name: "Market3",
+      component: Market3
+    },
+    {
+      path: "/marketdetail/:storeItemId",
       name: "MarketDetail",
       component: MarketDetail
     },
@@ -129,8 +147,8 @@ export default new Router({
       path: "/passwordfind",
       name: "PasswordFind",
       component: PasswordFind
-    }
-    ,{
+    },
+    {
       path: "/board",
       name: "Board",
       component: Board
@@ -139,8 +157,8 @@ export default new Router({
       path: "/notice",
       name: "Notice",
       component: Notice
-    }
-    ,{
+    },
+    {
       path: "/boardview",
       name: "BoardView",
       component: BoardView
@@ -149,13 +167,13 @@ export default new Router({
       path: "/noticeview",
       name: "NoticeView",
       component: NoticeView
-    }
-    ,{
+    },
+    {
       path: "/write",
       name: "Write",
       component: Write
-    }
-    ,{
+    },
+    {
       path: "/email",
       name: "Email",
       component: Email
