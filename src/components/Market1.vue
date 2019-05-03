@@ -151,7 +151,6 @@
         .market_product_img {
           overflow: hidden;
           height: 391px;
-          background: red;
         }
       }
     }

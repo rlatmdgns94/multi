@@ -55,13 +55,13 @@
       <!-- 이용방법 -->
       <!-- 식단표 -->
       <div class="diet_content on">
-        <!-- <span class="month"><input type='month' id='currnetMonth' readonly></span> -->
+        <span class="month"><input type='month' id='currnetMonth' readonly></span>
         <ul id="gallery">
           <li>
             <OneWeek/>
           </li>
           <li>
-            <TwoWeek/>
+            <TwoWeek/>            
           </li>
         </ul>
         <div id="btn_gallery">
@@ -460,26 +460,26 @@
   text-align: center;
   .week_diet_title {
     font-size: 30px;
-    /* padding-left: 160px; */
+    padding-left: 160px;
     font-weight: 600;
   }
   .week_diet_text {
     font-size: 16px;
   }
 }
-.month {
-  position: absolute;
-  left: 816px;
-  top: 56px;
-  input {
-    border: 0;
-    font-size: 30px;
-    font-weight: 600;
-    width: 252px;
-    vertical-align: top;
-    background: transparent;
-    letter-spacing: normal;
-  }
+.month{
+    position: absolute;
+   left: 816px;
+    top: 56px;
+  input{
+      border: 0;
+      font-size: 30px;
+      font-weight: 600;
+      width: 252px;
+      vertical-align: top;
+      background: transparent;
+      letter-spacing: normal;
+    }
 }
 .week_diet {
   width: 100%;
@@ -532,10 +532,10 @@
     float: right;
   }
 }
-.detail_bar {
-  &::after {
+.detail_bar{
+  &::after{
     display: inline-block;
-    content: "/";
+    content:"/";
     margin: 0 15px;
   }
 }
@@ -591,7 +591,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         max-width: 330px;
         max-height: 49px;
@@ -628,6 +628,8 @@
   dt {
     font-size: 16px;
     font-weight: 600;
+    text-decoration: underline;
+    text-underline-position: under;
   }
   em {
     display: block;
@@ -635,7 +637,15 @@
     font-weight: 600;
   }
 }
-
+.no_dessert{
+	width: 84px !important;
+	height: 84px !important;
+	border-radius: 43px;
+	border: 1px solid #85AF4B;
+}
+.food_text_v2{
+	margin-top :14px;
+}
 // //식단표
 // 주문하기
 .order_wrap {
@@ -880,7 +890,7 @@ import TwoWeek from "./TwoWeek.vue";
 export default {
   components: {
     OneWeek,
-    TwoWeek
+    TwoWeek,
   },
   name: "Diet",
   data: function() {
@@ -971,9 +981,7 @@ export default {
         }
       });
     });
-    document.getElementById(
-      "currnetMonth"
-    ).value = new Date().toISOString().slice(0, 7);
+    document.getElementById('currnetMonth').value= new Date().toISOString().slice(0, 7);
   },
   methods: {
     numberWithCommas: function(x) {
