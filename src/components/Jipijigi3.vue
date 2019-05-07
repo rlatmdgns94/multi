@@ -15,7 +15,7 @@
             <router-link :to="{path: '/jipijigi/2'}">당뇨 음식</router-link>
           </li>
           <li>
-            <router-link :to="{path: '/jipijigi/3'}">당뇨 운동</router-link>
+            <router-link :to="{path: '/jipijigi/3'}" class="on">당뇨 운동</router-link>
           </li>
         </ul>
       </div>
@@ -283,7 +283,7 @@ import axios from "axios";
 
 import config from "../utils/config";
 export default {
-  name: "Jipijigi",
+  name: "Jipijigi3",
   data: function() {
     return {
       cdn: config.cdn,
@@ -299,7 +299,7 @@ export default {
       });
     });
     const getArticleList = await axios({
-      url: "/v1/articles",
+      url: "/v1/articles/3",
       method: "get"
     });
     this.articleList = getArticleList.data;

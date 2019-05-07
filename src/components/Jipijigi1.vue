@@ -6,10 +6,10 @@
         <h2 class="blind">지피지기 메뉴</h2>
         <ul class="jipijigi_gnb">
           <li>
-            <router-link :to="{path: '/jipijigi'}" class="on">전체</router-link>
+            <router-link :to="{path: '/jipijigi'}">전체</router-link>
           </li>
           <li>
-            <router-link :to="{path: '/jipijigi/1'}">당뇨란?</router-link>
+            <router-link :to="{path: '/jipijigi/1'}" class="on">당뇨란?</router-link>
           </li>
           <li>
             <router-link :to="{path: '/jipijigi/2'}">당뇨 음식</router-link>
@@ -283,7 +283,7 @@ import axios from "axios";
 
 import config from "../utils/config";
 export default {
-  name: "Jipijigi",
+  name: "Jipijigi1",
   data: function() {
     return {
       cdn: config.cdn,
@@ -299,7 +299,7 @@ export default {
       });
     });
     const getArticleList = await axios({
-      url: "/v1/articles",
+      url: "/v1/articles/1",
       method: "get"
     });
     this.articleList = getArticleList.data;
