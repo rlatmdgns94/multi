@@ -76,115 +76,18 @@
       </div>
       <div class="information_box">
         <ul class="jipijigi_information">
-          <li>
-            <router-link to="/jipijigidetail">
-              <div class="jipijigi_category">당뇨란?</div>
+          <li v-for="article in articleList" :key="article.title">
+            <router-link :to="{name: 'JipijigiDetail', params: {articleId: article.articleId}}">
+              <div class="jipijigi_category">{{ categorySwitch(article.category) }}</div>
               <div class="thumbnail">
-                <img src="../assets/img/jipijigi1.jpg" alt>
+                <img :src="cdn + article.thumbnailUrl[0].imageUrl">
               </div>
               <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
+                <h3 class="thumnail_title">{{ article.title }}</h3>
+                <p class="source">출처 - {{ article.source }}</p>
                 <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
-                  </ul>
-                  <span class="date">2019.04.01</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <div class="thumbnail"></div>
-              <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
-                <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
-                  </ul>
-                  <span class="date">2019.04.01</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <div class="thumbnail"></div>
-              <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
-                <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
-                  </ul>
-                  <span class="date">2019.04.01</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <div class="thumbnail"></div>
-              <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
-                <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
-                  </ul>
-                  <span class="date">2019.04.01</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <div class="thumbnail"></div>
-              <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
-                <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
-                  </ul>
-                  <span class="date">2019.04.01</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <div class="thumbnail"></div>
-              <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
-                <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
-                  </ul>
-                  <span class="date">2019.04.01</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <div class="thumbnail"></div>
-              <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
-                <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
+                  <ul v-for="tags in article.hashTag.split(' ')" :key="tags" class="tag">
+                    <li>{{tags}}</li>
                   </ul>
                   <span class="date">2019.04.01</span>
                 </div>
@@ -290,7 +193,7 @@
     margin-left: 20px;
     margin-bottom: 24px;
     a {
-      position:relative;
+      position: relative;
       display: block;
       width: 283px;
       color: #000;
@@ -332,9 +235,6 @@
       float: left;
       margin-right: 5px;
       font-size: 11px;
-      &:last-child {
-        margin: 0;
-      }
     }
   }
   .date {
@@ -365,23 +265,32 @@
     }
   }
 }
-.jipijigi_category{
-  position:absolute;
-  top:17px;
-  left:15px;
+.jipijigi_category {
+  position: absolute;
+  top: 17px;
+  left: 15px;
   display: inline-block;
   background: rgba(133, 175, 75, 0.6);
-  padding:5px 11px;
-  font-size:9px;
-  color:#fff;
+  padding: 5px 11px;
+  font-size: 9px;
+  color: #fff;
   border-radius: 30px;
 }
 </style>
 
 <script>
+import axios from "axios";
+
+import config from "../utils/config";
 export default {
   name: "Jipijigi",
-  mounted() {
+  data: function() {
+    return {
+      cdn: config.cdn,
+      articleList: []
+    };
+  },
+  async mounted() {
     $(document).ready(function() {
       $(".slide").bxSlider({
         pager: "true",
@@ -389,6 +298,25 @@ export default {
         controls: "true"
       });
     });
+    const getArticleList = await axios({
+      url: "/v1/articles",
+      method: "get"
+    });
+    this.articleList = getArticleList.data;
+  },
+  methods: {
+    categorySwitch: function(categoryNumber) {
+      switch (categoryNumber) {
+        case 1:
+          return "당뇨란?";
+        case 2:
+          return "당뇨 음식";
+        case 3:
+          return "당뇨 운동";
+        default:
+          return null;
+      }
+    }
   }
 };
 </script>

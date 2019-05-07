@@ -110,22 +110,6 @@
             >
           </div>
         </div>
-        <!-- <div v-if="isInfoClicked" class="detail_tab_content" v-bind:class="{on: isInfoClicked}">
-          <h4 class="blind">제품정보고시</h4>
-          <div class="detail_information">
-            <img :src="cdn + storeItem.productInfoCards[0].imageUrl">
-          </div>
-        </div>
-        <div
-          v-if="isWarningClicked"
-          class="detail_tab_content"
-          v-bind:class="{on: isWarningClicked}"
-        >
-          <h4 class="blind">배송안내</h4>
-          <div class="detail_information">
-            <img src="../assets/img/marketDetail_warning.png">
-          </div>
-        </div>-->
       </div>
     </div>
   </div>

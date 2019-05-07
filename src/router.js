@@ -124,7 +124,7 @@ export default new Router({
       component: Jipijigi
     },
     {
-      path: "/jipijigidetail",
+      path: "/jipijigidetail/:articleId",
       name: "JipijigiDetail",
       component: JipijigiDetail
     },
@@ -184,5 +184,9 @@ export default new Router({
       component: Privacy
     }
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // page scroll to top for all route navigations
+    return { x: 0, y: 0 };
+  },
   mode: "history"
 });
