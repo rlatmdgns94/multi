@@ -1403,7 +1403,7 @@
 							<!-- 상세 메뉴 -->
 							<div class="menu_detail">
 								<div class="detail_top">
-									<p class="top_title">목요일 배송상품</p>
+									<p class="top_title">금요일 배송상품</p>
 								<router-link to="#" class="detail_close">
 										<img src="../assets/img/cancel.png" alt="상세 식단 닫기">
 									</router-link>
@@ -1414,7 +1414,7 @@
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/oneweek/thu/dinner/rice.png" alt="율무 쌀밥">
+												<img src="../assets/oneweek/fri/dinner/rice.png" alt="율무 쌀밥">
 											</div>
 											<div class="food_text">
 												<p>현미 쌀밥</p>
@@ -1423,7 +1423,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/oneweek/thu/dinner/main.png" alt="닭가슴살 양파볶음">
+												<img src="../assets/oneweek/fri/dinner/main.png" alt="닭가슴살 양파볶음">
 											</div>
 											<div class="food_text">
 												<p>닭가슴살 양파볶음(저녁 메인)</p>
@@ -1432,7 +1432,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/oneweek/thu/dinner/side1.png" alt="돌미나리무침">
+												<img src="../assets/oneweek/fri/dinner/side1.png" alt="돌미나리무침">
 											</div>
 											<div class="food_text">
 												<p>돌미나리무침</p>
@@ -1451,7 +1451,7 @@
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/oneweek/thu/dinner/soup.png" alt="소고기 햇고사리국">
+												<img src="../assets/oneweek/fri/dinner/soup.png" alt="소고기 햇고사리국">
 											</div>
 											<div class="food_text">
 												<p>소고기 햇고사리국</p>
@@ -1460,7 +1460,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/oneweek/thu/dinner/side2.png" alt="쑥갓 양상추무침">
+												<img src="../assets/oneweek/fri/dinner/side2.png" alt="쑥갓 양상추무침">
 											</div>
 											<div class="food_text">
 												<p>쑥갓 양상추무침</p>
@@ -1469,7 +1469,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/oneweek/thu/dinner/side3.png" alt="배추김치">
+												<img src="../assets/oneweek/fri/dinner/side3.png" alt="배추김치">
 											</div>
 											<div class="food_text">
 												<p>배추김치</p>
