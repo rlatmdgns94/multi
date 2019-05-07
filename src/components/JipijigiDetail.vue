@@ -1,120 +1,54 @@
 <template>
   <div class="jipijigi_detail">
-    <div class="title_img">
-      <img src="../assets/img/diabetes_target.png" alt="당뇨를 관리하는 목표">
-    </div>
-    <div class="source_area">
-      <div class="source_content">
-        <ul class="tag">
-          <li>
-            <span>#당뇨관리</span>
-          </li>
-          <li>
-            <span>#당뇨목표</span>
-          </li>
-        </ul>
-        <p class="text">자세한 정보는 출처를 통해 확인하세요.</p>
-        <ul class="article_area">
-          <li>
-            <span>출처</span>대한당뇨협회
-          </li>
-          <li>
-            <span>링크</span>
-            <a
-              href="http://www.diabetes.or.kr/general/class/medical.php?mode=view&number=322&idx=6"
-            >http://www.diabetes.or.kr/general/class/medical.php?mode=view&number=322&idx=6</a>
-          </li>
-        </ul>
+    <div>
+      <div class="title_img">
+        <img
+          :src="article.bannerUrl ? cdn + article.bannerUrl[0].imageUrl : null"
+          alt="bannerImage"
+        >
+      </div>
+      <div class="content_img">
+        <img :src="article.imageUrl ? cdn + article.imageUrl[0].imageUrl : null">
+      </div>
+      <div class="source_area">
+        <div class="source_content">
+          <div class="info">
+            <ul v-if="article.hashtag" class="tag">
+              <li v-for="tags in article.hashTag.split(' ')" :key="tags">
+                <span>{{ tags }}</span>
+              </li>
+            </ul>
+            <p class="text">자세한 정보는 출처를 통해 확인하세요.</p>
+            <ul class="article_area">
+              <li>
+                <span>출처</span>대한당뇨협회
+              </li>
+              <li>
+                <span>링크</span>
+                <a
+                  href="http://www.diabetes.or.kr/general/class/medical.php?mode=view&number=322&idx=6"
+                >http://www.diabetes.or.kr/general/class/medical.php?mode=view&number=322&idx=6</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div class="recommendation_area">
       <h2 class="recommendation_title">이런 당뇨 정보는 어떠세요?</h2>
       <div class="recommendation_content">
         <ul class="recommendation">
-          <li>
-            <router-link to>
+          <li v-for="article in filteredArticleList" :key="article.title">
+            <router-link :to="{name: 'JipijigiDetail', params: {articleId: article.articleId}}">
               <div class="thumbnail">
-                <img src="../assets/img/jipijigi1.jpg" alt>
+                <img :src="cdn + article.thumbnailUrl[0].imageUrl">
               </div>
               <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
+                <h3 class="thumnail_title">{{ article.title }}</h3>
+                <p class="source">출처 - {{ article.source }}</p>
                 <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
-                  </ul>
-                  <span class="date">2019.04.01</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <div class="thumbnail">
-                <img src="../assets/img/jipijigi1.jpg" alt>
-              </div>
-              <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
-                <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
-                  </ul>
-                  <span class="date">2019.04.01</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <div class="thumbnail">
-                <img src="../assets/img/jipijigi1.jpg" alt>
-              </div>
-              <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
-                <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
-                  </ul>
-                  <span class="date">2019.04.01</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <div class="thumbnail">
-                <img src="../assets/img/jipijigi1.jpg" alt>
-              </div>
-              <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
-                <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
-                  </ul>
-                  <span class="date">2019.04.01</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <div class="thumbnail">
-                <img src="../assets/img/jipijigi1.jpg" alt>
-              </div>
-              <div class="thumbnail_text">
-                <h3 class="thumnail_title">당뇨를 관리하는 목표는?</h3>
-                <p class="source">출처 - 대한당뇨협회</p>
-                <div class="thumbnail_text_bottom">
-                  <ul class="tag">
-                    <li>#당뇨관리</li>
-                    <li>#혈당조절</li>
+                  <ul v-for="tags in article.hashTag.split(' ')" :key="tags" class="tag">
+                    <li>{{ tags }}</li>
                   </ul>
                   <span class="date">2019.04.01</span>
                 </div>
@@ -128,9 +62,21 @@
 </template>
 
 <style lang="scss" scoped>
+.content_img {
+  width: 1000px;
+  margin: 0 auto;
+  img {
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+}
 .source_area {
   background: #fbfbfb;
   padding: 22px 0;
+}
+.source_img {
+  width: 1000px;
+  margin: 0 auto;
 }
 .source_content {
   width: 1000px;
@@ -244,9 +190,6 @@
       float: left;
       margin-right: 5px;
       font-size: 9px;
-      &:last-child {
-        margin: 0;
-      }
     }
   }
   .date {
@@ -257,7 +200,39 @@
 </style>
 
 <script>
+import axios from "axios";
+
+import config from "../utils/config";
 export default {
-  name: "JipijigiDetail"
+  name: "JipijigiDetail",
+  data: function() {
+    return {
+      cdn: config.cdn,
+      article: {},
+      filteredArticleList: []
+    };
+  },
+  async mounted() {
+    const getArticleById = await axios({
+      url: `/v1/articles/${this.$route.params.articleId}`,
+      method: "get"
+    });
+    this.article = getArticleById.data;
+
+    const getArticleListByCategory = await axios({
+      url: `/v1/articles/${getArticleById.data.category}`,
+      method: "get"
+    });
+    this.filteredArticleList = getArticleListByCategory.data;
+  },
+  watch: {
+    $route(to, from) {
+      const id = to.params.articleId;
+      const getArticleById = axios({
+        url: `/v1/articles/${id}`,
+        method: "get"
+      }).then(response => (this.article = response.data));
+    }
+  }
 };
 </script>
