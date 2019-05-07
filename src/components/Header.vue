@@ -21,36 +21,36 @@
               <li>
                 <router-link to="/diet">식단표</router-link>
               </li>
-               <li>
+              <li>
                 <router-link to="/diet">주문하기</router-link>
               </li>
             </ul>
           </li>
           <li>
-            <router-link to="/market" class="menu_arrow">건강당 마켓</router-link>
+            <router-link :to="{path: '/market'}" class="menu_arrow">건강당 마켓</router-link>
             <ul class="submenu">
               <li>
-                <router-link to="/">체험식</router-link>
+                <router-link :to="{path: '/market/1'}">반찬</router-link>
               </li>
               <li>
-                <router-link to="/">반찬</router-link>
+                <router-link :to="{path: '/market/2'}">간식</router-link>
               </li>
               <li>
-                <router-link to="/">간식</router-link>
+                <router-link :to="{path: '/market/3'}">영양제</router-link>
               </li>
             </ul>
           </li>
           <li>
-            <router-link to="/jipijigi" class="menu_arrow">지피지기 당뇨</router-link>
+            <router-link :to="{path: '/jipijigi'}" class="menu_arrow">지피지기 당뇨</router-link>
             <ul class="submenu">
               <li>
-                <router-link to="/">당뇨란?</router-link>
+                <router-link :to="{path: '/jipijigi/1'}">당뇨란?</router-link>
               </li>
               <li>
-                <router-link to="/">당뇨 음식</router-link>
+                <router-link :to="{path: '/jipijigi/2'}">당뇨 음식</router-link>
               </li>
               <li>
-                <router-link to="/">뉴스 정보</router-link>
+                <router-link :to="{path: '/jipijigi/3'}">당뇨 운동</router-link>
               </li>
             </ul>
           </li>

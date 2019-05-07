@@ -17,6 +17,9 @@ import Market2 from "./components/Market2.vue";
 import Market3 from "./components/Market3.vue";
 import MarketDetail from "./components/MarketDetail.vue";
 import Jipijigi from "./components/Jipijigi.vue";
+import Jipijigi1 from "./components/Jipijigi1.vue";
+import Jipijigi2 from "./components/Jipijigi2.vue";
+import Jipijigi3 from "./components/Jipijigi3.vue";
 import JipijigiDetail from "./components/JipijigiDetail.vue";
 import Brand from "./components/Brand.vue";
 import UpdateMember from "./components/UpdateMember.vue";
@@ -122,6 +125,21 @@ export default new Router({
       path: "/jipijigi",
       name: "Jipijigi",
       component: Jipijigi
+    },
+    {
+      path: "/jipijigi/1",
+      name: "Jipijigi1",
+      component: Jipijigi1
+    },
+    {
+      path: "/jipijigi/2",
+      name: "Jipijigi2",
+      component: Jipijigi2
+    },
+    {
+      path: "/jipijigi/3",
+      name: "Jipijigi3",
+      component: Jipijigi3
     },
     {
       path: "/jipijigidetail/:articleId",

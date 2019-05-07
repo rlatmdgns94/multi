@@ -21,13 +21,12 @@
             <p class="text">자세한 정보는 출처를 통해 확인하세요.</p>
             <ul class="article_area">
               <li>
-                <span>출처</span>대한당뇨협회
+                <span>출처</span>
+                {{ article.source }}
               </li>
               <li>
                 <span>링크</span>
-                <a
-                  href="http://www.diabetes.or.kr/general/class/medical.php?mode=view&number=322&idx=6"
-                >http://www.diabetes.or.kr/general/class/medical.php?mode=view&number=322&idx=6</a>
+                <a :href="article.sourceLink" target="_blank">{{ article.sourceLink }}</a>
               </li>
             </ul>
           </div>
@@ -226,12 +225,13 @@ export default {
     this.filteredArticleList = getArticleListByCategory.data;
   },
   watch: {
-    $route(to, from) {
+    async $route(to, from) {
       const id = to.params.articleId;
-      const getArticleById = axios({
+      const getArticleById = await axios({
         url: `/v1/articles/${id}`,
         method: "get"
-      }).then(response => (this.article = response.data));
+      });
+      this.article = getArticleById.data;
     }
   }
 };
