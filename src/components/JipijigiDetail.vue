@@ -13,7 +13,7 @@
       <div class="source_area">
         <div class="source_content">
           <div class="info">
-            <ul v-if="article.hashtag" class="tag">
+            <ul class="tag">
               <li v-for="tags in article.hashTag.split(' ')" :key="tags">
                 <span>{{ tags }}</span>
               </li>
@@ -46,8 +46,8 @@
                 <h3 class="thumnail_title">{{ article.title }}</h3>
                 <p class="source">출처 - {{ article.source }}</p>
                 <div class="thumbnail_text_bottom">
-                  <ul v-for="tags in article.hashTag.split(' ')" :key="tags" class="tag">
-                    <li>{{ tags }}</li>
+                  <ul class="tag">
+                    <li v-for="tags in article.hashTag.split(' ')" :key="tags">{{ tags }}</li>
                   </ul>
                   <span class="date">2019.04.01</span>
                 </div>
@@ -187,7 +187,7 @@
     max-width: 180px;
     li {
       float: left;
-      margin-right: 5px;
+      margin-right: 3px;
       font-size: 9px;
     }
   }
