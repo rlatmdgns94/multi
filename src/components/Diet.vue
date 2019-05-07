@@ -63,6 +63,12 @@
           <li>
             <TwoWeek/>            
           </li>
+          <li>
+            <ThreeWeek/>            
+          </li>
+          <li>
+            <FourWeek/>            
+          </li>
         </ul>
         <div id="btn_gallery">
           <router-link to="#" class="btn_gallery_prev off">
@@ -887,10 +893,14 @@
 <script>
 import OneWeek from "./OneWeek.vue";
 import TwoWeek from "./TwoWeek.vue";
+import ThreeWeek from "./ThreeWeek.vue";
+import FourWeek from "./FourWeek.vue";
 export default {
   components: {
     OneWeek,
     TwoWeek,
+    ThreeWeek,
+    FourWeek,
   },
   name: "Diet",
   data: function() {
