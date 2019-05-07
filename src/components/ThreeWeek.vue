@@ -1491,6 +1491,6 @@
 
 <script>
 export default {
-  name: "TwoWeek",
+  name: "ThreeWeek",
 };
 </script>

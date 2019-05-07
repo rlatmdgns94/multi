@@ -67,7 +67,7 @@
             <ThreeWeek/>            
           </li>
           <li>
-            <TwoWeek/>            
+            <FourWeek/>            
           </li>
         </ul>
         <div id="btn_gallery">
@@ -900,7 +900,7 @@ export default {
     OneWeek,
     TwoWeek,
     ThreeWeek,
-    fourWeek,
+    FourWeek,
   },
   name: "Diet",
   data: function() {
