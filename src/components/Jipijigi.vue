@@ -78,6 +78,7 @@
         <ul class="jipijigi_information">
           <li>
             <router-link to="/jipijigidetail">
+              <div class="jipijigi_category">당뇨란?</div>
               <div class="thumbnail">
                 <img src="../assets/img/jipijigi1.jpg" alt>
               </div>
@@ -289,6 +290,7 @@
     margin-left: 20px;
     margin-bottom: 24px;
     a {
+      position:relative;
       display: block;
       width: 283px;
       color: #000;
@@ -362,6 +364,17 @@
       }
     }
   }
+}
+.jipijigi_category{
+  position:absolute;
+  top:17px;
+  left:15px;
+  display: inline-block;
+  background: rgba(133, 175, 75, 0.6);
+  padding:5px 11px;
+  font-size:9px;
+  color:#fff;
+  border-radius: 30px;
 }
 </style>
 
