@@ -162,6 +162,7 @@
 }
 .thumbnail_text {
   padding: 20px 20px;
+  text-align: left;
   .thumnail_title {
     max-width: 245px;
     overflow: hidden;
