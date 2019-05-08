@@ -71,10 +71,10 @@
           </li>
         </ul>
         <div id="btn_gallery">
-          <router-link to="#" class="btn_gallery_prev off">
+          <router-link to="#none" class="btn_gallery_prev off">
             <img src="../assets/img/btn_prev.png" alt="이전버튼">
           </router-link>
-          <router-link to="#" class="btn_gallery_next">
+          <router-link to="#none" class="btn_gallery_next">
             <img src="../assets/img/btn_next.png" alt="다음버튼">
           </router-link>
         </div>

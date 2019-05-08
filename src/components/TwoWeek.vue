@@ -1296,13 +1296,13 @@
 											</div>
 											<div class="food_text">
 												<p>양송이버섯볶음</p>
-												<p>양송이버섯 70g, 청홍피망 10g씩</p>
+												<p>양송이버섯 70g, 청홍피망 10g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
 												<img src="../assets/twoweek/wed/dinner/side3.jpg" alt="파김치">
-											</div>jpg
+											</div>
 											<div class="food_text">
 												<p>파김치</p>
 												<p>파김치 50g</p>
