@@ -86,8 +86,8 @@
                 <h3 class="thumnail_title">{{ article.title }}</h3>
                 <p class="source">출처 - {{ article.source }}</p>
                 <div class="thumbnail_text_bottom">
-                  <ul v-for="tags in article.hashTag.split(' ')" :key="tags" class="tag">
-                    <li>{{tags}}</li>
+                  <ul class="tag">
+                    <li v-for="tags in article.hashTag.split(' ')" :key="tags">{{tags}}</li>
                   </ul>
                   <span class="date">2019.04.01</span>
                 </div>
@@ -310,9 +310,9 @@ export default {
         case 1:
           return "당뇨란?";
         case 2:
-          return "당뇨 음식";
+          return "음식";
         case 3:
-          return "당뇨 운동";
+          return "운동";
         default:
           return null;
       }
