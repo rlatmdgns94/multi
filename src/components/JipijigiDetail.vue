@@ -14,7 +14,7 @@
         <div class="source_content">
           <div class="info">
             <ul class="tag">
-              <li v-for="tags in article.hashTag.split(' ')" :key="tags">
+              <li v-for="tags in hashTags" :key="tags">
                 <span>{{ tags }}</span>
               </li>
             </ul>
@@ -208,6 +208,7 @@ export default {
     return {
       cdn: config.cdn,
       article: {},
+      hashTags: [],
       filteredArticleList: []
     };
   },
@@ -217,6 +218,7 @@ export default {
       method: "get"
     });
     this.article = getArticleById.data;
+    this.hashTags = this.article.hashTag.split(" ");
 
     const getArticleListByCategory = await axios({
       url: `/v1/articles/${getArticleById.data.category}`,

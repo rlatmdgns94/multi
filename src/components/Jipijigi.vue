@@ -310,9 +310,9 @@ export default {
         case 1:
           return "당뇨란?";
         case 2:
-          return "당뇨 음식";
+          return "음식";
         case 3:
-          return "당뇨 운동";
+          return "운동";
         default:
           return null;
       }

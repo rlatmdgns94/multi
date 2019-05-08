@@ -105,6 +105,7 @@
   display: inline-block;
   border-bottom: 1px solid #85af4b;
   input {
+    width: 200px;
     border: 0;
     padding: 0;
     background: url("../assets/img/search.png") no-repeat left center;
