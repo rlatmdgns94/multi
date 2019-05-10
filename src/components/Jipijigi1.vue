@@ -35,41 +35,51 @@
                 포도당으로 변한 다음 혈액으로 흡수됩니다. 흡수된 포도당이 우리 몸
                 의 세포들에서 이용되기 위해서는 …
               </p>
-              <router-link to class="slide_more">더 보기</router-link>
+
+              <router-link
+                :to="{name: 'JipijigiDetail', params: {articleId: '5cd186e7f7590fc34b847f1a'}}"
+                class="slide_more"
+              >더 보기</router-link>
             </div>
           </li>
           <li>
             <img src="../assets/img/jipijigi_slide2.jpg" alt>
             <div class="slide_text">
-              <span>당뇨 음식 - 지피지기 당뇨</span>
+              <span>당뇨 운동 - 지피지기 당뇨</span>
               <h2 class="text_title">
-                <strong>당뇨에 좋은 음식은?</strong>
+                <strong>당뇨병 환자를 위한 운동</strong>
               </h2>
               <p class="text_explanation">
-                당뇨병이란 혈액중의 포도당(혈당)이 높아서 소변으로 포도당이 넘쳐
-                나오는데서 지어진 이름입니다. 포도당은 우리가 먹는 음식물 중 탄수
-                화물의 기본 구성성분입니다. 탄수화물은 위장에서 소화효소에 의해
-                포도당으로 변한 다음 혈액으로 흡수됩니다. 흡수된 포도당이 우리 몸
-                의 세포들에서 이용되기 위해서는 …
+                당뇨병 환자는 운동습관을 잘 들여야 한다. 제대로 운동하면 혈당 저하
+                나 병 진행을 더디게 하지만, 잘못 운동하면 오히려 저혈당이나 혼수상
+                태 등을 유발할 수 있다. 당뇨병 환자를 위한 운동수칙 3가지를 알아보
+                자. 1. 시간 및 강도 매일 규칙적으로 할 수 있는 가벼운 전신운동이 좋
+                다. 유산소운동은 적어도 20분 이상~1시간 미만으로 하고 …
               </p>
-              <router-link to class="slide_more">더 보기</router-link>
+              <router-link
+                :to="{name: 'JipijigiDetail', params: {articleId: '5cd18600f7590fc34b847f16'}}"
+                class="slide_more"
+              >더 보기</router-link>
             </div>
           </li>
           <li>
             <img src="../assets/img/jipijigi_slide3.jpg" alt>
             <div class="slide_text">
-              <span>당뇨 음식 - 지피지기 당뇨</span>
+              <span>당뇨란? - 지피지기 당뇨</span>
               <h2 class="text_title">
-                <strong>당뇨에 좋은 음식은?</strong>
+                <strong>당뇨병의 종류에 대해서</strong>
               </h2>
               <p class="text_explanation">
-                당뇨병이란 혈액중의 포도당(혈당)이 높아서 소변으로 포도당이 넘쳐
-                나오는데서 지어진 이름입니다. 포도당은 우리가 먹는 음식물 중 탄수
-                화물의 기본 구성성분입니다. 탄수화물은 위장에서 소화효소에 의해
-                포도당으로 변한 다음 혈액으로 흡수됩니다. 흡수된 포도당이 우리 몸
-                의 세포들에서 이용되기 위해서는 …
+                제 1형 당뇨병 - 소아 당뇨병 또는 인슐린 의존성 당뇨병이라고 알려진
+                제1 형 당뇨병은우리 몸에서 인슐린이 분비되지 않기 때문에 발생합니
+                다. 당뇨병 환자의5~10% 정도가 제1형 당뇨병이며 대개 어린이나 청
+                소년이지만 모든 연령층에서도 발병될 수 있습니다. 또한 마른 사람이
+                나 정상 체중인 사람들 도 발병될 수 있습니다. …
               </p>
-              <router-link to class="slide_more">더 보기</router-link>
+              <router-link
+                :to="{name: 'JipijigiDetail', params: {articleId: '5cd18552f7590fc34b847f12'}}"
+                class="slide_more"
+              >더 보기</router-link>
             </div>
           </li>
         </ul>
@@ -295,7 +305,8 @@ export default {
       $(".slide").bxSlider({
         pager: "true",
         auto: "true",
-        controls: "true"
+        controls: "true",
+        touchEnabled: navigator.maxTouchPoints > 0
       });
     });
     const getArticleList = await axios({
