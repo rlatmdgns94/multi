@@ -35,7 +35,11 @@
                 포도당으로 변한 다음 혈액으로 흡수됩니다. 흡수된 포도당이 우리 몸
                 의 세포들에서 이용되기 위해서는 …
               </p>
-              <router-link to class="slide_more">더 보기</router-link>
+
+              <router-link
+                :to="{name: 'JipijigiDetail', params: {articleId: '5cd186e7f7590fc34b847f1a'}}"
+                class="slide_more"
+              >더 보기</router-link>
             </div>
           </li>
           <li>
@@ -52,7 +56,10 @@
                 자. 1. 시간 및 강도 매일 규칙적으로 할 수 있는 가벼운 전신운동이 좋
                 다. 유산소운동은 적어도 20분 이상~1시간 미만으로 하고 …
               </p>
-              <router-link to class="slide_more">더 보기</router-link>
+              <router-link
+                :to="{name: 'JipijigiDetail', params: {articleId: '5cd18600f7590fc34b847f16'}}"
+                class="slide_more"
+              >더 보기</router-link>
             </div>
           </li>
           <li>
@@ -69,7 +76,10 @@
                 소년이지만 모든 연령층에서도 발병될 수 있습니다. 또한 마른 사람이
                 나 정상 체중인 사람들 도 발병될 수 있습니다. …
               </p>
-              <router-link to class="slide_more">더 보기</router-link>
+              <router-link
+                :to="{name: 'JipijigiDetail', params: {articleId: '5cd18552f7590fc34b847f12'}}"
+                class="slide_more"
+              >더 보기</router-link>
             </div>
           </li>
         </ul>
@@ -229,7 +239,7 @@
   overflow: hidden;
   margin-top: 22px;
   .tag {
-     overflow: hidden;
+    overflow: hidden;
     float: left;
     max-width: 180px;
     max-height: 21px;
