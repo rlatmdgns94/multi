@@ -229,8 +229,10 @@
   overflow: hidden;
   margin-top: 22px;
   .tag {
+     overflow: hidden;
     float: left;
     max-width: 180px;
+    max-height: 21px;
     li {
       float: left;
       margin-right: 5px;
