@@ -2,7 +2,7 @@
 	<div>
 		<div class="week_diet_wrap content">
 			<div class="week_diet_top">
-				<h3 class="week_diet_title">2주차</h3>
+				<h3 class="week_diet_title">4주차</h3>
 				<p class="week_diet_text">메인 식단 표기, 드시려는 식단명을 클릭하셔서 상세정보를 확인하세요.</p>
 			</div>
 			<table class="week_diet">
@@ -30,11 +30,11 @@
 								<dl>
 									<dt>아침</dt>
 									<dd>
-										<em>소고기 채소 불고기</em>
+										<em>아삭이고추 양파무침</em>
 									</dd>
 									<dd>흑미밥</dd>
-									<dd>마늘쫑볶음</dd>
-									<dd>오이 양파 생채</dd>
+									<dd>꽈리고추찜</dd>
+									<dd>김 실파무침</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -47,11 +47,11 @@
 								</div>
 								<div class="detail_bottom">
 									<span class="detail_title"><strong>아침식단</strong></span>
-									<p>흑미밥 + 아욱 된장국 + 소고기 채소 불고기 + 마늘쫑볶음 + 오이 양파 생채 + 열무 김치<i class="detail_bar"></i>간식 : 황도 복숭아, 우유</p>
+									<p>흑미밥 + 재첩 맑은국 + 꽈리고추찜 + 아삭이고추 양파무침 + 김 실파무침 + 배추 김치<i class="detail_bar"></i>간식 : 대추, 우유</p>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/morning/rice.jpg" alt="흑미밥">
+												<img src="../assets/fourweek/mon/morning/rice.jpg" alt="흑미밥">
 											</div>
 											<div class="food_text">
 												<p>흑미밥</p>
@@ -60,63 +60,63 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/morning/main.jpg" alt="소고기 채소 불고기">
+												<img src="../assets/fourweek/mon/morning/side1.jpg" alt="꽈리고추찜">
 											</div>
 											<div class="food_text">
-												<p>소고기 채소 불고기(아침메인)</p>
-												<p>소고기 40g, 깻잎 2g, 양파 10g, 당근 5g</p>
+												<p>꽈리고추찜</p>
+												<p>꽈리고추 70g, 밀가루 10g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/morning/side1.jpg" alt="오이 양파 생채">
+												<img src="../assets/fourweek/mon/morning/side2.jpg" alt="김 실파무침">
 											</div>
 											<div class="food_text">
-												<p>오이 양파 생채</p>
-												<p>오이 70g, 양파 35g</p>
+												<p>김 실파무침</p>
+												<p>김 4g, 실파 5g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/morning/dessert1.jpg" alt="황도 복숭아">
+												<img src="../assets/fourweek/mon/morning/dessert1.jpg" alt="대추">
 											</div>
 											<div class="food_text">
-												<p>황도 복숭아</p>
-												<p>150g</p>
+												<p>대추</p>
+												<p>50g</p>
 											</div>
 										</li>
 									</ul>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/morning/soup.jpg" alt="아욱 된장국">
+												<img src="../assets/fourweek/mon/morning/soup.jpg" alt="재첩 맑은국">
 											</div>
 											<div class="food_text">
-												<p>아욱 된장국</p>
+												<p>재첩 맑은국</p>
 												<p>아욱 70g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/morning/side2.jpg" alt="마늘쫑볶음">
+												<img src="../assets/fourweek/mon/morning/main.jpg" alt="아삭이고추 양파무침(아침메인)">
 											</div>
 											<div class="food_text">
-												<p>마늘쫑볶음</p>
-												<p>마늘쫑 40g</p>
+												<p>아삭이고추 양파무침(아침메인)</p>
+												<p>아삭이고추 70g, 양파 35g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/morning/side3.jpg" alt="열무 김치">
+												<img src="../assets/fourweek/mon/morning/side3.jpg" alt="배추 김치">
 											</div>
 											<div class="food_text">
-												<p>열무 김치</p>
-												<p>열무 김치 50g</p>
+												<p>배추 김치</p>
+												<p>배추 김치 50g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/morning/dessert2.jpg" alt="우유">
+												<img src="../assets/fourweek/mon/morning/dessert2.jpg" alt="우유">
 											</div>
 											<div class="food_text">
 												<p>우유</p>
@@ -133,11 +133,11 @@
 								<dl>
 									<dt>아침</dt>
 									<dd>
-										<em>연근 초무침</em>
+										<em>시래기 콩가루무침</em>
 									</dd>
 									<dd>율무밥</dd>
-									<dd>대파 두부 황태국</dd>
-									<dd>참나물무침</dd>
+									<dd>두부 톳무침</dd>
+									<dd>오이 생채</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -150,11 +150,11 @@
 								</div>
 								<div class="detail_bottom">
 									<span class="detail_title"><strong>아침식단</strong></span>
-									<p>율무밥 + 대파 두부 황태국 + 참나물무침 + 무나물 + 연근 초무침 + 배추 김치<i class="detail_bar"></i>간식 : 포도, 우유</p>
+									<p>율무밥 + 양파 부추국 + 두부 톳무침 + 오이 생채 + 시래기 콩가루무침 + 깍두기<i class="detail_bar"></i>간식 : 사과, 우유</p>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/morning/rice.jpg" alt="율무밥">
+												<img src="../assets/fourweek/tue/morning/rice.jpg" alt="율무밥">
 											</div>
 											<div class="food_text">
 												<p>율무밥</p>
@@ -163,28 +163,28 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/morning/side1.jpg" alt="참나물무침">
+												<img src="../assets/fourweek/tue/morning/side1.jpg" alt="두부 톳무침">
 											</div>
 											<div class="food_text">
-												<p>참나물무침</p>
-												<p>참나물 70g, 양파 20g</p>
+												<p>두부 톳무침</p>
+												<p>두부 60g, 톳 35g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/morning/main.jpg" alt="연근 초무침">
+												<img src="../assets/fourweek/tue/morning/main.jpg" alt="시래기 콩가루무침(아침메인)">
 											</div>
 											<div class="food_text">
-												<p>연근 초무침(아침메인)</p>
-												<p>연근 70g</p>
+												<p>시래기 콩가루무침(아침메인)</p>
+												<p>시래기 70g, 콩가루 5g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/morning/dessert1.jpg" alt="포도">
+												<img src="../assets/fourweek/tue/morning/dessert1.jpg" alt="사과">
 											</div>
 											<div class="food_text">
-												<p>포도</p>
+												<p>사과</p>
 												<p>80g</p>
 											</div>
 										</li>
@@ -192,34 +192,34 @@
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/morning/soup.jpg" alt="대파 두부 황태국">
+												<img src="../assets/fourweek/tue/morning/soup.jpg" alt="양파 부추국">
 											</div>
 											<div class="food_text">
-												<p>대파 두부 황태국</p>
-												<p>황태 15g, 두부 80g, 대파 40g</p>
+												<p>양파 부추국/p>
+												<p>양파 35g, 부추 35g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/morning/side2.jpg" alt="무나물">
+												<img src="../assets/fourweek/tue/morning/side2.jpg" alt="오이 생채">
 											</div>
 											<div class="food_text">
-												<p>무나물</p>
-												<p>무 70g</p>
+												<p>오이 생채</p>
+												<p>오이 70g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/morning/side3.jpg" alt="배추 김치">
+												<img src="../assets/fourweek/tue/morning/side3.jpg" alt="깍두기">
 											</div>
 											<div class="food_text">
-												<p>배추 김치</p>
-												<p>배추 김치 50g</p>
+												<p>깍두기</p>
+												<p>깍두기 50g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/morning/dessert2.jpg" alt="우유">
+												<img src="../assets/fourweek/tue/morning/dessert2.jpg" alt="우유">
 											</div>
 											<div class="food_text">
 												<p>우유</p>
@@ -236,11 +236,11 @@
 								<dl>
 									<dt>아침</dt>
 									<dd>
-										<em>애호박 새우살전</em>
+										<em>흑임자 팽이버섯 무침</em>
 									</dd>
-									<dd>흑미 보리밥</dd>
-									<dd>채소 스틱</dd>
-									<dd>배추 된장무침</dd>
+									<dd>현미 조밥</dd>
+									<dd>가지나물</dd>
+									<dd>데친 브로콜리</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -253,179 +253,76 @@
 								</div>
 								<div class="detail_bottom">
 									<span class="detail_title"><strong>아침식단</strong></span>
-									<p>흑미 보리밥 + 소고기 무국 + 애호박 새우살전 + 배추 된장무침 + 채소 스틱 + 깍두기<i class="detail_bar"></i>간식 : 방울토마토, 우유</p>
+									<p><i class="detail_bar">현미 조밥 + 어묵 맑은국 + 흑임자 팽이버섯무침 + 가지나물 + 데친 브로콜리 + 백련초 인삼 백김치</i>간식 : 금귤, 우유</p>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/morning/rice.jpg" alt="보리밥">
+												<img src="../assets/fourweek/wed/morning/rice.jpg" alt="현미 조밥">
 											</div>
 											<div class="food_text">
-												<p>흑미 보리밥</p>
-												<p>쌀 60g, 흑미 10g, 보리 20g</p>
+												<p>현미 조밥</p>
+												<p>쌀 50g, 현미 30g, 조 10g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/morning/main.jpg" alt="애호박 새우나물">
+												<img src="../assets/fourweek/wed/morning/main.jpg" alt="흑임자 팽이버섯무침(아침메인)">
 											</div>
 											<div class="food_text">
-												<p>애호박 새우살전(아침 메인)</p>
-												<p>애호박 70g, 새우살 50g</p>
+												<p>흑임자 팽이버섯무침(아침메인)</p>
+												<p>팽이버섯 50g, 당근 5g, 영양부추 20g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/morning/side1.jpg" alt="채소 스틱">
+												<img src="../assets/fourweek/wed/morning/side1.jpg" alt="데친 브로콜리">
 											</div>
 											<div class="food_text">
-												<p>채소 스틱</p>
-												<p>오이 35g, 당근 35g, 풋고추 35g</p>
+												<p>데친 브로콜리</p>
+												<p>브로콜리 70g, 초고추장 10g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/morning/dessert1.jpg" alt="체리">
+												<img src="../assets/fourweek/wed/morning/dessert1.jpg" alt="금귤">
 											</div>
 											<div class="food_text">
-												<p>방울토마토</p>
-												<p>300g</p>
+												<p>금귤</p>
+												<p>60g</p>
 											</div>
 										</li>
 									</ul>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/morning/soup.jpg" alt="소고기 무국">
+												<img src="../assets/fourweek/wed/morning/soup.jpg" alt="어묵 맑은국">
 											</div>
 											<div class="food_text">
-												<p>소고기 무국</p>
-												<p>소고기 40g, 무 70g</p>
+												<p>어묵 맑은국</p>
+												<p>찐 어묵 50g, 무 35g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/morning/side2.jpg" alt="배추 된장무침">
+												<img src="../assets/fourweek/wed/morning/side2.jpg" alt="가지나물">
 											</div>
 											<div class="food_text">
-												<p>배추 된장무침</p>
-												<p>배추 40g</p>
+												<p>가지나물</p>
+												<p>가지 70g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/morning/side3.jpg" alt="깍두기">
+												<img src="../assets/fourweek/wed/morning/side3.jpg" alt="백련초 인삼 백김치">
 											</div>
 											<div class="food_text">
-												<p>깍두기</p>
-												<p>깍두기 50g</p>
+												<p>백련초 인삼 백김치</p>
+												<p>백년초 20g, 인삼 10g, 배추 50g, 무 15g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/morning/dessert2.jpg" alt="우유">
-											</div>
-											<div class="food_text">
-												<p>우유</p>
-												<p>200g</p>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<!-- 상세 메뉴 -->
-						</td>
-						<td>
-							<div class="menu_box">
-								<dl>
-									<dt>아침</dt>
-									<dd>
-										<em>소고기볶음</em>
-									</dd>
-									<dd>차조밥</dd>
-									<dd>고구마순나물</dd>
-									<dd>노각 생채</dd>
-								</dl>
-							</div>
-							<!-- 상세 메뉴 -->
-							<div class="menu_detail">
-								<div class="detail_top">
-									<p class="top_title">목요일 배송상품</p>
-								<router-link to="#" class="detail_close">
-										<img src="../assets/img/cancel.png" alt="상세 식단 닫기">
-									</router-link>
-								</div>
-								<div class="detail_bottom">
-									<span class="detail_title"><strong>아침식단</strong></span>
-									<p>차조밥 + 배추 된장국 + 소고기볶음 + 고구마순나물 + 노각 생채 + 부추 김치<i class="detail_bar"></i>간식 : 자두, 두유</p>
-									<ul class="food_list">
-										<li>
-											<div class="food_img">
-												<img src="../assets/twoweek/thu/morning/rice.jpg" alt="차조밥">
-											</div>
-											<div class="food_text">
-												<p>차조밥</p>
-												<p>쌀 70g, 차조 20g</p>
-											</div>
-										</li>
-										<li>
-											<div class="food_img">
-												<img src="../assets/twoweek/thu/morning/main.jpg" alt="소고기볶음">
-											</div>
-											<div class="food_text">
-												<p>소고기볶음(아침메인)</p>
-												<p>소고기 40g, 양파 35g</p>
-											</div>
-										</li>
-										<li>
-											<div class="food_img">
-												<img src="../assets/twoweek/thu/morning/side1.jpg" alt="노각 생채">
-											</div>
-											<div class="food_text">
-												<p>노각 생채</p>
-												<p>노각 70g</p>
-											</div>
-										</li>
-										<li>
-											<div class="food_img">
-												<img src="../assets/twoweek/thu/morning/dessert1.jpg" alt="자두">
-											</div>
-											<div class="food_text">
-												<p>자두</p>
-												<p>150g</p>
-											</div>
-										</li>
-									</ul>
-									<ul class="food_list">
-										<li>
-											<div class="food_img">
-												<img src="../assets/twoweek/thu/morning/soup.jpg" alt="배추 된장국">
-											</div>
-											<div class="food_text">
-												<p>배추 된장국</p>
-												<p>배추 70g</p>
-											</div>
-										</li>
-										<li>
-											<div class="food_img">
-												<img src="../assets/twoweek/thu/morning/side2.jpg" alt="고구마순나물">
-											</div>
-											<div class="food_text">
-												<p>고구마순나물</p>
-												<p>고구마순 70g</p>
-											</div>
-										</li>
-										<li>
-											<div class="food_img">
-												<img src="../assets/twoweek/thu/morning/side3.jpg" alt="부추 김치">
-											</div>
-											<div class="food_text">
-												<p>부추 김치</p>
-												<p>부추 김치 50g</p>
-											</div>
-										</li>
-										<li>
-											<div class="food_img">
-												<img src="../assets/twoweek/thu/morning/dessert2.jpg" alt="두유">
+												<img src="../assets/fourweek/wed/morning/dessert2.jpg" alt="두유">
 											</div>
 											<div class="food_text">
 												<p>두유</p>
@@ -442,11 +339,114 @@
 								<dl>
 									<dt>아침</dt>
 									<dd>
-										<em>오징어볶음</em>
+										<em>꼬막 양념무침</em>
 									</dd>
-									<dd>현미밥</dd>
-									<dd>다시마 애호박 맑은국</dd>
-									<dd>풋고추 된장무침</dd>
+									<dd>현미 수수밥</dd>
+									<dd>무말랭이무침</dd>
+									<dd>미역 적양파샐러드</dd>
+								</dl>
+							</div>
+							<!-- 상세 메뉴 -->
+							<div class="menu_detail">
+								<div class="detail_top">
+									<p class="top_title">목요일 배송상품</p>
+								<router-link to="#" class="detail_close">
+										<img src="../assets/img/cancel.png" alt="상세 식단 닫기">
+									</router-link>
+								</div>
+								<div class="detail_bottom">
+									<span class="detail_title"><strong>아침식단</strong></span>
+									<p>현미 수수밥 + 솎음배추국 + 꼬막 양념무침 + 무말랭이무침 + 미역 적양파샐러드 + 깍두기<i class="detail_bar"></i>간식 : 단감, 우유</p>
+									<ul class="food_list">
+										<li>
+											<div class="food_img">
+												<img src="../assets/fourweek/thu/morning/rice.jpg" alt="흑미 수수밥">
+											</div>
+											<div class="food_text">
+												<p>흑미 수수밥</p>
+												<p>쌀 50g, 흑미 10g, 수수 30g</p>
+											</div>
+										</li>
+										<li>
+											<div class="food_img">
+												<img src="../assets/fourweek/thu/morning/main.jpg" alt="꼬막 양념무침(아침메인)">
+											</div>
+											<div class="food_text">
+												<p>꼬막 양념무침(아침메인)</p>
+												<p>꼬막 70g</p>
+											</div>
+										</li>
+										<li>
+											<div class="food_img">
+												<img src="../assets/fourweek/thu/morning/side1.jpg" alt="미역 적양파샐러드">
+											</div>
+											<div class="food_text">
+												<p>미역 적양파샐러드</p>
+												<p>생미역 70g, 적양파 35g</p>
+											</div>
+										</li>
+										<li>
+											<div class="food_img">
+												<img src="../assets/fourweek/thu/morning/dessert1.jpg" alt="단감">
+											</div>
+											<div class="food_text">
+												<p>단감</p>
+												<p>50g</p>
+											</div>
+										</li>
+									</ul>
+									<ul class="food_list">
+										<li>
+											<div class="food_img">
+												<img src="../assets/fourweek/thu/morning/soup.jpg" alt="솎음배추국">
+											</div>
+											<div class="food_text">
+												<p>솎음배추국</p>
+												<p>솎음배추 70g</p>
+											</div>
+										</li>
+										<li>
+											<div class="food_img">
+												<img src="../assets/fourweek/thu/morning/side2.jpg" alt="무말랭이무침">
+											</div>
+											<div class="food_text">
+												<p>무말랭이무침</p>
+												<p>무말랭이 7g</p>
+											</div>
+										</li>
+										<li>
+											<div class="food_img">
+												<img src="../assets/fourweek/thu/morning/side3.jpg" alt="깍두기">
+											</div>
+											<div class="food_text">
+												<p>깍두기</p>
+												<p>깍두기 50g</p>
+											</div>
+										</li>
+										<li>
+											<div class="food_img">
+												<img src="../assets/fourweek/thu/morning/dessert2.jpg" alt="우유">
+											</div>
+											<div class="food_text">
+												<p>우유</p>
+												<p>200g</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- 상세 메뉴 -->
+						</td>
+						<td>
+							<div class="menu_box">
+								<dl>
+									<dt>아침</dt>
+									<dd>
+										<em>고등어 무조림</em>
+									</dd>
+									<dd>흑미밥</dd>
+									<dd>숙주 당근채나물</dd>
+									<dd>양상추샐러드</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -459,41 +459,41 @@
 								</div>
 								<div class="detail_bottom">
 									<span class="detail_title"><strong>아침식단</strong></span>
-									<p>현미밥 + 다시마 애호박 맑은 국 + 오징어볶음 + 풋고추 된장무침 + 머위대나물 + 깍두기<i class="detail_bar"></i>간식 : 참외, 플레인 요거트</p>
+									<p>흑미밥 + 시금치국 + 고등어 무조림 + 숙주 당근채나물 + 양상추샐러드 + 배추 김치<i class="detail_bar"></i>간식 : 귤, 두유</p>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/morning/rice.jpg" alt="현미밥">
+												<img src="../assets/fourweek/fri/morning/rice.jpg" alt="흑미밥">
 											</div>
 											<div class="food_text">
-												<p>현미밥</p>
-												<p>쌀 70g, 현미 20g</p>
+												<p>흑미밥</p>
+												<p>쌀 70g, 흑미 20g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/morning/main.jpg" alt="오징어볶음(아침 메인)">
+												<img src="../assets/fourweek/fri/morning/main.jpg" alt="고등어 무조림(아침 메인)">
 											</div>
 											<div class="food_text">
-												<p>오징어볶음(아침메인)</p>
-												<p>오징어 50g, 양파 35g, 당근 10g, 풋고추 10g</p>
+												<p>고등어 무조림(아침메인)</p>
+												<p>고등어 50g, 무 35g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/morning/side1.jpg" alt="머위대나물">
+												<img src="../assets/fourweek/fri/morning/side1.jpg" alt="양상추샐러드">
 											</div>
 											<div class="food_text">
-												<p>머위대나물</p>
-												<p>머위대 70g</p>
+												<p>양상추샐러드</p>
+												<p>양상추 70g, 당근 20g, 적채 10g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/morning/dessert1.jpg" alt="참외">
+												<img src="../assets/fourweek/fri/morning/dessert1.jpg" alt="귤">
 											</div>
 											<div class="food_text">
-												<p>참외</p>
+												<p>귤</p>
 												<p>120g</p>
 											</div>
 										</li>
@@ -501,38 +501,38 @@
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/morning/soup.jpg" alt="다시마 애호박 맑은국">
+												<img src="../assets/fourweek/fri/morning/soup.jpg" alt="시금치국">
 											</div>
 											<div class="food_text">
-												<p>다시마 애호박 맑은국</p>
-												<p>애호박 70g, 건다시마 1g</p>
+												<p>시금치국</p>
+												<p>시금치 70g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/morning/side2.jpg" alt="아스파라거스">
+												<img src="../assets/fourweek/fri/morning/side2.jpg" alt="숙주 당근채나물">
 											</div>
 											<div class="food_text">
-												<p>풋고추 된장무침</p>
-												<p>풋고추 70g</p>
+												<p>숙주 당근채나물</p>
+												<p>숙주 70g, 당근 20g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/morning/side3.jpg" alt="깍두기">
+												<img src="../assets/fourweek/fri/morning/side3.jpg" alt="배추 김치">
 											</div>
 											<div class="food_text">
-												<p>깍두기</p>
-												<p>깍두기 50g</p>
+												<p>배추 김치</p>
+												<p>배추 김치 50g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/morning/dessert2.jpg" alt="요거트">
+												<img src="../assets/fourweek/fri/morning/dessert2.jpg" alt="두유">
 											</div>
 											<div class="food_text">
-												<p>플레인 요거트</p>
-												<p>100g</p>
+												<p>두유</p>
+												<p>200g</p>
 											</div>
 										</li>
 									</ul>
@@ -548,11 +548,11 @@
 								<dl>
 									<dt>점심</dt>
 									<dd>
-										<em>고등어조림</em>
+										<em>소고기 샤브샤브</em>
 									</dd>
-									<dd>감자 보리밥</dd>
-									<dd>연두부 계란국</dd>
-									<dd>미나리 생채</dd>
+									<dd>현미밥</dd>
+									<dd>박고지 묵은 김치 만두</dd>
+									<dd>양배추 무침</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -565,76 +565,76 @@
 								</div>
 								<div class="detail_bottom">
 									<span class="detail_title"><strong>점심식단</strong></span>
-									<p>감자 보리밥 + 연두부 계란국 + 고등어조림 + 콩나물무침 + 미나리생채 + 배추 김치<i class="detail_bar"></i>간식 : 딸기, 우유</p>
+									<p>현미밥 + 소고기 샤브샤브 + 박고지 묵은 김치 만두 + 무볶음 + 양배추무침 + 갓김치<i class="detail_bar"></i>간식 : 연시, 우유</p>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/rice.jpg" alt="감자 보리밥">
+												<img src="../assets/fourweek/mon/lunch/rice.jpg" alt="현미밥">
 											</div>
 											<div class="food_text">
-												<p>감자 보리밥</p>
-												<p>쌀 45g, 보리 30g, 감자 65g</p>
+												<p>현미밥</p>
+												<p>쌀 70g, 현미 20g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/main.jpg" alt="고등어조림">
+												<img src="../assets/fourweek/mon/lunch/side1.jpg" alt="박고지 묵은 김치 만두">
 											</div>
 											<div class="food_text">
-												<p>고등어조림(점심메인)</p>
-												<p>고등어 50g, 대파 10g</p>
+												<p>박고지 묵은 김치 만두</p>
+												<p>마른 박고지 불린 것 35g, 묵은 김치 50g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/side1.jpg" alt="미나리 생채">
+												<img src="../assets/fourweek/mon/lunch/side2.jpg" alt="양배추무침">
 											</div>
 											<div class="food_text">
-												<p>미나리 생채</p>
-												<p>미나리 70g, 무 20g, 양파 10g</p>
+												<p>양배추무침</p>
+												<p>양배추 70g, 당근 10g, 풋고추 10g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/dessert1.jpg" alt="토마토">
+												<img src="../assets/fourweek/mon/lunch/dessert1.jpg" alt="연시">
 											</div>
 											<div class="food_text">
-												<p>토마토</p>
-												<p>350g</p>
+												<p>연시</p>
+												<p>80g</p>
 											</div>
 										</li>
 									</ul>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/soup.jpg" alt="연두부 계란국">
+												<img src="../assets/fourweek/mon/lunch/main.jpg" alt="소고기 샤브샤브">
 											</div>
 											<div class="food_text">
-												<p>연두부 계란국</p>
-												<p>연두부 75g, 계란 1/2개, 애호박 10g, 양파 10g</p>
+												<p>소고기 샤브샤브(점심메인)</p>
+												<p>소고기 40g, 새송이버섯 25g, 청경채 35g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/side2.jpg" alt="콩나물무침">
+												<img src="../assets/fourweek/mon/lunch/side3.jpg" alt="무볶음">
 											</div>
 											<div class="food_text">
-												<p>콩나물무침</p>
-												<p>콩나물 70g</p>
+												<p>무볶음</p>
+												<p>무 70g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/side3.jpg" alt="배추 김치">
+												<img src="../assets/fourweek/mon/lunch/side4.jpg" alt="갓김치">
 											</div>
 											<div class="food_text">
-												<p>배추 김치</p>
-												<p>배추 김치 50g</p>
+												<p>갓김치</p>
+												<p>갓김치 50g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/dessert2.jpg" alt="우유">
+												<img src="../assets/fourweek/mon/lunch/dessert2.jpg" alt="우유">
 											</div>
 											<div class="food_text">
 												<p>우유</p>
@@ -651,11 +651,11 @@
 								<dl>
 									<dt>점심</dt>
 									<dd>
-										<em>장어구이와 부추샐러드</em>
+										<em>돼지 구기자볶음</em>
 									</dd>
-									<dd>검은콩 쌀밥</dd>
-									<dd>죽순 느타리버섯볶음</dd>
-									<dd>취나물</dd>
+									<dd>잡곡밥</dd>
+									<dd>더덕 된장무침</dd>
+									<dd>모듬쌈</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -668,76 +668,76 @@
 								</div>
 								<div class="detail_bottom">
 									<span class="detail_title"><strong>점심식단</strong></span>
-									<p>검은콩 쌀밥 + 우뭇가사리 냉국 + 장어구이와 부추샐러드 + 죽순 느타리버섯볶음 + 취나물 + 가지 김치<i class="detail_bar"></i>간식 : 참외, 우유</p>
+									<p>잡곡밥 + 배추 된장국 + 돼지 구기자볶음 + 더덕 된장무침 + 모듬쌈 + 동치미<i class="detail_bar"></i>간식 : 토마토, 우유</p>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/lunch/rice.jpg" alt="검은콩 쌀밥">
+												<img src="../assets/fourweek/tue/lunch/rice.jpg" alt="잡곡밥">
 											</div>
 											<div class="food_text">
-												<p>검은콩 쌀밥</p>
-												<p>쌀 90g, 검은콩 20g</p>
+												<p>잡곡밥</p>
+												<p>쌀 50g, 현미 20g, 기장 10g, 흑미 10g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/lunch/main.jpg" alt="장어구이와 부추샐러드">
+												<img src="../assets/fourweek/tue/lunch/main.jpg" alt="돼지 구기자볶음">
 											</div>
 											<div class="food_text">
-												<p>장어구이와 부추샐러드(점심메인)</p>
-												<p>장어 50g, 부추 35g, 양파 10g, 깻잎 10g, 복분자 10g</p>
+												<p>돼지 구기자볶음(점심메인)</p>
+												<p>돼지안심살 80g, 양배추 20g 마늘 7g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/lunch/side1.jpg" alt="취나물">
+												<img src="../assets/fourweek/tue/lunch/side1.jpg" alt="모듬쌈">
 											</div>
 											<div class="food_text">
-												<p>취나물</p>
-												<p>취나물 70g</p>
+												<p>모듬쌈</p>
+												<p>생다시마 35g, 생미역 35g, 상추 10g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/lunch/dessert1.jpg" alt="참외">
+												<img src="../assets/fourweek/tue/lunch/dessert1.jpg" alt="토마토">
 											</div>
 											<div class="food_text">
-												<p>참외</p>
-												<p>120g</p>
+												<p>토마토</p>
+												<p>350g</p>
 											</div>
 										</li>
 									</ul>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/lunch/soup.jpg" alt="우뭇가사리 냉국">
+												<img src="../assets/fourweek/tue/lunch/soup.jpg" alt="배추 된장국">
 											</div>
 											<div class="food_text">
-												<p>우뭇가사리 냉국</p>
-												<p>우뭇가사리 70g</p>
+												<p>배추 된장국</p>
+												<p>배추 70g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/lunch/side2.jpg" alt="죽순 느타리버섯볶음">
+												<img src="../assets/fourweek/tue/lunch/side2.jpg" alt="더덕 된장무침">
 											</div>
 											<div class="food_text">
-												<p>죽순 느타리버섯볶음</p>
-												<p>죽순 35g, 느타리버섯 50g, 양파 10g, 홍고추 5g</p>
+												<p>더덕 된장무침</p>
+												<p>더덕 40g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/lunch/side3.jpg" alt="가지 김치">
+												<img src="../assets/fourweek/tue/lunch/side3.jpg" alt="동치미">
 											</div>
 											<div class="food_text">
-												<p>가지 김치</p>
-												<p>가지 김치 50g</p>
+												<p>동치미</p>
+												<p>동치미 70g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/dessert2.jpg" alt="우유">
+												<img src="../assets/fourweek/mon/lunch/dessert2.jpg" alt="우유">
 											</div>
 											<div class="food_text">
 												<p>우유</p>
@@ -754,11 +754,11 @@
 								<dl>
 									<dt>점심</dt>
 									<dd>
-										<em>녹차 비빔냉면</em>
+										<em>코다리 무찜</em>
 									</dd>
-									<dd>콩나물 잡채</dd>
-									<dd>메밀전병</dd>
-									<dd>깻잎순나물</dd>
+									<dd>팥밥</dd>
+									<dd>계란말이</dd>
+									<dd>대파 겉절이</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -771,71 +771,80 @@
 								</div>
 								<div class="detail_bottom">
 									<span class="detail_title"><strong>점심식단</strong></span>
-									<p>녹차 비빔냉면 + 콩나물 잡채 + 메밀전병 + 깻잎순나물 + 열무 김치<i class="detail_bar"></i>간식 : 백도 복숭아, 플레인 요거트</p>
+									<p>팥밥 + 매생이국 + 코다리 무찜 + 계란말이 + 대파 겉절이 + 배추 김치 <i class="detail_bar"></i>간식 : 바나나, 우유</p>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/lunch/main.jpg" alt="비빔냉면">
+												<img src="../assets/fourweek/wed/lunch/rice.jpg" alt="팥밥">
 											</div>
 											<div class="food_text">
-												<p>녹차 비빔냉면(점심메인)</p>
-												<p>녹차냉면(건) 60g, 무 10g, 무순 2g</p>
+												<p>팥밥</p>
+												<p>쌀 70g, 팥 20g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/lunch/side1.jpg" alt="메밀전병">
+												<img src="../assets/fourweek/wed/lunch/main.jpg" alt="코다리 무찜">
 											</div>
 											<div class="food_text">
-												<p>메밀전병</p>
-												<p>메밀가루 30g, 배추 김치 50g, 두부 40g, 돈육 40g</p>
+												<p>코다리 무찜(점심메인)</p>
+												<p>코다리 50g, 무 70g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/lunch/side2.jpg" alt="열무 김치">
+												<img src="../assets/fourweek/wed/lunch/side1.jpg" alt="대파 겉절이">
 											</div>
 											<div class="food_text">
-												<p>열무 김치</p>
-												<p>열무 김치 50g</p>
+												<p>대파 겉절이</p>
+												<p>대파 40g, 오이 35g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/lunch/dessert1.jpg" alt="플레인 요거트">
+												<img src="../assets/fourweek/wed/lunch/dessert1.jpg" alt="바나나">
 											</div>
 											<div class="food_text">
-												<p>플레인 요거트</p>
-												<p>100g</p>
+												<p>바나나</p>
+												<p>50g</p>
 											</div>
 										</li>
 									</ul>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/lunch/side3.jpg" alt="콩나물 잡채">
+												<img src="../assets/fourweek/wed/lunch/soup.jpg" alt="매생이국">
 											</div>
 											<div class="food_text">
-												<p>콩나물 잡채</p>
-												<p>닭가슴살 20g, 콩나물 70g, 오이 20g, 당근 15g</p>
+												<p>매생이국</p>
+												<p>매생이 20g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/lunch/side4.jpg" alt="깻잎순나물">
+												<img src="../assets/fourweek/wed/lunch/side2.jpg" alt="계란말이">
 											</div>
 											<div class="food_text">
-												<p>깻잎순나물</p>
-												<p>깻잎순 70g</p>
+												<p>계란말이</p>
+												<p>계란 1개, 당근 10g, 실파 5g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/dessert2.jpg" alt="복숭아">
+												<img src="../assets/fourweek/wed/lunch/side3.jpg" alt="배추 김치">
 											</div>
 											<div class="food_text">
-												<p>백도 복숭아</p>
-												<p>150g</p>
+												<p>배추 김치</p>
+												<p>배추 김치 50g</p>
+											</div>
+										</li>
+										<li>
+											<div class="food_img">
+												<img src="../assets/fourweek/mon/lunch/dessert2.jpg" alt="우유">
+											</div>
+											<div class="food_text">
+												<p>우유</p>
+												<p>200g</p>
 											</div>
 										</li>
 									</ul>
@@ -848,11 +857,11 @@
 								<dl>
 									<dt>점심</dt>
 									<dd>
-										<em>카레 생선 완자전</em>
+										<em>꽁치구이</em>
 									</dd>
-									<dd>현미 붉은 팥밥</dd>
-									<dd>꽈리고추찜</dd>
-									<dd>양배추 레몬 생채</dd>
+									<dd>곤드레 보리밥</dd>
+									<dd>청국장 비지찌개</dd>
+									<dd>죽순 들깨볶음</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -865,80 +874,80 @@
 								</div>
 								<div class="detail_bottom">
 									<span class="detail_title"><strong>점심식단</strong></span>
-									<p>현미 붉은 팥밥 + 육개장 + 카레 생선 완자전 + 꽈리고추찜 + 양배추 레몬 생채 + 석박지<i class="detail_bar"></i> 간식 : 수박, 우유</p>
+									<p>곤드레 보리밥 + 청국장 비지찌개 + 꽁치구이 + 죽순 들깨볶음 + 실파 무 생채 + 갓김치<i class="detail_bar"></i> 간식 : 배, 두유</p>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/thu/lunch/rice.jpg" alt="현미 붉은 팥밥">
+												<img src="../assets/fourweek/thu/lunch/rice.jpg" alt="곤드레 보리밥">
 											</div>
 											<div class="food_text">
-												<p>현미 붉은 팥밥</p>
-												<p>쌀 30g, 현미 30g, 팥 30g</p>
+												<p>곤드레 보리밥</p>
+												<p>쌀 60g, 보리 30g, 곤드레 데친 것 35g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/thu/lunch/main.jpg" alt="카레 생선 완자전">
+												<img src="../assets/fourweek/thu/lunch/main.jpg" alt="꽁치구이">
 											</div>
 											<div class="food_text">
-												<p>카레 생선 완자전(점심메인)</p>
-												<p>흰살생선 25g, 두부 40g, 당근 5g, 양파 10g, 카레 2g</p>
+												<p>꽁치구이(점심메인)</p>
+												<p>꽁치 50g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/thu/lunch/side1.jpg" alt="양배추 레몬 생채">
+												<img src="../assets/fourweek/thu/lunch/side1.jpg" alt="실파 무 생채">
 											</div>
 											<div class="food_text">
-												<p>양배추 레몬 생채</p>
-												<p>양배추 70g, 레몬즙 30g</p>
+												<p>실파 무 생채</p>
+												<p>실파 35g, 무 20g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/thu/lunch/dessert1.jpg" alt="수박">
+												<img src="../assets/fourweek/thu/lunch/dessert1.jpg" alt="배">
 											</div>
 											<div class="food_text">
-												<p>수박</p>
-												<p>150g</p>
+												<p>배</p>
+												<p>110g</p>
 											</div>
 										</li>
 									</ul>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/thu/lunch/soup.jpg" alt="육개장">
+												<img src="../assets/fourweek/thu/lunch/soup.jpg" alt="청국장 비지찌개">
 											</div>
 											<div class="food_text">
-												<p>육개장</p>
-												<p>소고기 40g, 토란대 35g, 숙주 40g, 대파 10g</p>
+												<p>청국장 비지찌개</p>
+												<p>비지 75g, 청국장 20g, 무 30g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/thu/lunch/side2.jpg" alt="꽈리고추찜">
+												<img src="../assets/fourweek/thu/lunch/side2.jpg" alt="죽순 들깨볶음">
 											</div>
 											<div class="food_text">
-												<p>꽈리고추찜</p>
-												<p>꽈리고추 70g, 밀가루 5g</p>
+												<p>죽순 들깨볶음</p>
+												<p>죽순 70g, 들깨 8g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/thu/lunch/side3.jpg" alt="석박지">
+												<img src="../assets/fourweek/thu/lunch/side3.jpg" alt="갓김치">
 											</div>
 											<div class="food_text">
-												<p>석박지</p>
-												<p>석박지 50g</p>
+												<p>갓김치</p>
+												<p>갓김치 50g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/thu/lunch/dessert2.jpg" alt="우유">
+												<img src="../assets/fourweek/thu/lunch/dessert2.jpg" alt="두유">
 											</div>
 											<div class="food_text">
-												<p>우유</p>
-												<p>우유 200g</p>
+												<p>두유</p>
+												<p>두유 200g</p>
 											</div>
 										</li>
 									</ul>
@@ -951,11 +960,11 @@
 								<dl>
 									<dt>점심</dt>
 									<dd>
-										<em>연근 더덕 칡 만두</em>
+										<em>황태 전골</em>
 									</dd>
-									<dd>녹두 닭가슴살죽</dd>
-									<dd>해파리 냉채</dd>
-									<dd>쑥갓 양파무침</dd>
+									<dd>현미 율무밥</dd>
+									<dd>소고기 완자전</dd>
+									<dd>건나물 비빔</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -968,29 +977,29 @@
 								</div>
 								<div class="detail_bottom">
 									<span class="detail_title"><strong>점심식단</strong></span>
-									<p>녹두 닭가슴살죽 + 연근 더덕 칡 만두 + 해파리 냉채 + 쑥갓 양파무침 + 배추 김치<i class="detail_bar"></i>간식 : 키위, 우유</p>
+									<p>현미 율무밥 + 황태 전골 + 소고기 완자전 + 건나물 비빔 + 부추 양파무침 + 동치미<i class="detail_bar"></i>간식 : 키위, 우유</p>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/lunch/rice.jpg" alt="닭가슴살죽">
+												<img src="../assets/fourweek/fri/lunch/rice.jpg" alt="현미 율무밥">
 											</div>
 											<div class="food_text">
-												<p>녹두 닭가슴살죽</p>
-												<p>쌀 40g, 녹두 20g, 당근 10g, 닭가슴살 40g</p>
+												<p>현미 율무밥</p>
+												<p>쌀 40g, 발아현미 25g, 율무 25g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/lunch/side1.jpg" alt="해파리 냉채">
+												<img src="../assets/fourweek/fri/lunch/side1.jpg" alt="소고기 완자전">
 											</div>
 											<div class="food_text">
-												<p>해파리 냉채</p>
-												<p>해파리 35g, 오이 35g</p>
+												<p>소고기 완자전</p>
+												<p>소고기 20g, 두부 40g, 양파 10g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/lunch/side2.jpg" alt="배추 김치">
+												<img src="../assets/fourweek/fri/lunch/side2.jpg" alt="배추 김치">
 											</div>
 											<div class="food_text">
 												<p>배추 김치</p>
@@ -999,40 +1008,49 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/lunch/dessert1.jpg" alt="우유">
+												<img src="../assets/fourweek/fri/lunch/dessert1.jpg" alt="키위">
 											</div>
 											<div class="food_text">
-												<p>우유</p>
-												<p>200g</p>
+												<p>키위</p>
+												<p>80g</p>
 											</div>
 										</li>
 									</ul>
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/lunch/main.jpg" alt="연근 더덕 칡 만두(점심메인)">
+												<img src="../assets/fourweek/fri/lunch/main.jpg" alt="황태 전골">
 											</div>
 											<div class="food_text">
-												<p>연근 더덕 칡 만두(점심메인)</p>
-												<p>연근 10g, 더덕 20g, 칡즙 20g, 밀가루 30g, 두부 80g</p>
+												<p>황태 전골(점심메인)</p>
+												<p>황태 15g, 애느타리버섯 25g, 표고버섯 25g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/lunch/side3.jpg" alt="쑥갓 양파무침">
+												<img src="../assets/fourweek/fri/lunch/side3.jpg" alt="건나물 비빔">
 											</div>
 											<div class="food_text">
-												<p>쑥갓 양파무침</p>
-												<p>쑥갓 70g, 양파 20g</p>
+												<p>건나물 비빔</p>
+												<p>건고비 5g, 건취 5g, 건고사리 5g, 건호박 5g</p>
 											</div>
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/lunch/dessert2.jpg" alt="키위">
+												<img src="../assets/fourweek/fri/lunch/side3.jpg" alt="동치미">
 											</div>
 											<div class="food_text">
-												<p>키위</p>
-												<p>키위 80g</p>
+												<p>동치미</p>
+												<p>동치미 70g</p>
+											</div>
+										</li>
+										<li>
+											<div class="food_img">
+												<img src="../assets/fourweek/fri/lunch/dessert2.jpg" alt="우유">
+											</div>
+											<div class="food_text">
+												<p>우유</p>
+												<p>200g</p>
 											</div>
 										</li>
 									</ul>
@@ -1048,11 +1066,11 @@
 								<dl>
 									<dt>저녁</dt>
 									<dd>
-										<em>오리전골</em>
+										<em>갈치구이</em>
 									</dd>
-									<dd>현미 찹쌀밥</dd>
-									<dd>돈사태찜</dd>
-									<dd>도라지 간장조림</dd>
+									<dd>수수밥</dd>
+									<dd>비지찌개</dd>
+									<dd>우엉조림</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -1132,11 +1150,11 @@
 								<dl>
 									<dt>저녁</dt>
 									<dd>
-										<em>양파 닭안심찜</em>
+										<em>닭볶음</em>
 									</dd>
-									<dd>현미밥</dd>
-									<dd>마늘칩 그린샐러드</dd>
-									<dd>고춧잎나물</dd>
+									<dd>흑미 찰밥</dd>
+									<dd>파프리카구이</dd>
+									<dd>고사리나물</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -1225,11 +1243,11 @@
 								<dl>
 									<dt>저녁</dt>
 									<dd>
-										<em>돼지고기 김치찜</em>
+										<em>우엉 잡채 월남쌈</em>
 									</dd>
-									<dd>차조 찹쌀밥</dd>
-									<dd>양송이버섯볶음</dd>
-									<dd>호박잎쌈과 강된장</dd>
+									<dd>보리무밥</dd>
+									<dd>돈육 김치찌개</dd>
+									<dd>문어초회</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -1318,12 +1336,11 @@
 								<dl>
 									<dt>저녁</dt>
 									<dd>
-										<em>산나물 비빔</em>
+										<em>소고기볶음</em>
 									</dd>
-									<dd>무채국</dd>
-									<dd>열무 물김치</dd>
-									<dd>달래무물김치</dd>
-									<dd>오미자 냉차</dd>
+									<dd>잡곡밥</dd>
+									<dd>청경채나물</dd>
+									<dd>도라지 생채</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
@@ -1394,11 +1411,11 @@
 								<dl>
 									<dt>저녁</dt>
 									<dd>
-										<em>민어 양념찜</em>
+										<em>돼지갈비찜</em>
 									</dd>
-									<dd>강낭콩 율무밥</dd>
-									<dd>아스파라거스 돈육볶음</dd>
-									<dd>실파무침</dd>
+									<dd>현미 무밥</dd>
+									<dd>마늘쫑볶음</dd>
+									<dd>시금치 나물</dd>
 								</dl>
 							</div>
 							<!-- 상세 메뉴 -->
