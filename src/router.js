@@ -182,7 +182,7 @@ export default new Router({
       component: BoardView
     },
     {
-      path: "/noticeview",
+      path: "/noticeview/:noticeId",
       name: "NoticeView",
       component: NoticeView
     },
