@@ -305,7 +305,8 @@ export default {
       $(".slide").bxSlider({
         pager: "true",
         auto: "true",
-        controls: "true"
+        controls: "true",
+        touchEnabled: navigator.maxTouchPoints > 0
       });
     });
     const getArticleList = await axios({
