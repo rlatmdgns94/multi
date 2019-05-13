@@ -1,14 +1,12 @@
 <template>
   <div class="market">
     <div class="keyimg"></div>
-    <div
-      v-for="storeItem in storeItemList"
-      :key="storeItem.storeItemId"
-      class="content market_detail_wrap"
-    >
+    <div class="content market_detail_wrap">
       <div class="market_detail_top">
         <div class="market_detail_img">
-          <img :src="cdn + storeItem.thumbnailUrl[0].imageUrl">
+          <img
+            :src="storeItem.thumbnailUrl && storeItem.thumbnailUrl.length ? cdn + storeItem.thumbnailUrl[0].imageUrl : null"
+          >
         </div>
         <div class="detail_info">
           <span class="info_caption">{{categoryNameSwitch(storeItem.category)}}</span>
@@ -38,11 +36,19 @@
             <dd>
               <strong>수량 :</strong>
               <div class="quantity">
-                <span class="bt_down">
+                <span @click="handleProductQtyDecrease" class="bt_down">
                   <img src="../assets/img/minus.png" alt="빼기 버튼">
                 </span>
-                <input type="text" name="num" value="1" id class="num" title="상품수량" readonly>
-                <span class="bt_up">
+                <input
+                  type="text"
+                  name="num"
+                  :value="productQty"
+                  id
+                  class="num"
+                  title="상품수량"
+                  readonly
+                >
+                <span @click="handleProductQtyIncrease" class="bt_up">
                   <img src="../assets/img/plus.png" alt="더하기 버튼">
                 </span>
               </div>
@@ -52,15 +58,15 @@
             <div class="total_price">
               <strong>
                 총 판매금액 :
-                <span class="price_num">{{numberWithCommas(storeItem.price)}}원</span>
+                <span class="price_num">{{numberWithCommas(productQty * storeItem.price)}}원</span>
               </strong>
             </div>
             <ul class="market_detail_btn">
               <li>
-                <router-link to class="buy">바로 구매</router-link>
+                <button @click="getOrderItem" class="buy">바로 구매</button>
               </li>
               <li>
-                <router-link to>장바구니</router-link>
+                <button>장바구니</button>
               </li>
             </ul>
           </div>
@@ -234,7 +240,7 @@
     &:last-child {
       margin-right: 0;
     }
-    a {
+    button {
       display: inline-block;
       border: 1px solid #009d54;
       color: #009d54;
@@ -293,47 +299,19 @@ export default {
   data: function() {
     return {
       cdn: config.cdn,
-      storeItemList: [],
+      storeItem: {},
+      productQty: 1,
       isDetailClicked: true,
       isInfoClicked: false,
       isWarningClicked: false
     };
   },
-  mounted() {
-    // $(document).ready(function() {
-    //   $(".market_detail_tab>li>a").on("click", function() {
-    //     var idx = $(this)
-    //       .parent()
-    //       .index();
-    //     $(this)
-    //       .parents("ul")
-    //       .find("a")
-    //       .removeClass("on");
-    //     $(this).addClass("on");
-    //     $(".detail_tab_content").removeClass("on");
-    //     $(".detail_tab_content")
-    //       .eq(idx)
-    //       .addClass("on");
-    //   });
-    // });
-    $(function() {
-      $(".bt_up").click(function() {
-        var n = $(".bt_up").index(this);
-        var num = $(".num:eq(" + n + ")").val();
-        num = $(".num:eq(" + n + ")").val(num * 1 + 1);
-      });
-      $(".bt_down").click(function() {
-        var n = $(".bt_down").index(this);
-        var num = $(".num:eq(" + n + ")").val();
-        num = $(".num:eq(" + n + ")").val(num * 1 - 1);
-      });
-    });
-    const getStoreItemById = axios({
+  async mounted() {
+    const getStoreItemById = await axios({
       url: `/v1/store/${this.$route.params.storeItemId}`,
       method: "get"
-    }).then(response => {
-      this.storeItemList.push(response.data);
     });
+    this.storeItem = getStoreItemById.data;
   },
   methods: {
     categoryNameSwitch: function(number) {
@@ -369,6 +347,34 @@ export default {
       this.isWarningClicked = true;
       this.isDetailClicked = false;
       this.isInfoClicked = false;
+    },
+    handleProductQtyIncrease: function(event) {
+      this.productQty = parseInt(this.productQty + 1);
+    },
+    handleProductQtyDecrease: function(event) {
+      if (this.productQty - 1 === 0) {
+        alert("최소 주문수량은 1개입니다.");
+        this.productQty = 1;
+      } else {
+        this.productQty = this.productQty - 1;
+      }
+    },
+    getOrderItem: function() {
+      if (!localStorage.getItem("sat")) {
+        alert("로그인이 필요합니다.");
+        this.$router.push("/login");
+      } else {
+        const data = [
+          {
+            productName: this.storeItem.title,
+            qty: this.productQty,
+            totalPrice: this.storeItem.price * this.productQty,
+            productImg: this.storeItem.thumbnailUrl[0].imageUrl
+          }
+        ];
+        localStorage.setItem("basket", JSON.stringify(data));
+        this.$router.push("/order");
+      }
     }
   }
 };
