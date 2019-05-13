@@ -284,7 +284,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/morning/dessert1.jpg" alt="체리">
+												<img src="../assets/twoweek/wed/morning/dessert1.jpg" alt="방울토마토">
 											</div>
 											<div class="food_text">
 												<p>방울토마토</p>
@@ -1322,7 +1322,6 @@
 									</dd>
 									<dd>무채국</dd>
 									<dd>열무 물김치</dd>
-									<dd>달래무물김치</dd>
 									<dd>오미자 냉차</dd>
 								</dl>
 							</div>
