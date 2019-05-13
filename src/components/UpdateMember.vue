@@ -14,9 +14,7 @@
                   <img src="../assets/img/ico_required.gif" alt>
                 </label>
               </th>
-              <td>
-                rkrkrkrk123
-              </td>
+              <td>{{ userInfo.userId }}</td>
             </tr>
             <tr>
               <th scope="row">
@@ -54,9 +52,7 @@
                   <img src="../assets/img/ico_required.gif" alt>
                 </label>
               </th>
-              <td>
-                김승훈
-              </td>
+              <td>{{ userInfo.userName }}</td>
             </tr>
             <tr>
               <th scope="row">휴대전화</th>
@@ -101,19 +97,19 @@
             </tr>
           </tbody>
         </table>
-        </div>
       </div>
-      <div class="join_btn_area">
-        <label for="join_submit" class="join_submit">수정완료</label>
-        <input id="join_submit" value="회원가입" @click="postUser">
-        <label for="join_reset" class="join_submit join_reset">취소</label>
-        <input id="join_reset" type="reset" value="가입취소">
-        <span class="delete_member_btn">
-          <router-link to="/" class="join_submit join_reset">회원탈퇴</router-link>
-        </span>
-      </div>
-      <!-- </form> -->
     </div>
+    <div class="join_btn_area">
+      <label for="join_submit" class="join_submit">수정완료</label>
+      <input id="join_submit" value="회원가입" @click="postUser">
+      <label for="join_reset" class="join_submit join_reset">취소</label>
+      <input id="join_reset" type="reset" value="가입취소" @click="handleCancel">
+      <span class="delete_member_btn">
+        <button @click="handleDeleteUser" class="join_submit join_reset">회원탈퇴</button>
+      </span>
+    </div>
+    <!-- </form> -->
+  </div>
 </template>
 <style lang="scss" scoped>
 .join_wrap {
@@ -229,10 +225,10 @@
     display: none;
   }
 }
-.delete_member_btn{
-  position:absolute;
-  right:0;
-  top:-3px;
+.delete_member_btn {
+  position: absolute;
+  right: 0;
+  top: -3px;
 }
 </style>
 
@@ -240,7 +236,12 @@
 import axios from "axios";
 export default {
   name: "UpdateMember",
-  mounted() {
+  data: function() {
+    return {
+      userInfo: {}
+    };
+  },
+  async mounted() {
     $(document).ready(function() {
       $("#selectEmail").change(function() {
         $("#selectEmail option:selected").each(function() {
@@ -256,6 +257,31 @@ export default {
         });
       });
     });
+
+    const getUserInfo = await axios({
+      url: "/v1/users/profile_edit",
+      method: "get",
+      headers: { "x-sikguadang-token": localStorage.getItem("sat") }
+    });
+    this.userInfo = getUserInfo.data;
+  },
+  methods: {
+    handleCancel: function() {
+      this.$router.push("/mypage");
+    },
+    handleDeleteUser: async function() {
+      const deleteUser = await axios({
+        url: "/v1/users/delete_user",
+        method: "delete",
+        headers: { "x-sikguadang-token": localStorage.getItem("sat") }
+      });
+      if (deleteUser.data.code === "RC100200") {
+        alert("회원 탈퇴가 완료되었습니다.");
+        localStorage.removeItem("sat");
+        localStorage.removeItem("sar");
+        this.$router.push("/");
+      }
+    }
   }
 };
 </script>
