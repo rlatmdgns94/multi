@@ -688,7 +688,7 @@ export default {
         const response = await axios.post("/v1/users/sign_up", data);
         console.log(response);
         alert("회원가입이 완료되었습니다.");
-        this.$router.go("/");
+        window.location.href = "/";
       } catch (error) {
         throw Error(error);
       }

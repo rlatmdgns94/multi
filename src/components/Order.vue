@@ -663,7 +663,7 @@ export default {
 
     cancelPurchase() {
       alert("주문을 취소하셨습니다.");
-      this.$router.push("/");
+      window.location.href = "/";
     }
   }
 };

@@ -101,7 +101,7 @@
     </div>
     <div class="join_btn_area">
       <label for="join_submit" class="join_submit">수정완료</label>
-      <input id="join_submit" value="회원가입" @click="postUser">
+      <input id="join_submit" value="회원정보 수정" @click="handleOnSubmit">
       <label for="join_reset" class="join_submit join_reset">취소</label>
       <input id="join_reset" type="reset" value="가입취소" @click="handleCancel">
       <span class="delete_member_btn">
@@ -238,7 +238,14 @@ export default {
   name: "UpdateMember",
   data: function() {
     return {
-      userInfo: {}
+      userInfo: {},
+      password: "",
+      passwordCheck: "",
+      phoneFirst: "010",
+      phoneMiddle: "",
+      phoneLast: "",
+      emailId: "",
+      domain: "naver.com"
     };
   },
   async mounted() {
@@ -263,9 +270,51 @@ export default {
       method: "get",
       headers: { "x-sikguadang-token": localStorage.getItem("sat") }
     });
+    console.log(getUserInfo.data);
     this.userInfo = getUserInfo.data;
+    this.phoneFirst = this.userInfo.phoneNumber.split("-")[0];
+    this.phoneMiddle = this.userInfo.phoneNumber.split("-")[1];
+    this.phoneLast = this.userInfo.phoneNumber.split("-")[2];
+    this.emailId = this.userInfo.email.split("@")[0];
+    this.domain = this.userInfo.email.split("@")[1];
   },
   methods: {
+    handleOnSubmit: async function() {
+      try {
+        if (this.phoneMiddle === "" && this.phoneLast === "") {
+          alert("핸드폰 번호를 입력해주세요.");
+          return false;
+        }
+        if (this.emailId === "") {
+          alert("이메일 아이디를 입력해주세요.");
+          return false;
+        }
+        if (this.domain === "") {
+          alert("도메인을 입력하거나 선택해주세요.");
+          return false;
+        }
+        const data = {};
+        data.profile = {
+          password: this.password,
+          phoneFirst: this.phoneFirst,
+          phoneMiddle: this.phoneMiddle,
+          phoneLast: this.phoneLast,
+          emailId: this.emailId,
+          domain: this.domain
+        };
+        const updateUserInfo = await axios({
+          url: "/v1/users/profile_edit",
+          method: "put",
+          data: data,
+          headers: { "x-sikguadang-token": localStorage.getItem("sat") }
+        });
+        console.log(updateUserInfo.data);
+        alert("회원정보가 수정되었습니다.");
+        this.$router.push("/mypage");
+      } catch (error) {
+        throw Error(error);
+      }
+    },
     handleCancel: function() {
       this.$router.push("/mypage");
     },
@@ -279,7 +328,7 @@ export default {
         alert("회원 탈퇴가 완료되었습니다.");
         localStorage.removeItem("sat");
         localStorage.removeItem("sar");
-        this.$router.push("/");
+        window.location.href = "/";
       }
     }
   }

@@ -249,7 +249,7 @@ export default {
     logOut: function() {
       localStorage.removeItem("sat");
       localStorage.removeItem("sar");
-      this.$router.go("/");
+      window.location.href = "/";
     }
   }
 };
