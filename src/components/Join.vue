@@ -16,7 +16,7 @@
               </th>
               <td>
                 <input type="text" name="id" id="id" maxlength="16" size="12" v-model="id">
-                <a href="javascript:checkID()" class="id_check">아이디 중복확인</a>(영문 대소문자/숫자 4자~16자)
+                <button class="id_check" @click="handleIdCheck">아이디 중복확인</button>(영문 대소문자/숫자 4자~16자)
               </td>
             </tr>
             <tr>
@@ -554,6 +554,7 @@ export default {
   data: function() {
     return {
       id: "",
+      idVal: false,
       password: "",
       passwordCheck: "",
       username: "",
@@ -585,17 +586,69 @@ export default {
     }
   },
   methods: {
+    idValidate: function(id) {
+      const idReg = /^[A-za-z0-9]{4,16}$/g;
+      if (!id) {
+        return false;
+      }
+
+      if (id.length < 4 && id.length > 16) return false;
+
+      const reg = new RegExp(idReg);
+      const valid = reg.test(id);
+      if (!valid) {
+        return false;
+      }
+
+      return true;
+    },
     handleChangeId: function(e) {
       this.id = e.target.value;
     },
     handleChangeDomain: function(e) {
       this.domain = e.target.value;
     },
+    handleIdCheck: function() {
+      const data = {};
+      data.id = this.id;
+
+      if (this.id === "") {
+        alert("아이디를 입력해주세요.");
+      }
+      if (this.id !== "" && this.idValidate(this.id) === false) {
+        alert("아이디 양식에 맞게 입력해주세요.");
+      }
+      if (this.idValidate(this.id)) {
+        const idCheck = axios({
+          url: "/v1/users/id_check",
+          method: "post",
+          data: data
+        })
+          .then(response => {
+            console.log(response);
+            if (response.data.code === "RC100200") {
+              alert("사용 가능한 아이디입니다.");
+              this.idVal = true;
+            }
+            if (response.data.detail.code === "RC100422") {
+              alert("이미 사용중인 아이디입니다.");
+            }
+          })
+          .catch(err => {
+            console.log(err);
+          });
+        return idCheck;
+      }
+    },
 
     postUser: async function() {
       try {
         if (this.id === "") {
           alert("아이디를 입력해주세요.");
+          return false;
+        }
+        if (this.idVal === false) {
+          alert("아이디 중복확인을 해주세요.");
           return false;
         }
         if (this.password === "") {

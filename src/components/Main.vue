@@ -391,7 +391,8 @@ export default {
       $(".slider").bxSlider({
         pagerCustom: "#bx-pager",
         auto: "true",
-        controls: "true"
+        controls: "true",
+        touchEnabled: navigator.maxTouchPoints > 0
       });
     });
   }
