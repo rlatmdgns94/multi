@@ -63,7 +63,7 @@
             </div>
             <ul class="market_detail_btn">
               <li>
-                <button @click="getOrderItem" class="buy">바로 구매</button>
+                <button @click="getOrderItem">바로 구매</button>
               </li>
               <li>
                 <button>장바구니</button>
@@ -241,13 +241,15 @@
       margin-right: 0;
     }
     button {
+      cursor: pointer;
       display: inline-block;
-      border: 1px solid #009d54;
-      color: #009d54;
+      border: 1px solid #85af4b;
+      color: #85af4b;
       padding: 10px 85px;
       font-size: 16px;
+      background:#fff;
       border-radius: 30px;
-      &.buy {
+      &:hover{
         background: #85af4b;
         color: #fff;
         border: 1px solid #85af4b;
@@ -288,6 +290,11 @@
     }
   }
 }
+// .active{
+//         background: #85af4b;
+//         color: #fff;
+//         border: 1px solid #85af4b;
+//       }
 </style>
 
 <script>

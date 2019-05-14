@@ -332,3 +332,6 @@ a:focus {
   clear: both;
   content: "";
 }
+button{
+  cursor: pointer;
+}

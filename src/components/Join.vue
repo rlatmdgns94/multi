@@ -525,6 +525,7 @@
 }
 // 이용약관
 .join_submit {
+  cursor: pointer;
   display: inline-block;
   margin-top: 76px;
   padding: 8px 42px;
@@ -534,6 +535,7 @@
   border: 1px solid #85af4b;
 }
 .join_reset {
+  cursor: pointer;
   display: inline-block;
   border: 1px solid #727272;
   color: #727272;

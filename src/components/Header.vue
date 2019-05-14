@@ -71,7 +71,7 @@
       <dl class="user_menu" v-if="isLogged">
         <dt class="blind">사용자 메뉴</dt>
         <dd>
-          <span @click="logOut">로그아웃</span>
+          <span @click="logOut" class="logout">로그아웃</span>
         </dd>
         <dd>
           <router-link to="/mypage">마이페이지</router-link>
@@ -166,7 +166,9 @@
 .user_menu dt + dd {
   margin-left: 0;
 }
-
+.logout{
+  cursor: pointer;
+}
 .user_menu dd::after {
   position: absolute;
   top: 5px;
