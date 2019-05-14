@@ -62,6 +62,19 @@
           </li>
         </ul>
       </div>
+      <div class="content_pager">
+        <ul class="pager">
+          <li>
+            <router-link to class="active">1</router-link>
+          </li>
+          <li>
+            <router-link to>2</router-link>
+          </li>
+          <li>
+            <router-link to>3</router-link>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -115,7 +128,6 @@
 .market_bottom {
   overflow: hidden;
   margin-top: 42px;
-  margin-bottom: 90px;
   .product_category_area {
     overflow: hidden;
   }
@@ -171,6 +183,29 @@
       margin-top: 16px;
       font-size: 20px;
       color: #85af4b;
+    }
+  }
+}
+.content_pager {
+  text-align: center;
+}
+.pager {
+  margin-top: 29px;
+  margin-bottom: 96px;
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      width: 31px;
+      height: 31px;
+      line-height: 31px;
+      font-size: 15px;
+      color: #7b7b7b;
+      &.active {
+        background: #85af4b;
+        border-radius: 16px;
+        color: #fff;
+      }
     }
   }
 }

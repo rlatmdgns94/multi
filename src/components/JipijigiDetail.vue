@@ -138,7 +138,7 @@
 .recommendation_content {
   width: 1000px;
   margin: 0 auto;
-  margin-bottom: 93px;
+  margin-bottom: 120px;
 }
 .recommendation {
   overflow: hidden;
