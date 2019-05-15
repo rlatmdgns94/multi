@@ -18,17 +18,14 @@
               <strong>판매가 :</strong>
               <em class="price_num">{{numberWithCommas(storeItem.price)}}원</em>
             </dd>
-            <!-- <dd>
+            <dd>
               <strong>중량 :</strong>
-              <span class="weight_text">1,450 g(셀프부대찌개재료:662 g,사골육수:650 g,신라면:120 g,체다슬라이스치즈:18 g)</span>
+              <span class="weight_text">{{ storeItem.weight }}</span>
             </dd>
             <dd class="expiration_date">
               <strong>유통기한 :</strong>
-              <span class="weight_text weight_text_v1">
-                셀프부대찌개재료 : 제조일로부터 냉장 4일, 사골육수 : 제조일로부터 냉동 180일
-                <br>신라면 : 제조일로부터 6개월, 체다슬라이스치즈 : 제조일로부터 6개월
-              </span>
-            </dd>-->
+              <span class="weight_text weight_text_v1">{{ storeItem.expirationDate }}</span>
+            </dd>
             <dd class="shipping_guide">
               <strong>배송안내 :</strong>
               <span class="free_delivery">무료배송</span>
@@ -247,9 +244,9 @@
       color: #85af4b;
       padding: 10px 85px;
       font-size: 16px;
-      background:#fff;
+      background: #fff;
       border-radius: 30px;
-      &:hover{
+      &:hover {
         background: #85af4b;
         color: #fff;
         border: 1px solid #85af4b;
@@ -324,13 +321,13 @@ export default {
     categoryNameSwitch: function(number) {
       switch (number) {
         case 1:
-          return "반찬";
+          return "반찬/Side Dish";
           break;
         case 2:
-          return "간식";
+          return "간식/Refreshments";
           break;
         case 3:
-          return "영양제";
+          return "영양제/Nutritional Supplements";
           break;
         default:
           return null;
