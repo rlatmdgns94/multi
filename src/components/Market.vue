@@ -7,7 +7,7 @@
           <h3 class="blind">마켓메뉴</h3>
           <ul class="market_menu">
             <li>
-              <router-link :to="{path: '/market'}" class="on">전체</router-link>
+              <router-link :to="{path: '/market', query: {limit: 9, offset: 0}}" class="on">전체</router-link>
             </li>
             <li>
               <router-link :to="{path: '/market/1'}">반찬</router-link>
@@ -65,13 +65,22 @@
       <div class="content_pager">
         <ul class="pager">
           <li>
-            <router-link to class="active">1</router-link>
+            <router-link
+              :to="{name: 'Market', query: {limit: 9, offset: 0}}"
+              exact-active-class="active"
+            >1</router-link>
           </li>
           <li>
-            <router-link to>2</router-link>
+            <router-link
+              :to="{name: 'Market', query: {limit: 9, offset: 9}}"
+              exact-active-class="active"
+            >2</router-link>
           </li>
           <li>
-            <router-link to>3</router-link>
+            <router-link
+              :to="{name: 'Market', query: {limit: 9, offset: 18}}"
+              exact-active-class="active"
+            >3</router-link>
           </li>
         </ul>
       </div>
@@ -225,10 +234,22 @@ export default {
   },
   async mounted() {
     const response = await axios({
-      url: "/v1/store",
+      url: "/v1/store?limit=9&offset=0",
       method: "get"
     });
     this.storeItemList = response.data;
+  },
+  watch: {
+    async $route(to, from) {
+      const limit = to.query.limit;
+      const offset = to.query.offset;
+      const sort = to.query.sort;
+      const getStoreItemListWithQuery = await axios({
+        url: `/v1/store?limit=${limit}&offset=${offset}&sort=${sort}`,
+        method: "get"
+      });
+      this.storeItemList = getStoreItemListWithQuery.data;
+    }
   },
   methods: {
     numberWithCommas: function(x) {

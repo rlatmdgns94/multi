@@ -27,7 +27,10 @@
             </ul>
           </li>
           <li>
-            <router-link :to="{path: '/market'}" class="menu_arrow">건강당 마켓</router-link>
+            <router-link
+              :to="{path: '/market', query: {limit: 9, offset: 0}}"
+              class="menu_arrow"
+            >건강당 마켓</router-link>
             <ul class="submenu">
               <li>
                 <router-link :to="{path: '/market/1'}">반찬</router-link>
@@ -166,7 +169,7 @@
 .user_menu dt + dd {
   margin-left: 0;
 }
-.logout{
+.logout {
   cursor: pointer;
 }
 .user_menu dd::after {
