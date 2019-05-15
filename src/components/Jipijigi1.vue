@@ -6,7 +6,7 @@
         <h2 class="blind">지피지기 메뉴</h2>
         <ul class="jipijigi_gnb">
           <li>
-            <router-link :to="{path: '/jipijigi'}">전체</router-link>
+            <router-link :to="{path: '/jipijigi', query: {limit: 8, offset: 0}}">전체</router-link>
           </li>
           <li>
             <router-link :to="{path: '/jipijigi/1'}" class="on">당뇨란?</router-link>

@@ -7,7 +7,7 @@
           <h3 class="blind">마켓메뉴</h3>
           <ul class="market_menu">
             <li>
-              <router-link :to="{path: '/market'}">전체</router-link>
+              <router-link :to="{path: '/market', query: {limit: 9, offset: 0}}">전체</router-link>
             </li>
             <li>
               <router-link :to="{path: '/market/1'}" class="on">반찬</router-link>

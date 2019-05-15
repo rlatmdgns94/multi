@@ -6,7 +6,7 @@
         <h2 class="blind">지피지기 메뉴</h2>
         <ul class="jipijigi_gnb">
           <li>
-            <router-link :to="{path: '/jipijigi'}" class="on">전체</router-link>
+            <router-link :to="{path: '/jipijigi', query: {limit: 8, offset: 0}}" class="on">전체</router-link>
           </li>
           <li>
             <router-link :to="{path: '/jipijigi/1'}">당뇨란?</router-link>
@@ -109,13 +109,16 @@
       <div class="content_pager">
         <ul class="pager">
           <li>
-            <router-link to class="active">1</router-link>
+            <router-link
+              :to="{name: 'Jipijigi', query: {limit: 8, offset: 0}}"
+              exact-active-class="active"
+            >1</router-link>
           </li>
           <li>
-            <router-link to>2</router-link>
-          </li>
-          <li>
-            <router-link to>3</router-link>
+            <router-link
+              :to="{name: 'Jipijigi', query: {limit: 8, offset: 8}}"
+              exact-active-class="active"
+            >2</router-link>
           </li>
         </ul>
       </div>
@@ -312,10 +315,21 @@ export default {
       });
     });
     const getArticleList = await axios({
-      url: "/v1/articles",
+      url: "/v1/articles?limit=8&offset=0",
       method: "get"
     });
     this.articleList = getArticleList.data;
+  },
+  watch: {
+    async $route(to, from) {
+      const limit = to.query.limit;
+      const offset = to.query.offset;
+      const getArticleListWithQuery = await axios({
+        url: `/v1/articles?limit=${limit}&offset=${offset}`,
+        method: "get"
+      });
+      this.articleList = getArticleListWithQuery.data;
+    }
   },
   methods: {
     categorySwitch: function(categoryNumber) {

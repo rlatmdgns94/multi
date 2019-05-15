@@ -44,7 +44,10 @@
             </ul>
           </li>
           <li>
-            <router-link :to="{path: '/jipijigi'}" class="menu_arrow">지피지기 당뇨</router-link>
+            <router-link
+              :to="{path: '/jipijigi', query: {limit: 8, offset: 0}}"
+              class="menu_arrow"
+            >지피지기 당뇨</router-link>
             <ul class="submenu">
               <li>
                 <router-link :to="{path: '/jipijigi/1'}">당뇨란?</router-link>
