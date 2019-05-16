@@ -665,6 +665,28 @@ export default {
           alert("비밀번호를 확인해주세요.");
           return false;
         }
+        if (this.password.search(/\s/) != -1) {
+          alert("비밀번호에는 공백이 들어가서는 안됩니다.");
+          return false;
+        }
+
+        let check = 0;
+
+        if (this.password.search(/[0-9]/g) != -1) check++;
+        if (this.password.search(/[a-z]/gi) != -1) check++;
+        if (this.password.search(/[A-Z]/gi) != -1) check++;
+        if (
+          this.password.search(
+            /\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"/g
+          ) != -1
+        ) {
+          check++;
+        }
+        if (check < 2) {
+          alert("비밀번호 양식에 맞게 값을 입력해주세요.");
+          return false;
+        }
+
         if (this.username === "") {
           alert("이름을 입력해주세요.");
           return false;
