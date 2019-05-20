@@ -99,7 +99,7 @@
                   <ul class="tag">
                     <li v-for="tags in article.hashTag.split(' ')" :key="tags">{{tags}}</li>
                   </ul>
-                  <span class="date">2019.04.01</span>
+                  <span class="date">{{ moment(article.sdate).utcOffset(9).format('YYYY.MM.DD') }}</span>
                 </div>
               </div>
             </router-link>
@@ -295,6 +295,7 @@
 
 <script>
 import axios from "axios";
+import moment from "moment";
 
 import config from "../utils/config";
 export default {
@@ -302,7 +303,8 @@ export default {
   data: function() {
     return {
       cdn: config.cdn,
-      articleList: []
+      articleList: [],
+      moment: moment
     };
   },
   async mounted() {
@@ -319,6 +321,7 @@ export default {
       method: "get"
     });
     this.articleList = getArticleList.data;
+    console.log(this.articleList);
   },
   watch: {
     async $route(to, from) {
