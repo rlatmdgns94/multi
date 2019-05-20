@@ -30,7 +30,7 @@
         required="true"
         aria-required="true"
       >
-      <button v-on:click="postSignin" class="login_btn">확인</button>
+      <button v-on:click="findId" class="login_btn">확인</button>
       <ul class="login_menu">
         <li>
           <router-link to="/passwordfind">비밀번호 찾기</router-link>
@@ -89,7 +89,7 @@
     width: 100%;
     margin-top: 30px;
     padding: 11px 0;
-    border:0;
+    border: 0;
     background: #85af4b;
     color: #fff;
     font-size: 17px;
@@ -137,29 +137,36 @@ export default {
     }
   },
   methods: {
-    postSignin: async function() {
-      try {
-        if (this.userName === "") {
-          alert("이름을 입력해주세요.");
-          return false;
-        }
-        if (this.email === "") {
-          alert("이메일을 입력해주세요.");
-          return false;
-        }
+    findId: function() {
+      const emailRegExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 
-        if (true) {
-          const data = {
-            userId: this.userName,
-            password: this.email
-          };
-          const response = await axios.post("/v1/users/sign_in", data);
-          localStorage.setItem("sat", response.headers["x-sikguadang-token"]);
-          localStorage.setItem("sar", response.headers["x-sikguadang-restore"]);
-          window.location.href = "/";
-        }
-      } catch (error) {
-        throw Error(error);
+      if (this.userName === "") {
+        alert("이름을 입력해주세요.");
+        return false;
+      }
+      if (this.email === "") {
+        alert("이메일을 입력해주세요.");
+        return false;
+      }
+
+      if (emailRegExp.test(this.email) !== true) {
+        alert("이메일 양식에 맞게 입력해주세요.");
+        return false;
+      }
+
+      if (true) {
+        const data = {
+          userName: this.userName,
+          email: this.email
+        };
+        const findIdByUserNameAndEmail = axios
+          .post("/v1/users/findId", data)
+          .then(function(response) {
+            alert(`아이디는 ${response.data.userId}입니다.`);
+          })
+          .catch(function(ex) {
+            alert("아이디를 찾을 수 없습니다.");
+          });
       }
     }
   }
