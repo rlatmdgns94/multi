@@ -7,16 +7,16 @@
           <h3 class="blind">마켓메뉴</h3>
           <ul class="market_menu">
             <li>
-              <router-link :to="{path: '/market', query: {limit: 9, offset: 0}}" class="on">전체</router-link>
+              <router-link :to="{path: '/market', query: {sort: '-cdate'}}" class="on">전체</router-link>
             </li>
             <li>
-              <router-link :to="{path: '/market/1'}">반찬</router-link>
+              <router-link :to="{path: '/market/1', query: {sort: '-cdate'}}">반찬</router-link>
             </li>
             <li>
-              <router-link :to="{path: '/market/2'}">간식</router-link>
+              <router-link :to="{path: '/market/2', query: {sort: '-cdate'}}">간식</router-link>
             </li>
             <li>
-              <router-link :to="{path: '/market/3'}">영양제</router-link>
+              <router-link :to="{path: '/market/3', query: {sort: '-cdate'}}">영양제</router-link>
             </li>
           </ul>
         </div>
@@ -27,22 +27,31 @@
       <div class="market_bottom">
         <div class="product_category_area">
           <ul class="product_category">
+            <!-- <li>
+              <router-link :to="{name: 'Market', query: {sort: ''}}" exact-active-class="active">인기순</router-link>
+            </li>-->
             <li>
-              <router-link to="/" class="active">인기순</router-link>
+              <router-link
+                :to="{name: 'Market', query: {sort: '-price'}}"
+                exact-active-class="active"
+              >높은가격순</router-link>
             </li>
             <li>
-              <router-link to="/">높은가격순</router-link>
+              <router-link
+                :to="{name: 'Market', query: {sort: 'price'}}"
+                exact-active-class="active"
+              >낮은가격순</router-link>
             </li>
             <li>
-              <router-link to="/">낮은가격순</router-link>
-            </li>
-            <li>
-              <router-link to="/">등록일순</router-link>
+              <router-link
+                :to="{name: 'Market', query: {sort: '-cdate'}}"
+                exact-active-class="active"
+              >등록일순</router-link>
             </li>
           </ul>
         </div>
         <ul class="market_product">
-          <li v-for="storeItem in storeItemList" :key="storeItem.title">
+          <li v-for="storeItem in paginatedData" :key="storeItem.title">
             <router-link
               :to="{name: 'MarketDetail', params: {storeItemId: storeItem.storeItemId}, query: {content: 'detail'}}"
             >
@@ -65,22 +74,9 @@
       <div class="content_pager">
         <ul class="pager">
           <li>
-            <router-link
-              :to="{name: 'Market', query: {limit: 9, offset: 0}}"
-              exact-active-class="active"
-            >1</router-link>
-          </li>
-          <li>
-            <router-link
-              :to="{name: 'Market', query: {limit: 9, offset: 9}}"
-              exact-active-class="active"
-            >2</router-link>
-          </li>
-          <li>
-            <router-link
-              :to="{name: 'Market', query: {limit: 9, offset: 18}}"
-              exact-active-class="active"
-            >3</router-link>
+            <button :disabled="pageNum === 0" @click="prevPage" class="active">이전</button>
+            <span class="page-count">{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
+            <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="active">다음</button>
           </li>
         </ul>
       </div>
@@ -203,8 +199,8 @@
   margin-bottom: 96px;
   li {
     display: inline-block;
-    a {
-      display: block;
+    button {
+      display: inline-block;
       width: 31px;
       height: 31px;
       line-height: 31px;
@@ -215,6 +211,9 @@
         border-radius: 16px;
         color: #fff;
       }
+    }
+    span {
+      padding: 0 1rem;
     }
   }
 }
@@ -229,31 +228,57 @@ export default {
   data: function() {
     return {
       cdn: config.cdn,
-      storeItemList: []
+      pageNum: 0,
+      pageSize: 9,
+      storeItemList: [],
+      pages: []
     };
   },
-  async mounted() {
-    const response = await axios({
-      url: "/v1/store?limit=9&offset=0",
-      method: "get"
-    });
-    this.storeItemList = response.data;
+  created() {
+    this.getStoreItemList();
   },
   watch: {
     async $route(to, from) {
-      const limit = to.query.limit;
-      const offset = to.query.offset;
       const sort = to.query.sort;
       const getStoreItemListWithQuery = await axios({
-        url: `/v1/store?limit=${limit}&offset=${offset}&sort=${sort}`,
+        url: `/v1/store?sort=${sort}`,
         method: "get"
       });
       this.storeItemList = getStoreItemListWithQuery.data;
     }
   },
   methods: {
+    getStoreItemList: async function() {
+      const sort = this.$route.query.sort;
+      const response = await axios({
+        url: `/v1/store?sort=${sort}`,
+        method: "get"
+      });
+      this.storeItemList = response.data;
+    },
+    nextPage() {
+      this.pageNum += 1;
+    },
+    prevPage() {
+      this.pageNum -= 1;
+    },
     numberWithCommas: function(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  },
+  computed: {
+    pageCount() {
+      let listLeng = this.storeItemList.length,
+        listSize = this.pageSize,
+        page = Math.floor(listLeng / listSize);
+      if (listLeng % listSize > 0) page += 1;
+
+      return page;
+    },
+    paginatedData() {
+      const start = this.pageNum * this.pageSize,
+        end = start + this.pageSize;
+      return this.storeItemList.slice(start, end);
     }
   }
 };

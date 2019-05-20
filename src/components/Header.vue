@@ -27,19 +27,16 @@
             </ul>
           </li>
           <li>
-            <router-link
-              :to="{path: '/market', query: {limit: 9, offset: 0}}"
-              class="menu_arrow"
-            >건강당 마켓</router-link>
+            <router-link :to="{path: '/market', query: {sort: '-cdate'}}" class="menu_arrow">건강당 마켓</router-link>
             <ul class="submenu">
               <li>
-                <router-link :to="{path: '/market/1'}">반찬</router-link>
+                <router-link :to="{path: '/market/1', query: {sort: '-cdate'}}">반찬</router-link>
               </li>
               <li>
-                <router-link :to="{path: '/market/2'}">간식</router-link>
+                <router-link :to="{path: '/market/2', query: {sort: '-cdate'}}">간식</router-link>
               </li>
               <li>
-                <router-link :to="{path: '/market/3'}">영양제</router-link>
+                <router-link :to="{path: '/market/3', query: {sort: '-cdate'}}">영양제</router-link>
               </li>
             </ul>
           </li>
