@@ -20,15 +20,15 @@
               <th scope="col">등록일</th>
             </tr>
           </thead>
-          <tbody>
-            <tr v-for="notice in noticeList" :key="notice.title">
-              <td>1</td>
+          <tbody v-for="notice in noticeList" :key="notice.title">
+            <tr>
+              <td>{{ notice.number }}</td>
               <td class="board_list_title">
                 <router-link
                   :to="{name: 'NoticeView', params: {noticeId: notice.noticeId}}"
                 >{{ notice.title }}</router-link>
               </td>
-              <td>2019.04.01</td>
+              <td>{{moment(notice.sdate).utcOffset(9).format('YYYY.MM.DD')}}</td>
             </tr>
           </tbody>
         </table>
@@ -108,12 +108,14 @@
 
 <script>
 import axios from "axios";
+import moment from "moment";
 
 export default {
   name: "Notice",
   data: function() {
     return {
-      noticeList: []
+      noticeList: [],
+      moment: moment
     };
   },
   async mounted() {
@@ -122,6 +124,7 @@ export default {
       method: "get"
     });
     this.noticeList = getNoticeList.data;
+    console.log(this.noticeList);
   }
 };
 </script>
