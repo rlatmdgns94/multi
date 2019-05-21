@@ -30,7 +30,7 @@
         required="true"
         aria-required="true"
       >
-      <button v-on:click="postSignin" class="login_btn">확인</button>
+      <button v-on:click="findPassword" class="login_btn">확인</button>
       <ul class="login_menu">
         <li>
           <router-link to="/idfind">아이디 찾기</router-link>
@@ -89,7 +89,7 @@
     width: 100%;
     margin-top: 30px;
     padding: 11px 0;
-    border:0;
+    border: 0;
     background: #85af4b;
     color: #fff;
     font-size: 17px;
@@ -128,7 +128,7 @@ export default {
   data: function() {
     return {
       userId: "",
-      password: ""
+      email: ""
     };
   },
   mounted() {
@@ -137,29 +137,37 @@ export default {
     }
   },
   methods: {
-    postSignin: async function() {
-      try {
-        if (this.userId === "") {
-          alert("아이디를 입력해주세요.");
-          return false;
-        }
-        if (this.password === "") {
-          alert("비밀번호를 입력해주세요.");
-          return false;
-        }
+    findPassword: function() {
+      const emailRegExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 
-        if (true) {
-          const data = {
-            userId: this.userId,
-            password: this.password
-          };
-          const response = await axios.post("/v1/users/sign_in", data);
-          localStorage.setItem("sat", response.headers["x-sikguadang-token"]);
-          localStorage.setItem("sar", response.headers["x-sikguadang-restore"]);
-          window.location.href = "/";
-        }
-      } catch (error) {
-        throw Error(error);
+      if (this.userId === "") {
+        alert("아이디를 입력해주세요.");
+        return false;
+      }
+      if (this.email === "") {
+        alert("이메일을 입력해주세요.");
+        return false;
+      }
+
+      if (emailRegExp.test(this.email) !== true) {
+        alert("이메일 양식에 맞게 입력해주세요.");
+        return false;
+      }
+
+      if (true) {
+        const data = {
+          userId: this.userId,
+          email: this.email
+        };
+        const findPasswordByUserIdAndEmail = axios
+          .post("/v1/users/findPassword", data)
+          .then(function(response) {
+            console.log(response);
+            alert("임시 비밀번호가 이메일로 발송되었습니다.");
+          })
+          .catch(function(ex) {
+            alert("비밀번호를 변경할 수 없습니다.");
+          });
       }
     }
   }

@@ -92,7 +92,7 @@
     width: 100%;
     margin-top: 30px;
     padding: 11px 0;
-    border:0;
+    border: 0;
     background: #85af4b;
     color: #fff;
     font-size: 17px;
@@ -162,6 +162,7 @@ export default {
           window.location.href = "/";
         }
       } catch (error) {
+        alert("아이디 또는 비밀번호를 확인해주세요.");
         throw Error(error);
       }
     }
