@@ -32,15 +32,15 @@
             </li>-->
             <li>
               <router-link
-                :to="{name: 'Market2', query: {sort: '-price'}}"
-                exact-active-class="active"
-              >높은가격순</router-link>
-            </li>
-            <li>
-              <router-link
                 :to="{name: 'Market2', query: {sort: 'price'}}"
                 exact-active-class="active"
               >낮은가격순</router-link>
+            </li>
+            <li>
+              <router-link
+                :to="{name: 'Market2', query: {sort: '-price'}}"
+                exact-active-class="active"
+              >높은가격순</router-link>
             </li>
             <li>
               <router-link
@@ -148,11 +148,18 @@
         margin-left: 0;
       }
       a {
+        position: relative;
         display: block;
         color: #000;
         font-size: 12px;
-        &.active {
-          padding-left: 18px;
+        &.active::before{
+          position: absolute;
+          left:-15px;
+          top: 2px;
+          content: "";
+          display: block;
+          width: 14px;
+          height:14px;
           background: url("../assets/img/tick.png") no-repeat left;
         }
       }
