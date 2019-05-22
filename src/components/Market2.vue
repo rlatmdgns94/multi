@@ -143,7 +143,7 @@
     margin-bottom: 10px;
     li {
       float: left;
-      margin-left: 18px;
+      margin-left: 28px;
       &:first-child {
         margin-left: 0;
       }
