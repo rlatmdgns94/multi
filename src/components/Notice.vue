@@ -20,7 +20,7 @@
               <th scope="col">등록일</th>
             </tr>
           </thead>
-          <tbody v-for="notice in noticeList" :key="notice.title">
+          <tbody v-for="notice in noticeList" :key="notice.number">
             <tr>
               <td>{{ notice.number }}</td>
               <td class="board_list_title">

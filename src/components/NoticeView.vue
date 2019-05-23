@@ -12,7 +12,7 @@
         <div class="view_content_box">
           <div class="writer_area">
             <div class="write_day">
-              <span>2019.04.01</span>
+              <span>{{ moment(notice.sdate).utcOffset(9).format('YYYY.MM.DD') }}</span>
             </div>
           </div>
           <div class="notice_content">
@@ -86,6 +86,7 @@
 
 <script>
 import axios from "axios";
+import moment from "moment";
 
 import config from "../utils/config";
 export default {
@@ -93,6 +94,7 @@ export default {
   data: function() {
     return {
       cdn: config.cdn,
+      moment: moment,
       notice: {},
       lines: []
     };

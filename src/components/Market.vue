@@ -36,7 +36,7 @@
                 exact-active-class="active"
               >낮은가격순</router-link>
             </li>
-            <li>  
+            <li>
               <router-link
                 :to="{name: 'Market', query: {sort: '-price'}}"
                 exact-active-class="active"
@@ -151,14 +151,14 @@
         display: block;
         color: #000;
         font-size: 12px;
-        &.active::before{
+        &.active::before {
           position: absolute;
-          left:-15px;
+          left: -15px;
           top: 2px;
           content: "";
           display: block;
           width: 14px;
-          height:14px;
+          height: 14px;
           background: url("../assets/img/tick.png") no-repeat left;
         }
       }
@@ -230,6 +230,7 @@
 import axios from "axios";
 
 import config from "../utils/config";
+
 export default {
   name: "Market",
   data: function() {

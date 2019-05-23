@@ -30,6 +30,7 @@ import Notice from "./components/Notice.vue";
 import BoardView from "./components/BoardView.vue";
 import NoticeView from "./components/NoticeView.vue";
 import Write from "./components/Write.vue";
+import Modify from "./components/Modify.vue";
 import Email from "./components/Email.vue";
 import Privacy from "./components/Privacy.vue";
 
@@ -177,7 +178,7 @@ export default new Router({
       component: Notice
     },
     {
-      path: "/boardview",
+      path: "/boardview/:inquiryId",
       name: "BoardView",
       component: BoardView
     },
@@ -190,6 +191,11 @@ export default new Router({
       path: "/write",
       name: "Write",
       component: Write
+    },
+    {
+      path: "/modify/:inquiryId",
+      name: "Modify",
+      component: Modify
     },
     {
       path: "/email",

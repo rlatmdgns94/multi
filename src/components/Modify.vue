@@ -3,7 +3,7 @@
     <div class="board_keyimg"></div>
     <div class="content">
       <div class="write_wrap">
-        <span class="writing">글쓰기</span>
+        <span class="writing">수정</span>
         <form action>
           <table class="write_box">
             <colgroup>
@@ -14,7 +14,7 @@
               <tr style="border-bottom: 1px solid #85AF4B">
                 <th>제목</th>
                 <td>
-                  <input type="text" class="write_title" maxlength="40" v-model="title">
+                  <input type="text" class="write_title" maxlength="40" v-model="inquiry.title">
                 </td>
               </tr>
               <tr>
@@ -24,12 +24,17 @@
               <tr style="border:0;">
                 <th>비밀번호</th>
                 <td>
-                  <input type="password" maxlength="10" class="write_password" v-model="password">
+                  <input
+                    type="password"
+                    maxlength="10"
+                    class="write_password"
+                    v-model="inquiry.password"
+                  >
                 </td>
               </tr>
               <tr style="border:0;">
                 <td colspan="2">
-                  <textarea class="memo" v-model="text"></textarea>
+                  <textarea class="memo" v-model="inquiry.text"></textarea>
                 </td>
               </tr>
             </tbody>
@@ -38,7 +43,7 @@
             <span class="list_btn">
               <router-link to="/board">돌아가기</router-link>
             </span>
-            <span class="write_submit" @click="handleOnSubmit">등록</span>
+            <span class="write_submit" @click="handleOnSubmit">수정하기</span>
           </div>
         </form>
       </div>
@@ -120,19 +125,18 @@
 import axios from "axios";
 
 export default {
-  name: "Write",
+  name: "Modify",
   data: function() {
     return {
       userInfo: {},
-      title: "",
-      password: "",
-      text: "",
+      inquiry: {},
       status: "actv"
     };
   },
-  mounted() {
+  created() {
     if (localStorage.getItem("sat")) {
       this.getUserInfo();
+      this.getInquiry();
     } else {
       alert("로그인이 필요합니다.");
       this.$router.push("/login");
@@ -147,37 +151,44 @@ export default {
       });
       this.userInfo = getUserInfoByToken.data;
     },
+    getInquiry: async function() {
+      const getInquiryById = await axios({
+        url: `/v1/inquiries/${this.$route.params.inquiryId}`,
+        method: "get"
+      });
+      this.inquiry = getInquiryById.data;
+    },
     handleOnSubmit: async function() {
-      if (!this.title) {
+      if (!this.inquiry.title) {
         alert("제목을 입력해주세요.");
         return false;
       }
 
-      if (!this.text) {
+      if (!this.inquiry.text) {
         alert("내용을 입력해주세요.");
         return false;
       }
 
-      if (!this.password) {
+      if (!this.inquiry.password) {
         alert("비밀번호를 입력해주세요.");
         return false;
       }
 
       const data = {};
       data.inquiry = {
-        title: this.title,
+        title: this.inquiry.title,
         userName: this.userInfo.userName,
-        password: this.password,
-        text: this.text,
+        password: this.inquiry.password,
+        text: this.inquiry.text,
         status: this.status
       };
-      const createInquiry = await axios({
-        url: "/v1/inquiries",
-        method: "post",
+      const updateInquiry = await axios({
+        url: `/v1/inquiries/${this.inquiry.inquiryId}`,
+        method: "put",
         data: data,
         headers: { "x-sikguadang-token": localStorage.getItem("sat") }
       });
-      alert("게시물이 등록되었습니다.");
+      alert("수정되었습니다.");
       this.$router.push("/board");
     }
   }
