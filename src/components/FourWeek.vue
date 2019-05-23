@@ -195,7 +195,7 @@
 												<img src="../assets/fourweek/tue/morning/soup.jpg" alt="양파 부추국">
 											</div>
 											<div class="food_text">
-												<p>양파 부추국/p>
+												<p>양파 부추국</p>
 												<p>양파 35g, 부추 35g</p>
 											</div>
 										</li>
@@ -1037,7 +1037,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/fourweek/fri/lunch/side3.jpg" alt="동치미">
+												<img src="../assets/fourweek/fri/lunch/side4.jpg" alt="동치미">
 											</div>
 											<div class="food_text">
 												<p>동치미</p>
@@ -1124,7 +1124,7 @@
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/fourweek/tue/dinner/soup.jpg" alt="비지찌개">
+												<img src="../assets/fourweek/mon/dinner/soup.jpg" alt="비지찌개">
 											</div>
 											<div class="food_text">
 												<p>비지찌개</p>
@@ -1133,7 +1133,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/fourweek/tue/dinner/side2.jpg" alt="우엉조림">
+												<img src="../assets/fourweek/mon/dinner/side2.jpg" alt="우엉조림">
 											</div>
 											<div class="food_text">
 												<p>우엉조림</p>
@@ -1142,7 +1142,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/fourweek/tue/dinner/side3.jpg" alt="파김치">
+												<img src="../assets/fourweek/mon/dinner/side3.jpg" alt="파김치">
 											</div>
 											<div class="food_text">
 												<p>파김치</p>

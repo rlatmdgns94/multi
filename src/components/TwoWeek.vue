@@ -831,7 +831,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/dessert2.jpg" alt="복숭아">
+												<img src="../assets/twoweek/wed/lunch/dessert2.jpg" alt="복숭아">
 											</div>
 											<div class="food_text">
 												<p>백도 복숭아</p>
@@ -999,7 +999,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/lunch/dessert1.jpg" alt="우유">
+												<img src="../assets/twoweek/fri/lunch/dessert2.jpg" alt="우유">
 											</div>
 											<div class="food_text">
 												<p>우유</p>
@@ -1028,7 +1028,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/fri/lunch/dessert2.jpg" alt="키위">
+												<img src="../assets/twoweek/fri/lunch/dessert1.jpg" alt="키위">
 											</div>
 											<div class="food_text">
 												<p>키위</p>
@@ -1106,7 +1106,7 @@
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/tue/dinner/side2.jpg" alt="돈사태찜">
+												<img src="../assets/twoweek/mon/dinner/side2.jpg" alt="돈사태찜">
 											</div>
 											<div class="food_text">
 												<p>돈사태찜</p>
@@ -1255,11 +1255,11 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/wed/dinner/main.jpg" alt="제육볶음">
+												<img src="../assets/twoweek/wed/dinner/main.jpg" alt="돼지고기 김치찜">
 											</div>
 											<div class="food_text">
-												<p>제육볶음(저녁 메인)</p>
-												<p>돈육 40g, 양파 10g, 당근 10g</p>
+												<p>돼지고기 김치찜(저녁 메인)</p>
+												<p>돈육 40g, 배추 김치 30g</p>
 											</div>
 										</li>
 										<li>

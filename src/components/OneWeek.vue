@@ -304,10 +304,10 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/oneweek/wed/morning/side2.png" alt="새송이 버섯조림(아침 메인)">
+												<img src="../assets/oneweek/wed/morning/side2.png" alt="우엉조림">
 											</div>
 											<div class="food_text">
-												<p>새송이 버섯조림(아침 메인)</p>
+												<p>우어조림</p>
 												<p>우엉 40g</p>
 											</div>
 										</li>
@@ -616,7 +616,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/oneweek/mon/lunch/side2.png" alt="청경채 김치">
+												<img src="../assets/oneweek/mon/lunch/side4.png" alt="청경채 김치">
 											</div>
 											<div class="food_text">
 												<p>청경채 김치</p>
@@ -813,7 +813,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/oneweek/mon/lunch/dessert2.png" alt="파인애플">
+												<img src="../assets/oneweek/wed/lunch/dessert2.png" alt="파인애플">
 											</div>
 											<div class="food_text">
 												<p>파인애플</p>

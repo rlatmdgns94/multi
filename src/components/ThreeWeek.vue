@@ -840,7 +840,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/twoweek/mon/lunch/dessert2.jpg" alt="플레인 요거트">
+												<img src="../assets/threeweek/wed/lunch/dessert2.jpg" alt="플레인 요거트">
 											</div>
 											<div class="food_text">
 												<p>플레인 요거트</p>
@@ -1124,7 +1124,7 @@
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/threeweek/tue/dinner/soup.jpg" alt="김치 콩나물국">
+												<img src="../assets/threeweek/mon/dinner/soup.jpg" alt="김치 콩나물국">
 											</div>
 											<div class="food_text">
 												<p>김치 콩나물국</p>
@@ -1133,7 +1133,7 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/threeweek/tue/dinner/main.jpg" alt="브로콜리 양파볶음(저녁메인)">
+												<img src="../assets/threeweek/mon/dinner/main.jpg" alt="브로콜리 양파볶음(저녁메인)">
 											</div>
 											<div class="food_text">
 												<p>브로콜리 양파볶음(저녁메인)</p>
@@ -1142,12 +1142,12 @@
 										</li>
 										<li>
 											<div class="food_img">
-												<img src="../assets/threeweek/tue/dinner/side3.jpg" alt="갓김치">
+												<img src="../assets/threeweek/mon/dinner/side3.jpg" alt="갓김치">
 											</div>
 											<div class="food_text">
 												<p>갓김치</p>
 												<p>갓김치 50g</p>
-											</div>hfjgvymgng
+											</div>
 										</li>
 									</ul>
 								</div>
@@ -1403,11 +1403,11 @@
 									<ul class="food_list">
 										<li>
 											<div class="food_img">
-												<img src="../assets/threeweek/thu/dinner/soup.jpg" alt="물김치">
+												<img src="../assets/threeweek/thu/dinner/soup.jpg" alt="들깨 토란국">
 											</div>
 											<div class="food_text">
-												<p>열무 물김치</p>
-												<p>열무 물김치 70g</p>
+												<p>들깨 토란국</p>
+												<p>토란 70g, 무 20g, 양파 10g, 들깨 8g</p>
 											</div>
 										</li>
 										<li>
