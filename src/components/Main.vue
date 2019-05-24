@@ -38,17 +38,17 @@
       </div>
       <ul class="story_list">
         <li>
-          <router-link to="/">
+          <router-link to="/brand">
             <img src="../assets/img/Introduce1.jpg" alt>
           </router-link>
         </li>
         <li>
-          <router-link to="/">
+          <router-link to="/brand">
             <img src="../assets/img/Introduce2.jpg" alt>
           </router-link>
         </li>
         <li>
-          <router-link to="/">
+          <router-link to="/brand">
             <img src="../assets/img/Introduce3.jpg" alt>
           </router-link>
         </li>
