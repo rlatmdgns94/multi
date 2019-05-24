@@ -6,10 +6,10 @@
         <h3 class="blind">맞춤당 식단 탭메뉴</h3>
         <ul class="diet_tab">
           <li>
-            <router-link to>이용방법</router-link>
+            <router-link to class="on">이용방법</router-link>
           </li>
           <li>
-            <router-link to class="on">식단표</router-link>
+            <router-link to>식단표</router-link>
           </li>
           <li>
             <router-link to>주문하기</router-link>
@@ -21,7 +21,7 @@
     <!-- 탭메뉴배경 -->
     <div class="diet_content_wrap">
       <!-- //이용방법 -->
-      <div class="diet_content">
+      <div class="diet_content on">
         <div>
           <img src="../assets/img/use1.png" alt>
         </div>
@@ -54,7 +54,7 @@
       </div>
       <!-- 이용방법 -->
       <!-- 식단표 -->
-      <div class="diet_content on">
+      <div class="diet_content">
         <span class="month"><input type='month' id='currnetMonth' readonly></span>
         <ul id="gallery">
           <li>
