@@ -360,7 +360,7 @@
                 <input
                   id="agree_service_check"
                   name="agree_service_check"
-                  value="1"
+                  v-model="termAgreeCheck"
                   type="checkbox"
                 >
                 <label for="agree_service_check">동의함</label>
@@ -415,7 +415,7 @@
                 <input
                   id="agree_privacy_check"
                   name="agree_privacy_check"
-                  value="1"
+                  v-model="privacyAgreeCheck"
                   type="checkbox"
                 >
                 <label for="agree_privacy_check">동의함</label>
@@ -564,7 +564,9 @@ export default {
       phoneMiddle: "",
       phoneLast: "",
       emailId: "",
-      domain: "naver.com"
+      domain: "naver.com",
+      termAgreeCheck: false,
+      privacyAgreeCheck: false
     };
   },
   mounted() {
@@ -697,6 +699,16 @@ export default {
         }
         if (this.domain === "") {
           alert("도메인을 입력하거나 선택해주세요.");
+          return false;
+        }
+
+        if (this.termAgreeCheck === false) {
+          alert("이용약관에 동의해주세요.");
+          return false;
+        }
+
+        if (this.privacyAgreeCheck === false) {
+          alert("개인정보 수집 및 이용에 동의해주세요.");
           return false;
         }
         const data = {
