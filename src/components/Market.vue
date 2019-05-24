@@ -21,7 +21,7 @@
           </ul>
         </div>
         <div class="market_seach">
-          <input type="text" placeholder="찾으시는 상품이 있으신가요?">
+          <input type="text" placeholder="찾으시는 상품이 있으신가요?" v-model="search">
         </div>
       </div>
       <div class="market_bottom">
@@ -74,9 +74,12 @@
       <div class="content_pager">
         <ul class="pager">
           <li>
-            <button :disabled="pageNum === 0" @click="prevPage" class="active">이전</button>
-            <span class="page-count">{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
-            <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="active">다음</button>
+            <button
+              v-for="page in pageCount"
+              :key="page"
+              @click="changePage(page)"
+              v-bind:class="{active: pageNum === page - 1}"
+            >{{ page }}</button>
           </li>
         </ul>
       </div>
@@ -213,6 +216,8 @@
       line-height: 31px;
       font-size: 15px;
       color: #7b7b7b;
+      background: none;
+      border: none;
       &.active {
         background: #85af4b;
         border-radius: 16px;
@@ -238,7 +243,9 @@ export default {
       cdn: config.cdn,
       pageNum: 0,
       pageSize: 9,
+      search: "",
       storeItemList: [],
+      searchData: [],
       pages: []
     };
   },
@@ -270,13 +277,16 @@ export default {
     prevPage() {
       this.pageNum -= 1;
     },
+    changePage(page) {
+      this.pageNum = page - 1;
+    },
     numberWithCommas: function(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
   },
   computed: {
     pageCount() {
-      let listLeng = this.storeItemList.length,
+      let listLeng = this.searchData.length,
         listSize = this.pageSize,
         page = Math.floor(listLeng / listSize);
       if (listLeng % listSize > 0) page += 1;
@@ -286,7 +296,13 @@ export default {
     paginatedData() {
       const start = this.pageNum * this.pageSize,
         end = start + this.pageSize;
-      return this.storeItemList.slice(start, end);
+      this.searchData = this.storeItemList
+        .filter(data => {
+          return data.title.toLowerCase().includes(this.search.toLowerCase());
+        })
+        .slice(0);
+
+      return this.searchData.slice(start, end);
     }
   }
 };
