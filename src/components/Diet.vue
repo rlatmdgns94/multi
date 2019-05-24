@@ -21,7 +21,7 @@
     <!-- 탭메뉴배경 -->
     <div class="diet_content_wrap">
       <!-- //이용방법 -->
-      <div class="diet_content">
+      <div class="diet_content" id="method">
         <div>
           <img src="../assets/img/use1.png" alt>
         </div>
@@ -54,20 +54,22 @@
       </div>
       <!-- 이용방법 -->
       <!-- 식단표 -->
-      <div class="diet_content on">
-        <span class="month"><input type='month' id='currnetMonth' readonly></span>
+      <div class="diet_content on" id="menu">
+        <span class="month">
+          <input type="month" id="currnetMonth" readonly>
+        </span>
         <ul id="gallery">
           <li>
             <OneWeek/>
           </li>
           <li>
-            <TwoWeek/>            
+            <TwoWeek/>
           </li>
           <li>
-            <ThreeWeek/>            
+            <ThreeWeek/>
           </li>
           <li>
-            <FourWeek/>            
+            <FourWeek/>
           </li>
         </ul>
         <div id="btn_gallery">
@@ -81,7 +83,7 @@
       </div>
       <!-- //식단표 -->
       <!-- 주문하기 -->
-      <div class="diet_content">
+      <div class="diet_content" id="order">
         <div class="order_wrap">
           <ul class="diabetes_guide">
             <li>
@@ -473,19 +475,19 @@
     font-size: 16px;
   }
 }
-.month{
-    position: absolute;
-   left: 816px;
-    top: 56px;
-  input{
-      border: 0;
-      font-size: 30px;
-      font-weight: 600;
-      width: 252px;
-      vertical-align: top;
-      background: transparent;
-      letter-spacing: normal;
-    }
+.month {
+  position: absolute;
+  left: 816px;
+  top: 56px;
+  input {
+    border: 0;
+    font-size: 30px;
+    font-weight: 600;
+    width: 252px;
+    vertical-align: top;
+    background: transparent;
+    letter-spacing: normal;
+  }
 }
 .week_diet {
   width: 100%;
@@ -538,10 +540,10 @@
     float: right;
   }
 }
-.detail_bar{
-  &::after{
+.detail_bar {
+  &::after {
     display: inline-block;
-    content:"/";
+    content: "/";
     margin: 0 15px;
   }
 }
@@ -643,14 +645,14 @@
     font-weight: 600;
   }
 }
-.no_dessert{
-	width: 84px !important;
-	height: 84px !important;
-	border-radius: 43px;
-	border: 1px solid #85AF4B;
+.no_dessert {
+  width: 84px !important;
+  height: 84px !important;
+  border-radius: 43px;
+  border: 1px solid #85af4b;
 }
-.food_text_v2{
-	margin-top :14px;
+.food_text_v2 {
+  margin-top: 14px;
 }
 // //식단표
 // 주문하기
@@ -900,7 +902,7 @@ export default {
     OneWeek,
     TwoWeek,
     ThreeWeek,
-    FourWeek,
+    FourWeek
   },
   name: "Diet",
   data: function() {
@@ -991,7 +993,9 @@ export default {
         }
       });
     });
-    document.getElementById('currnetMonth').value= new Date().toISOString().slice(0, 7);
+    document.getElementById(
+      "currnetMonth"
+    ).value = new Date().toISOString().slice(0, 7);
   },
   methods: {
     numberWithCommas: function(x) {
