@@ -89,7 +89,7 @@
 .memo {
   width: 97.3%;
   height: 386px;
-  background: #f0f0f0;
+  background: #fff;
 }
 .write_bottom {
   overflow: hidden;
@@ -110,6 +110,7 @@
   }
 }
 .write_submit {
+  cursor: pointer;
   float: right;
   width: 170px;
   height: 39px;
@@ -118,6 +119,7 @@
   color: #fff;
   background: #85af4b;
   border: 0;
+  text-align: center;
 }
 </style>
 

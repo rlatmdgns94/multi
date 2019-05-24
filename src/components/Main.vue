@@ -38,17 +38,17 @@
       </div>
       <ul class="story_list">
         <li>
-          <router-link to="/">
+          <router-link to="/brand">
             <img src="../assets/img/Introduce1.jpg" alt>
           </router-link>
         </li>
         <li>
-          <router-link to="/">
+          <router-link to="/brand">
             <img src="../assets/img/Introduce2.jpg" alt>
           </router-link>
         </li>
         <li>
-          <router-link to="/">
+          <router-link to="/brand">
             <img src="../assets/img/Introduce3.jpg" alt>
           </router-link>
         </li>
@@ -126,7 +126,7 @@
               당뇨의 좋은 음식과 안 좋은 음식
               <br>어떤 것들이 있을까요?
             </p>
-            <router-link to="/" class="information_more">자세히 보기</router-link>
+            <router-link :to="{name: 'JipijigiDetail', params: {articleId: '5cd186e7f7590fc34b847f1a'}}" class="information_more">자세히 보기</router-link>
           </div>
         </li>
         <li>
@@ -139,7 +139,7 @@
               당뇨 운동의 필요성과 운동 방법,
               <br>주의할 점 등 모두 알려드립니다.
             </p>
-            <router-link to="/" class="information_more">자세히 보기</router-link>
+            <router-link :to="{name: 'JipijigiDetail', params: {articleId: '5cd11a02488bc96fa319e8ed'}}" class="information_more">자세히 보기</router-link>
           </div>
         </li>
         <li>
@@ -152,7 +152,7 @@
               합병증이 더 곤란한 당뇨병
               <br>미리 알아보는 당뇨 합병증 종류
             </p>
-            <router-link to="/" class="information_more">자세히 보기</router-link>
+            <router-link :to="{name: 'JipijigiDetail', params: {articleId: '5cd118b1488bc96fa319e8e9'}}" class="information_more">자세히 보기</router-link>
           </div>
         </li>
       </ul>

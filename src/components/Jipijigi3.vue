@@ -57,7 +57,7 @@
                 다. 유산소운동은 적어도 20분 이상~1시간 미만으로 하고 …
               </p>
               <router-link
-                :to="{name: 'JipijigiDetail', params: {articleId: '5cd18600f7590fc34b847f16'}}"
+                :to="{name: 'JipijigiDetail', params: {articleId: '5cd11a02488bc96fa319e8ed'}}"
                 class="slide_more"
               >더 보기</router-link>
             </div>
@@ -77,7 +77,7 @@
                 나 정상 체중인 사람들 도 발병될 수 있습니다. …
               </p>
               <router-link
-                :to="{name: 'JipijigiDetail', params: {articleId: '5cd18552f7590fc34b847f12'}}"
+                :to="{name: 'JipijigiDetail', params: {articleId: '5cd118b1488bc96fa319e8e9'}}"
                 class="slide_more"
               >더 보기</router-link>
             </div>
