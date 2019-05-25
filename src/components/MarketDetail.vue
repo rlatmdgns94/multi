@@ -394,8 +394,8 @@ export default {
             totalPrice: this.storeItem.price * this.productQty,
             productImg: this.storeItem.thumbnailUrl[0].imageUrl
           };
-          basketArray = basket;
           basketArray.push(data);
+          basketArray.push(...basket);
         } else {
           const data = {
             productName: this.storeItem.title,

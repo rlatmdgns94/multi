@@ -668,9 +668,10 @@ export default {
         alert("로그인이 필요합니다.");
         this.$router.push("/login");
       } else {
-        const basket = localStorage.getItem("basket");
-        const data = [
-          {
+        const basket = JSON.parse(localStorage.getItem("basket"));
+        let basketArray = [];
+        if (basket) {
+          const data = {
             productName: this.productName,
             qty: 1,
             totalPrice:
@@ -679,9 +680,23 @@ export default {
               this.weeks *
               this.mealOption,
             checked: false
-          },
-          ...basket
-        ];
+          };
+          basketArray.push(data);
+          basketArray.push(...basket);
+        } else {
+          const data = {
+            productName: this.productName,
+            qty: 1,
+            totalPrice:
+              this.mealsPerDay *
+              this.daysPerWeek *
+              this.weeks *
+              this.mealOption,
+            checked: false
+          };
+          basketArray.push(data);
+        }
+        alert("장바구니에 추가되었습니다.");
         localStorage.setItem("basket", JSON.stringify(data));
         this.$router.push("/cart");
       }
