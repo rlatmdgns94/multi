@@ -26,12 +26,12 @@
                 <div class="cart_product">
                   <div class="cart_product_img">
                     <router-link to="/">
-                      <img src="../assets/img/cart1.png" alt>
+                      <img :src="item.productImg ? cdn + item.productImg : productImg" alt>
                     </router-link>
                   </div>
                   <div class="cart_product_text">
                     <p class="cart_product_name">{{ item.productName }}</p>
-                    <p class="cart_product_option">{{ [item.optionName] }}</p>
+                    <p class="cart_product_option">{{ item.optionName ? [item.optionName] : null }}</p>
                   </div>
                 </div>
               </td>
@@ -286,10 +286,15 @@
 </style>
 
 <script>
+import config from "../utils/config";
+import productImg from "../assets/img/cart1.png";
+
 export default {
   name: "Cart",
   data: function() {
     return {
+      cdn: config.cdn,
+      productImg: productImg,
       basket: []
     };
   },

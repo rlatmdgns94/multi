@@ -5,7 +5,9 @@ import Symptom from "./components/Symptom.vue";
 import Main from "./components/Main.vue";
 import Login from "./components/Login.vue";
 import Join from "./components/Join.vue";
-import Diet from "./components/Diet.vue";
+import Useway from "./components/Useway.vue";
+import Menu from "./components/Menu.vue";
+import DietOrder from "./components/DietOrder.vue";
 import Cart from "./components/Cart.vue";
 import Order from "./components/Order.vue";
 import OrderCompleted from "./components/OrderCompleted.vue";
@@ -68,9 +70,19 @@ export default new Router({
       component: Join
     },
     {
-      path: "/diet",
-      name: "Diet",
-      component: Diet
+      path: "/useway",
+      name: "Useway",
+      component: Useway
+    },
+    {
+      path: "/menu",
+      name: "Menu",
+      component: Menu
+    },
+    {
+      path: "/dietOrder",
+      name: "DietOrder",
+      component: DietOrder
     },
     {
       path: "/cart",

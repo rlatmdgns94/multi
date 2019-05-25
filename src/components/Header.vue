@@ -13,16 +13,16 @@
             <router-link to="/brand">식과당 소개</router-link>
           </li>
           <li>
-            <router-link to="/diet" class="menu_arrow">맞춤당 식단</router-link>
+            <router-link :to="{name: 'Useway',}" class="menu_arrow">맞춤당 식단</router-link>
             <ul class="submenu">
               <li>
-                <router-link to="/diet">이용방법</router-link>
+                <router-link :to="{name: 'Useway'}">이용방법</router-link>
               </li>
               <li>
-                <router-link to="/diet">식단표</router-link>
+                <router-link :to="{name: 'Menu'}">식단표</router-link>
               </li>
               <li>
-                <router-link to="/diet">주문하기</router-link>
+                <router-link :to="{name: 'DietOrder'}">주문하기</router-link>
               </li>
             </ul>
           </li>
