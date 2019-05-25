@@ -63,7 +63,7 @@
                 <button @click="getOrderItem">바로 구매</button>
               </li>
               <li>
-                <button>장바구니</button>
+                <button @click="setItemToBasket">장바구니</button>
               </li>
             </ul>
           </div>
@@ -385,17 +385,29 @@ export default {
         alert("로그인이 필요합니다.");
         this.$router.push("/login");
       } else {
-        const basket = localStorage.getItem("basket");
-        const data = [
-          {
+        const basket = JSON.parse(localStorage.getItem("basket"));
+        let basketArray = [];
+        if (basket) {
+          const data = {
             productName: this.storeItem.title,
             qty: this.productQty,
             totalPrice: this.storeItem.price * this.productQty,
             productImg: this.storeItem.thumbnailUrl[0].imageUrl
-          },
-          ...basket
-        ];
-        localStorage.setItem("basket", JSON.stringify(data));
+          };
+          basketArray = basket;
+          basketArray.push(data);
+        } else {
+          const data = {
+            productName: this.storeItem.title,
+            qty: this.productQty,
+            totalPrice: this.storeItem.price * this.productQty,
+            productImg: this.storeItem.thumbnailUrl[0].imageUrl
+          };
+          basketArray.push(data);
+        }
+
+        alert("장바구니에 추가되었습니다.");
+        localStorage.setItem("basket", JSON.stringify(basketArray));
         this.$router.push("/cart");
       }
     }
