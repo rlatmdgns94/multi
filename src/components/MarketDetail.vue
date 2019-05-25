@@ -376,8 +376,27 @@ export default {
             productImg: this.storeItem.thumbnailUrl[0].imageUrl
           }
         ];
-        localStorage.setItem("basket", JSON.stringify(data));
+        localStorage.setItem("order", JSON.stringify(data));
         this.$router.push("/order");
+      }
+    },
+    setItemToBasket: function() {
+      if (!localStorage.getItem("sat")) {
+        alert("로그인이 필요합니다.");
+        this.$router.push("/login");
+      } else {
+        const basket = localStorage.getItem("basket");
+        const data = [
+          {
+            productName: this.storeItem.title,
+            qty: this.productQty,
+            totalPrice: this.storeItem.price * this.productQty,
+            productImg: this.storeItem.thumbnailUrl[0].imageUrl
+          },
+          ...basket
+        ];
+        localStorage.setItem("basket", JSON.stringify(data));
+        this.$router.push("/cart");
       }
     }
   }

@@ -314,7 +314,7 @@
                       <span @click="getOrderItem">바로 결제하기</span>
                     </li>
                     <li>
-                      <router-link to="/">장바구니</router-link>
+                      <span @click="setItemToBasket">장바구니</span>
                     </li>
                   </ul>
                 </div>
@@ -851,12 +851,6 @@
             color: #85af4b;
           }
         }
-        a {
-          color: #000;
-          &:hover {
-            color: #85af4b;
-          }
-        }
       }
     }
   }
@@ -1042,8 +1036,52 @@ export default {
               this.mealsPerDay * this.daysPerWeek * this.weeks * this.mealOption
           }
         ];
-        localStorage.setItem("basket", JSON.stringify(data));
+        localStorage.setItem("order", JSON.stringify(data));
         this.$router.push("/order");
+      }
+    },
+    setItemToBasket: function() {
+      if (this.mealsPerDay === 0) {
+        alert("끼니 수를 선택해주세요.");
+        return false;
+      }
+      if (this.daysPerWeek === 0) {
+        alert("한 주에 몇 일 관리 받으실지를 선택해주세요.");
+        return false;
+      }
+      if (this.weeks === 0) {
+        alert("몇 주 동안 관리 받으실지를 선택해주세요.");
+        return false;
+      }
+      if (this.mealOption === 0) {
+        alert("식단의 옵션을 선택해주세요.");
+        return false;
+      }
+      if (this.deliveryDate === "") {
+        alert("배송받으실 요일을 선택해주세요.");
+        return false;
+      }
+
+      if (!localStorage.getItem("sat")) {
+        alert("로그인이 필요합니다.");
+        this.$router.push("/login");
+      } else {
+        const basket = localStorage.getItem("basket");
+        const data = [
+          {
+            productName: this.productName,
+            qty: 1,
+            totalPrice:
+              this.mealsPerDay *
+              this.daysPerWeek *
+              this.weeks *
+              this.mealOption,
+            checked: false
+          },
+          ...basket
+        ];
+        localStorage.setItem("basket", JSON.stringify(data));
+        this.$router.push("/cart");
       }
     }
   }

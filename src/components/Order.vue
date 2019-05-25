@@ -31,7 +31,7 @@
             <td>{{item.qty}}</td>
             <td>{{numberWithCommas(item.totalPrice)}}</td>
             <td>무료</td>
-            <td>{{numberWithCommas(item.totalPrice)}}</td>
+            <td>{{numberWithCommas(parseInt(item.totalPrice * item.qty))}}</td>
           </tr>
         </tbody>
       </table>
@@ -450,8 +450,8 @@ export default {
     this.orderData.phoneFirst = "010";
     this.orderData.phoneMiddle = "";
     this.orderData.phoneLast = "";
-    const basket = JSON.parse(localStorage.getItem("basket"));
-    this.items = basket;
+    const order = JSON.parse(localStorage.getItem("order"));
+    this.items = order;
 
     if (this.items) {
       this.sumTotalPrice();
@@ -555,10 +555,14 @@ export default {
 
     sumTotalProductName() {
       const items = this.items;
-      let totalProductName = 0;
-      // for (let i = 0; i < items.length; i++) {
-      totalProductName = items[0].productName;
-      // }
+      let totalProductName = "";
+
+      if (items.length > 1) {
+        totalProductName = items[0].productName + ` 외 ${items.length - 1}개`;
+      } else {
+        totalProductName = items[0].productName;
+      }
+
       this.orderData.totalProductName = totalProductName;
     },
 
@@ -616,8 +620,7 @@ export default {
               pay_method: `${this.orderData.purchaseMethod}`,
               merchant_uid: response.data.merchant_uid,
               name: `${this.orderData.totalProductName}`,
-              amount:
-                this.orderData.totalProductQty * this.orderData.totalPrice,
+              amount: this.orderData.totalPrice,
               buyer_email: `${this.userInfo.email}`,
               buyer_name: `${this.userInfo.userName}`,
               buyer_tel: `${this.userInfo.phoneFirst}-${
