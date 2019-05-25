@@ -405,6 +405,7 @@
       border: 1px solid #85af4b;
       background: #fff;
       border-radius: 40px;
+      cursor: pointer;
       font-size: 25px;
     }
     .button_like:checked + .symptom_button {
@@ -473,6 +474,7 @@
 .diabetes_radio_btn {
   font-size: 22px;
   text-align: center;
+  cursor: pointer;
   span {
     display: inline-block;
     width: 29px;
@@ -535,6 +537,7 @@
         }
         span {
           color: #000;
+          cursor: pointer;
           &:hover {
             color: #85af4b;
           }

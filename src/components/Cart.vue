@@ -210,6 +210,7 @@
       padding: 7px 0px;
       border: 1px solid #9a9a9a;
       color: #000;
+      background: #fff;
       font-size: 10px;
     }
   }
@@ -231,6 +232,7 @@
       border: 1px solid #5b5b5b;
       color: #000;
       font-size: 15px;
+      background: #fff;
       text-align: center;
     }
   }
@@ -247,12 +249,13 @@
     border: 1px solid #85af4b;
     color: #000;
     font-size: 15px;
+    background: #fff;
     text-align: center;
   }
 }
 .cart_order_btn {
   border: 1px solid #85af4b !important;
-  background: #85af4b;
+  background: #85af4b !important;
   color: #fff !important;
 }
 .cart_text {
