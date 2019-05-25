@@ -218,6 +218,7 @@
       color: #7b7b7b;
       background: none;
       border: none;
+      outline: none;
       &.active {
         background: #85af4b;
         border-radius: 16px;
