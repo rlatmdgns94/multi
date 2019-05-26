@@ -24,7 +24,7 @@
                 </div>
                 <div class="cart_product_text">
                   <p class="cart_product_name">{{item.productName}}</p>
-                  <!-- <p class="cart_product_option">[옵션 : 하루 2끼, 주 3일, 1주 메인+반찬]</p> -->
+                  <p class="cart_product_option">{{ [item.optionName] }}</p>
                 </div>
               </div>
             </td>
@@ -580,6 +580,7 @@ export default {
       data.order.productQty = this.orderData.totalProductQty;
       data.order.productName = this.orderData.totalProductName;
       data.order.productImg = this.items[0].productImg;
+      data.order.optionName = this.items[0].optionName;
       if (!localStorage.getItem("sat")) {
         alert("로그인을 해주세요.");
         this.$router.push("/login");

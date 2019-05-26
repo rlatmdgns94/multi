@@ -220,7 +220,7 @@
                       <input
                         type="radio"
                         name="day_of_the_week"
-                        value="tuesday"
+                        value="1"
                         class="button_like"
                         v-model="deliveryDate"
                       >
@@ -232,9 +232,9 @@
                       <input
                         type="radio"
                         name="day_of_the_week"
-                        value="thursday"
+                        value="2"
                         class="button_like"
-                        :v-model="deliveryDate"
+                        v-model="deliveryDate"
                       >
                       <span class="symptom_button">매주 목요일</span>
                     </label>
@@ -243,7 +243,7 @@
               </div>
               <div class="payment_box">
                 <div class="payment_text">
-                  <span>식단 프로그램</span>
+                  <span>식단 프로그램 [{{ this.mealOptionName }}]</span>
                   <span class="price">{{getTotalPrice()}} 원</span>
                 </div>
                 <div class="payment_menu">
@@ -591,7 +591,6 @@ export default {
       mealsPerDayName: "",
       daysPerWeekName: "",
       weeksName: "",
-      mealOptionName: "",
       productName: "맞춤당 정기 식단 프로그램",
       selectedOption: ""
     };
@@ -638,7 +637,11 @@ export default {
             productName: this.productName,
             qty: 1,
             totalPrice:
-              this.mealsPerDay * this.daysPerWeek * this.weeks * this.mealOption
+              this.mealsPerDay *
+              this.daysPerWeek *
+              this.weeks *
+              this.mealOption,
+            optionName: this.mealOptionName
           }
         ];
         localStorage.setItem("order", JSON.stringify(data));
@@ -682,6 +685,7 @@ export default {
               this.daysPerWeek *
               this.weeks *
               this.mealOption,
+            optionName: this.mealOptionName,
             checked: false
           };
           basketArray.push(data);
@@ -695,6 +699,7 @@ export default {
               this.daysPerWeek *
               this.weeks *
               this.mealOption,
+            optionName: this.mealOptionName,
             checked: false
           };
           basketArray.push(data);
@@ -703,6 +708,74 @@ export default {
         localStorage.setItem("basket", JSON.stringify(basketArray));
         this.$router.push("/cart");
       }
+    }
+  },
+  computed: {
+    mealOptionName: function() {
+      let oneDay = "";
+      let oneWeek = "";
+      let totalWeek = "";
+      let mealOption = "";
+      let deliveryDateName = "";
+
+      switch (this.mealsPerDay) {
+        case "2":
+          oneDay = "하루 2끼";
+          break;
+        case "3":
+          oneDay = "하루 3끼";
+          break;
+        default:
+          return null;
+      }
+
+      switch (this.daysPerWeek) {
+        case "3":
+          oneWeek = "3일";
+          break;
+        case "5":
+          oneWeek = "5일";
+          break;
+        default:
+          return null;
+      }
+
+      switch (this.weeks) {
+        case "1":
+          totalWeek = "1주";
+          break;
+        case "2":
+          totalWeek = "2주";
+          break;
+        default:
+          return null;
+      }
+
+      switch (this.mealOption) {
+        case "7000":
+          mealOption = "단일음식";
+          break;
+        case "9000":
+          mealOption = "단일음식+반찬";
+          break;
+        case "10000":
+          mealOption = "단일음식+반찬+간식";
+          break;
+        default:
+          return null;
+      }
+
+      switch (this.deliveryDate) {
+        case "1":
+          deliveryDateName = "매주 화요일";
+          break;
+        case "2":
+          deliveryDateName = "매주 목요일";
+          break;
+        default:
+          return null;
+      }
+      return `${oneDay}, ${oneWeek}, ${totalWeek}, ${mealOption}, ${deliveryDateName}`;
     }
   }
 };
