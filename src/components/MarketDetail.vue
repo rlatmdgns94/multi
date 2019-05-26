@@ -392,7 +392,8 @@ export default {
             productName: this.storeItem.title,
             qty: this.productQty,
             totalPrice: this.storeItem.price * this.productQty,
-            productImg: this.storeItem.thumbnailUrl[0].imageUrl
+            productImg: this.storeItem.thumbnailUrl[0].imageUrl,
+            checked: false
           };
           basketArray.push(data);
           basketArray.push(...basket);
@@ -401,7 +402,8 @@ export default {
             productName: this.storeItem.title,
             qty: this.productQty,
             totalPrice: this.storeItem.price * this.productQty,
-            productImg: this.storeItem.thumbnailUrl[0].imageUrl
+            productImg: this.storeItem.thumbnailUrl[0].imageUrl,
+            checked: false
           };
           basketArray.push(data);
         }

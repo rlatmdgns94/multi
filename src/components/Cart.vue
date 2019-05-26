@@ -81,7 +81,7 @@
         </ul>
         <div class="cart_bottom_area">
           <span class="product_clear">
-            <button @click="deleteAll">전체삭제</button>
+            <button type="button" @click="deleteAll">전체삭제</button>
           </span>
           <ul class="cart_all_menu">
             <li>
@@ -357,14 +357,19 @@ export default {
     },
     orderSelectedItem: function() {
       const selectedItem = this.basket.filter(item => item.checked === true);
-      localStorage.setItem("order", JSON.stringify(selectedItem));
-      this.basket = this.basket.filter(item => item.checked === false);
-      localStorage.setItem("basket", JSON.stringify(this.basket));
-      this.$router.push("/order");
+      console.log(selectedItem);
+      if (!selectedItem.checked) {
+        alert("선택된 상품이 없습니다.");
+      } else {
+        localStorage.setItem("order", JSON.stringify(selectedItem));
+        this.basket = this.basket.filter(item => item.checked === false);
+        localStorage.setItem("basket", JSON.stringify(this.basket));
+        this.$router.push("/order");
+      }
     },
     orderAll: function() {
       localStorage.setItem("order", JSON.stringify(this.basket));
-      localStorage.deleteItem("basket");
+      localStorage.removeItem("basket");
       this.$router.push("/order");
     },
     deleteItem: function(index) {
@@ -381,7 +386,10 @@ export default {
       }
     },
     deleteAll: function() {
-      localStorage.removeItem("basket");
+      const items = this.basket.filter(item => item.checked === false);
+      console.log(items);
+      localStorage.setItem("basket", JSON.stringify(items));
+      // localStorage.setItem("basket", JSON.stringify(this.basket));
       window.location.reload();
     }
   }
