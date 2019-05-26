@@ -567,7 +567,8 @@ export default {
     },
 
     purchase() {
-      const hasOptionItem = this.items.filter(item => item.optionName);
+      console.log(this.items);
+      const hasOptionItem = this.items.filter(item => item.optionName !== "");
       const data = {};
       data.order = this.orderData;
       data.order.userId = this.userInfo.userId;
@@ -581,7 +582,7 @@ export default {
       data.order.productQty = this.orderData.totalProductQty;
       data.order.productName = this.orderData.totalProductName;
       data.order.productImg = this.items[0].productImg;
-      data.order.optionItemName = hasOptionItem
+      data.order.optionItemName = hasOptionItem[0].optionName
         ? hasOptionItem[0].optionName
         : "";
       if (!localStorage.getItem("sat")) {
