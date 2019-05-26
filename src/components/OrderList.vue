@@ -34,7 +34,9 @@
                   </div>
                   <div class="cart_product_text">
                     <p class="cart_product_name">{{order.productName}}</p>
-                    <!-- <p class="cart_product_option">[옵션 : 하루 2끼, 주 3일, 1주 메인+반찬]</p> -->
+                    <p
+                      class="cart_product_option"
+                    >{{ order.optionItemName ? [order.optionItemName] : null }}</p>
                   </div>
                 </div>
               </td>
