@@ -700,7 +700,7 @@ export default {
           basketArray.push(data);
         }
         alert("장바구니에 추가되었습니다.");
-        localStorage.setItem("basket", JSON.stringify(data));
+        localStorage.setItem("basket", JSON.stringify(basketArray));
         this.$router.push("/cart");
       }
     }

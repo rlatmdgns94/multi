@@ -579,6 +579,7 @@ export default {
       data.order.totalPrice = this.orderData.totalPrice;
       data.order.productQty = this.orderData.totalProductQty;
       data.order.productName = this.orderData.totalProductName;
+      data.order.productImg = this.items[0].productImg;
       if (!localStorage.getItem("sat")) {
         alert("로그인을 해주세요.");
         this.$router.push("/login");

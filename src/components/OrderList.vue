@@ -29,7 +29,7 @@
                 <div class="cart_product">
                   <div class="cart_product_img">
                     <router-link to="/">
-                      <img src="../assets/img/cart1.png" alt>
+                      <img :src="order.productImage ? cdn + order.productImage : productImg" alt>
                     </router-link>
                   </div>
                   <div class="cart_product_text">
@@ -234,11 +234,16 @@
 
 <script>
 import axios from "axios";
+
+import config from "../utils/config";
+import productImg from "../assets/img/cart1.png";
 export default {
   name: "OrderList",
   data: function() {
     return {
-      orders: []
+      orders: [],
+      cdn: config.cdn,
+      productImg: productImg
     };
   },
   async mounted() {
@@ -248,6 +253,7 @@ export default {
       headers: { "x-sikguadang-token": localStorage.getItem("sat") }
     });
     this.orders = response.data;
+    console.log(this.orders);
   },
   methods: {
     numberWithCommas: function(x) {
