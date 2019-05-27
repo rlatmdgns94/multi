@@ -356,6 +356,9 @@ export default {
       }
     },
     orderSelectedItem: function() {
+      if (!this.basket) {
+        alert("장바구니가 없습니다.");
+      }
       const selectedItem = this.basket.filter(item => item.checked === true);
       console.log(selectedItem);
       if (!selectedItem.checked) {
@@ -368,17 +371,31 @@ export default {
       }
     },
     orderAll: function() {
+      if (!this.basket) {
+        alert("장바구니가 없습니다.");
+        return false;
+      }
       const selectedItem = this.basket.filter(item => item.checked === true);
       console.log(selectedItem);
+      if (this.basket.length === 1) {
+        if (this.basket[0].checked === false) {
+          alert("선택된 상품이 없습니다.");
+          return false;
+          // window.location.reload();
+        }
+      }
       selectedItem.forEach(function(item) {
         if (!item.checked) {
           alert("선택된 상품이 없습니다.");
+          return false;
         }
       });
-      localStorage.setItem("order", JSON.stringify(selectedItem));
-      this.basket = this.basket.filter(item => item.checked === false);
-      localStorage.setItem("basket", JSON.stringify(this.basket));
-      this.$router.push("/order");
+      if (true) {
+        localStorage.setItem("order", JSON.stringify(selectedItem));
+        this.basket = this.basket.filter(item => item.checked === false);
+        localStorage.setItem("basket", JSON.stringify(this.basket));
+        this.$router.push("/order");
+      }
     },
     deleteItem: function(index) {
       if (this.basket[index].checked !== true) {
@@ -394,6 +411,9 @@ export default {
       }
     },
     deleteAll: function() {
+      if (!this.basket || !this.basket[0]) {
+        alert("장바구니가 없습니다.");
+      }
       const items = this.basket.filter(item => item.checked === false);
       console.log(items);
       localStorage.setItem("basket", JSON.stringify(items));
