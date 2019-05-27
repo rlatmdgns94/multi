@@ -361,13 +361,17 @@ export default {
       }
       const selectedItem = this.basket.filter(item => item.checked === true);
       console.log(selectedItem);
-      if (!selectedItem.checked) {
-        alert("선택된 상품이 없습니다.");
-      } else {
-        localStorage.setItem("order", JSON.stringify(selectedItem));
+      if (selectedItem && selectedItem[0]) {
+        selectedItem.forEach(function(item) {
+          if (item.checked === true) {
+            localStorage.setItem("order", JSON.stringify(selectedItem));
+          }
+        });
         this.basket = this.basket.filter(item => item.checked === false);
         localStorage.setItem("basket", JSON.stringify(this.basket));
         this.$router.push("/order");
+      } else {
+        alert("선택된 상품이 없습니다.");
       }
     },
     orderAll: function() {
