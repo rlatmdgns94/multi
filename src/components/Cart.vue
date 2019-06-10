@@ -48,9 +48,9 @@
                   </div>
                 </div>
               </td>
-              <td>{{ numberWithCommas(item.totalPrice) }} 원</td>
+              <td>{{ numberWithCommas(item.totalPrice / item.qty) }} 원</td>
               <td>무료</td>
-              <td>{{ numberWithCommas(parseInt(item.totalPrice) * item.qty) }} 원</td>
+              <td>{{ numberWithCommas(parseInt(item.totalPrice)) }} 원</td>
               <td>
                 <ul class="cart_menu">
                   <li>
@@ -315,8 +315,7 @@ export default {
       const basket = this.basket;
       let totalPrice = 0;
       for (let i = 0; i < basket.length; i++) {
-        totalPrice =
-          totalPrice + parseInt(basket[i].totalPrice) * basket[i].qty;
+        totalPrice = totalPrice + parseInt(basket[i].totalPrice);
       }
       return totalPrice;
     }
