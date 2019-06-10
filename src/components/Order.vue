@@ -649,7 +649,22 @@ export default {
             rsp => {
               console.log(rsp);
               let msg = "";
+              const order = {};
+
               if (rsp.success) {
+                if (rsp.status === "ready") {
+                  order.status = "ready";
+                  axios.put(`/v1/order/${rsp.merchant_uid}`, order);
+                  msg = "가상계좌가 발급되었습니다.";
+                  alert(msg);
+                }
+
+                if (rsp.status === "paid") {
+                  order.status = "paid";
+                  axios.put(`/v1/order/${rsp.merchant_uid}`, order);
+                  msg = "결제가 완료되었습니다.";
+                  alert(msg);
+                }
                 localStorage.setItem("paymentsResult", JSON.stringify(rsp));
                 this.$router.push("/ordercompleted");
                 // this.props.history.push({
@@ -659,11 +674,8 @@ export default {
                 //   }
                 // });
               } else {
-                data.order.status = "failed";
-                axios.put(
-                  `/v1/order/${response.value.data.merchant_uid}`,
-                  data
-                );
+                order.status = "failed";
+                axios.put(`/v1/order/${rsp.merchant_uid}`, order);
                 msg = "결제에 실패하였습니다.";
                 msg += `에러내용 : ${rsp.error_msg}`;
                 alert(msg);

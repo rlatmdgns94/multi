@@ -42,7 +42,7 @@
               </td>
               <td>{{order.productQty}}</td>
               <td>{{numberWithCommas(order.totalPrice)}}원</td>
-              <td>{{order.purchaseMethod === 'card' ? "결제완료" : '입금전'}}</td>
+              <td>{{statusSwitch(order.status)}}</td>
             </tr>
           </tbody>
         </table>
@@ -260,6 +260,27 @@ export default {
   methods: {
     numberWithCommas: function(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+    statusSwitch: function(status) {
+      switch (status) {
+        case "ready":
+          return "입금 대기중";
+          break;
+        case "paid":
+          return "결제 완료";
+          break;
+        case "failed":
+          return "결제 취소";
+          break;
+        case "":
+          return "결제 취소";
+          break;
+        case null:
+          return "결제 취소";
+          break;
+        default:
+          return null;
+      }
     }
   }
 };
