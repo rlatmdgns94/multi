@@ -243,7 +243,7 @@
               </div>
               <div class="payment_box">
                 <div class="payment_text">
-                  <span>식단 프로그램 [{{ this.mealOptionName }}]</span>
+                  <span>식단 프로그램 {{ '[' + this.mealOptionName ? this.mealOptionName : '' + ']' }}</span>
                   <span class="price">{{getTotalPrice()}} 원</span>
                 </div>
                 <div class="payment_menu">
