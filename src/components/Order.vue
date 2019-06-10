@@ -94,7 +94,7 @@
               </th>
               <td>
                 <input
-                  v-model="orderData.userName"
+                  v-model="orderData.recipientName"
                   type="text"
                   name="recipient"
                   id="recipient"
@@ -574,12 +574,13 @@ export default {
       const data = {};
       data.order = this.orderData;
       data.order.userId = this.userInfo.userId;
-      data.order.phoneNumber =
-        this.orderData.phoneFirst +
-        "-" +
-        this.orderData.phoneMiddle +
-        "-" +
-        this.orderData.phoneLast;
+      data.order.userName = this.userInfo.userName;
+      data.order.recipientName = this.orderData.recipientName;
+      data.order.address = this.orderData.address;
+      data.order.addressDetail = this.orderData.addressDetail;
+      data.order.recipientPhoneNumber = `${this.orderData.phoneFirst}-${
+        this.orderData.phoneMiddle
+      }-${this.orderData.phoneLast}`;
       data.order.totalPrice =
         this.orderData.totalPrice / this.orderData.totalProductQty;
       data.order.productQty = this.orderData.totalProductQty;
@@ -594,7 +595,7 @@ export default {
         return false;
       }
 
-      if (!this.orderData.userName) {
+      if (!this.orderData.recipientName) {
         alert("받으시는 분의 이름을 입력해주세요.");
         return false;
       }
@@ -634,7 +635,7 @@ export default {
               amount:
                 this.orderData.totalPrice / this.orderData.totalProductQty,
               buyer_email: `${this.userInfo.email}`,
-              buyer_name: `${this.userInfo.userName}`,
+              buyer_name: `${this.orderData.recipientName}`,
               buyer_tel: `${this.userInfo.phoneFirst}-${
                 this.userInfo.phoneMiddle
               }-${this.userInfo.phoneLast}`,
