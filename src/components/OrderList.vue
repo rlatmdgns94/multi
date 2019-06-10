@@ -355,7 +355,7 @@ export default {
     paginatedData() {
       const start = this.pageNum * this.pageSize,
         end = start + this.pageSize;
-      this.searchData = this.orders;
+      this.searchData = this.orders.filter(data => data.status !== "failed");
       return this.searchData.slice(start, end);
     }
   }
