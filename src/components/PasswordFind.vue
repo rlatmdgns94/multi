@@ -162,8 +162,16 @@ export default {
         const findPasswordByUserIdAndEmail = axios
           .post("/v1/users/findPassword", data)
           .then(function(response) {
-            console.log(response);
-            alert("임시 비밀번호가 이메일로 발송되었습니다.");
+            if (response.data.status === 404) {
+              alert("아이디 또는 이메일 주소를 확인해주세요.");
+            } else {
+              alert(
+                `비밀번호가 임시 비밀번호인 ${
+                  response.data.userInfo.password
+                }로 변경되었습니다.\n 반드시 비밀번호를 변경해주세요.`
+              );
+              console.log(response.data.userInfo);
+            }
           })
           .catch(function(ex) {
             alert("비밀번호를 변경할 수 없습니다.");
