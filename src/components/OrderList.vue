@@ -17,7 +17,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="order in orders" :key="order.orderId">
+            <tr v-for="order in paginatedData" :key="order.orderId">
               <td class="order_num">
                 [
                 <span>{{order.merchant_uid}}</span>]
@@ -46,6 +46,18 @@
             </tr>
           </tbody>
         </table>
+        <div class="content_pager">
+          <ul class="pager">
+            <li>
+              <button
+                v-for="page in pageCount"
+                :key="page"
+                @click="changePage(page)"
+                v-bind:class="{active: pageNum === page - 1}"
+              >{{ page }}</button>
+            </li>
+          </ul>
+        </div>
       </form>
     </div>
   </div>
@@ -232,6 +244,35 @@
   font-weight: 600;
   margin-bottom: 5px;
 }
+.content_pager {
+  text-align: center;
+}
+.pager {
+  margin-top: 29px;
+  margin-bottom: 96px;
+  li {
+    display: inline-block;
+    button {
+      display: inline-block;
+      width: 31px;
+      height: 31px;
+      line-height: 31px;
+      font-size: 15px;
+      color: #7b7b7b;
+      background: none;
+      border: none;
+      outline: none;
+      &.active {
+        background: #85af4b;
+        border-radius: 16px;
+        color: #fff;
+      }
+    }
+    span {
+      padding: 0 1rem;
+    }
+  }
+}
 </style>
 
 <script>
@@ -243,9 +284,12 @@ export default {
   name: "OrderList",
   data: function() {
     return {
+      pageNum: 0,
+      pageSize: 10,
       orders: [],
       cdn: config.cdn,
-      productImg: productImg
+      productImg: productImg,
+      pages: []
     };
   },
   async mounted() {
@@ -261,6 +305,15 @@ export default {
     numberWithCommas: function(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
+    nextPage() {
+      this.pageNum += 1;
+    },
+    prevPage() {
+      this.pageNum -= 1;
+    },
+    changePage(page) {
+      this.pageNum = page - 1;
+    },
     statusSwitch: function(status) {
       switch (status) {
         case "ready":
@@ -272,6 +325,12 @@ export default {
         case "failed":
           return "결제 취소";
           break;
+        case "isDelivering":
+          return "배송중";
+          break;
+        case "delivered":
+          return "배송 완료";
+          break;
         case "":
           return "결제 취소";
           break;
@@ -281,6 +340,23 @@ export default {
         default:
           return null;
       }
+    }
+  },
+  computed: {
+    pageCount() {
+      let listLeng = this.searchData.length,
+        listSize = this.pageSize,
+        page = Math.floor(listLeng / listSize);
+      if (Math.floor(listLeng / listSize) === 0) page += 1;
+      if (listLeng % listSize > 0) page += 1;
+
+      return page;
+    },
+    paginatedData() {
+      const start = this.pageNum * this.pageSize,
+        end = start + this.pageSize;
+      this.searchData = this.orders;
+      return this.searchData.slice(start, end);
     }
   }
 };

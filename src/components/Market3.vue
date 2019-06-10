@@ -287,6 +287,7 @@ export default {
       let listLeng = this.searchData.length,
         listSize = this.pageSize,
         page = Math.floor(listLeng / listSize);
+      if (Math.floor(listLeng / listSize) === 0) page += 1;
       if (listLeng % listSize > 0) page += 1;
 
       return page;
