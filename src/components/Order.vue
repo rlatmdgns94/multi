@@ -29,9 +29,9 @@
               </div>
             </td>
             <td>{{item.qty}}</td>
-            <td>{{numberWithCommas(item.totalPrice)}}</td>
+            <td>{{numberWithCommas(item.totalPrice / item.qty)}}</td>
             <td>무료</td>
-            <td>{{numberWithCommas(parseInt(item.totalPrice * item.qty))}}</td>
+            <td>{{numberWithCommas(parseInt(item.totalPrice))}}</td>
           </tr>
         </tbody>
       </table>
@@ -105,27 +105,20 @@
             <tr>
               <th>주소</th>
               <td>
-                <input
-                  v-on:input="orderData.postcode = $event.target.value"
-                  id="postcode"
-                  type="text"
-                  size="7"
-                  readonly
-                >
+                <input v-model="orderData.postcode" id="postcode" size="7" readonly>
                 <button type="button" @click="modalRender" class="address_search">검색</button>
                 <br>
                 <input
-                  v-on:input="orderData.address = $event.target.value"
+                  v-model="orderData.address"
                   id="address"
-                  type="text"
                   size="30"
                   readonly
                   style="margin:5px 0;"
                 >
                 <br>
                 <input
-                  v-on:input="orderData.address_detail = $event.target.value"
-                  id="address_detail"
+                  v-model="orderData.addressDetail"
+                  id="addressDetail"
                   type="text"
                   name="rcvAddress2"
                   size="30"
@@ -187,7 +180,7 @@
         <h3 class="order_title">최종 결제 금액</h3>
         <div class="price">
           총 주문금액 :
-          <strong>{{numberWithCommas(orderData.totalPrice)}}원</strong>
+          <strong>{{numberWithCommas(orderData.totalPrice / orderData.totalProductQty)}}원</strong>
         </div>
       </div>
       <ul class="order_btn_are">
@@ -412,7 +405,11 @@ export default {
   },
   data: function() {
     return {
-      orderData: {},
+      orderData: {
+        postcode: "",
+        address: "",
+        addressDetail: ""
+      },
       userInfo: {},
       items: {},
       cdn: config.cdn,
@@ -447,6 +444,9 @@ export default {
     this.userInfo.phoneFirst = splitedPhoneNumbers[0];
     this.userInfo.phoneMiddle = splitedPhoneNumbers[1];
     this.userInfo.phoneLast = splitedPhoneNumbers[2];
+    this.orderData.postcode = "";
+    this.orderData.address = "";
+    this.orderData.addressDetail = "";
     this.orderData.phoneFirst = "010";
     this.orderData.phoneMiddle = "";
     this.orderData.phoneLast = "";
@@ -460,16 +460,16 @@ export default {
     }
   },
   methods: {
-    handleChangePostcode(e) {
-      this.orderData.postcode = e.target.value;
+    handleChangePostcode(postcode) {
+      this.orderData.postcode = postcode;
     },
 
-    handleChangeAddress(e) {
-      this.orderData.address = e.target.value;
+    handleChangeAddress(address) {
+      this.orderData.address = address;
     },
 
-    handleChangeAddressDetail(e) {
-      this.orderData.address_detail = e.target.value;
+    handleChangeAddressDetail(addressDetail) {
+      this.orderData.addressDetail = addressDetail;
     },
 
     numberWithCommas: function(x) {
@@ -522,15 +522,17 @@ export default {
       }
 
       // 커서를 상세주소 필드로 이동한다.
-      document.getElementById("address_detail").focus();
+      document.getElementById("addressDetail").focus();
 
       // 우편번호, 주소 저장 및 상세주소 초기화
-      document.getElementById("address").value = fullAddr;
-      document.getElementById("postcode").value = data.zonecode;
-      document.getElementById("address_detail").value = "";
-      // this.orderData.postcode = data.zonecode;
-      // this.orderData.address = fullAddr;
-      // this.orderData.address_detail = "";
+      // document.getElementById("address").value = fullAddr;
+      // document.getElementById("postcode").value = data.zonecode;
+      // document.getElementById("addressDetail").value = "";
+      this.handleChangePostcode(data.zonecode);
+      this.handleChangeAddress(fullAddr);
+      this.handleChangeAddressDetail("");
+      console.log(fullAddr, data.zonecode);
+      console.log(this.orderData.address);
 
       this.$modal.hide("dynamic-modal");
     },
@@ -578,7 +580,8 @@ export default {
         this.orderData.phoneMiddle +
         "-" +
         this.orderData.phoneLast;
-      data.order.totalPrice = this.orderData.totalPrice;
+      data.order.totalPrice =
+        this.orderData.totalPrice / this.orderData.totalProductQty;
       data.order.productQty = this.orderData.totalProductQty;
       data.order.productName = this.orderData.totalProductName;
       data.order.productImg = this.items[0].productImg;
@@ -601,7 +604,7 @@ export default {
       //   return false;
       // }
 
-      if (!this.orderData.address_detail) {
+      if (!this.orderData.addressDetail) {
         alert("상세주소를 입력해주세요.");
         return false;
       }
@@ -615,6 +618,8 @@ export default {
         return false;
       }
 
+      console.log(data);
+
       return new Promise((resolve, reject) => {
         return resolve(axios.post("/v1/order", data));
       })
@@ -626,16 +631,17 @@ export default {
               pay_method: `${this.orderData.purchaseMethod}`,
               merchant_uid: response.data.merchant_uid,
               name: `${this.orderData.totalProductName}`,
-              amount: this.orderData.totalPrice,
+              amount:
+                this.orderData.totalPrice / this.orderData.totalProductQty,
               buyer_email: `${this.userInfo.email}`,
               buyer_name: `${this.userInfo.userName}`,
               buyer_tel: `${this.userInfo.phoneFirst}-${
                 this.userInfo.phoneMiddle
               }-${this.userInfo.phoneLast}`,
-              // buyer_addr: `${this.orderData.address} ${
-              //   this.orderData.address_detail
-              // }`,
-              // buyer_postcode: `${this.orderData.postcode}`,
+              buyer_addr: `${this.orderData.address} ${
+                this.orderData.addressDetail
+              }`,
+              buyer_postcode: `${this.orderData.postcode}`,
               notice_url: "http://dev.soosooplace.com/v1/webhook/complete",
               m_redirect_url:
                 "http://192.168.0.119:3000/payments/complete/mobile"
