@@ -67,8 +67,10 @@
 
 ## Member
 
+### Design
+ - 지수빈
+ 
 ### Frontend
-
  - 김승훈
  - 이찬규
 
