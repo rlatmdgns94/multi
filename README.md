@@ -27,7 +27,10 @@
 
 **1) UI**
 - Vue.JS
-- CSS
+- HTML5
+- Css3
+- Scss
+- Jquery
 
 <br>
 
