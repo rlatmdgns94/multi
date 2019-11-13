@@ -77,7 +77,7 @@
  - 이찬규
  - 김승훈 (Publisher)
 
-### Backen
+### Backend
 - 이찬규
 
 <br>
