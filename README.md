@@ -74,8 +74,8 @@
  - 지수빈
  
 ### Frontend
- - 김승훈
  - 이찬규
+ - 김승훈 (Publisher)
 
 ### Backen
 - 이찬규
