@@ -86,3 +86,5 @@
 - Git: 소스 코드 버전 관리
 - XD: 디자인 시안 공유
 
+# youtube
+https://www.youtube.com/watch?v=IUWGx_mD2qk&t=18s
